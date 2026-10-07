@@ -1,0 +1,19 @@
+{
+  "divisions": {
+    "title": "Division roster",
+    "intro": "All 12 divisions and 66 workers, with what each role needs from its model and the wave it ships in.",
+    "legendHeading": "Requirement codes",
+    "rule": "If a model misses any requirement on a worker's list, AMORA won't assign it to that worker.",
+    "columns": {
+      "worker": "Worker",
+      "requirements": "Brain requirements",
+      "wave": "Wave"
+    }
+  },
+  "notFound": {
+    "code": "404",
+    "title": "This room doesn't exist.",
+    "body": "We couldn't find anything at this address.",
+    "cta": "Back to home"
+  }
+}

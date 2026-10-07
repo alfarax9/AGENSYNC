@@ -1,0 +1,47 @@
+{
+  "updated": "Oct 7, 2026",
+  "notice": "[PLACEHOLDER] Demo models stand in for the providers AMORA will support. Static data, no API calls.",
+  "models": [
+    {
+      "id": "frontier-multimodal",
+      "name": "Frontier multimodal",
+      "family": "Provider A",
+      "capabilities": ["V", "T", "S", "LC", "R"]
+    },
+    {
+      "id": "reasoning-specialist",
+      "name": "Reasoning specialist",
+      "family": "Provider B",
+      "capabilities": ["T", "S", "LC", "R"]
+    },
+    {
+      "id": "multimodal-lite",
+      "name": "Multimodal lite",
+      "family": "Provider B",
+      "capabilities": ["V", "T", "S", "Cheap"]
+    },
+    {
+      "id": "small-fast",
+      "name": "Small and fast",
+      "family": "Provider A",
+      "capabilities": ["T", "S", "Cheap"]
+    },
+    {
+      "id": "local-open-weights",
+      "name": "Local open-weights",
+      "family": "Provider C",
+      "capabilities": ["S", "Cheap"]
+    }
+  ],
+  "workers": [
+    { "workerId": "slice-markup-engineer" },
+    { "workerId": "logic-developer" },
+    { "workerId": "task-dispatcher" },
+    { "workerId": "market-researcher" },
+    { "workerId": "ui-visual-designer" },
+    {
+      "workerId": "reality-checker",
+      "reviews": { "workerId": "logic-developer", "modelId": "frontier-multimodal" }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "faq",
+  "heading": "Frequently asked questions",
+  "items": [
+    {
+      "id": "default-model",
+      "question": "Which model does AMORA use by default?",
+      "answer": "[PLACEHOLDER] The default model per worker is still being decided. Every worker can be pointed at any model that meets its requirements."
+    },
+    {
+      "id": "cost",
+      "question": "Do I have to pay?",
+      "answer": "AMORA is free. What costs money is model usage: you pay your providers for the tokens your workers use, so the bill depends on which models you pick and how much work you hand over. High-volume roles like the Task Dispatcher are flagged so you can give them a cheaper model."
+    },
+    {
+      "id": "local-models",
+      "question": "Can I use local models?",
+      "answer": "[PLACEHOLDER] Local model support is still being confirmed. A local model can only be assigned to workers whose requirements it meets."
+    },
+    {
+      "id": "training",
+      "question": "Is my data used for training?",
+      "answer": "AMORA runs on your machine. Whether your prompts are used for training is up to the providers you connect, so check their terms before you add an API key."
+    },
+    {
+      "id": "change-model",
+      "question": "How do I change the model for one worker?",
+      "answer": "Open the worker's manifest and change the model. AMORA checks the new model against the worker's requirements and refuses it if anything is missing. Give the Slice / Markup Engineer a text-only model, for example, and it gets rejected, because that role needs vision."
+    },
+    {
+      "id": "prompt-collections",
+      "question": "How is this different from prompt collections like agency-agents?",
+      "answer": "A prompt collection gives you role descriptions to paste into a single model. AMORA runs the work itself: workers execute tasks, pass results to each other through typed contracts, and have to clear quality gates written in code. Each worker also runs on its own model instead of everyone sharing one."
+    },
+    {
+      "id": "license",
+      "question": "What is the license?",
+      "answer": "[PLACEHOLDER] The license will be announced before the first release."
+    }
+  ]
+}
