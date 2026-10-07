@@ -19,20 +19,6 @@
   --color-border: rgb(255 255 255 / 0.08);
   --color-danger: #ff6b6b;
 
-  /* Equal lightness and chroma, so no division outshouts the accent blue. */
-  --color-division-crucible: oklch(0.78 0.1 25);
-  --color-division-forge: oklch(0.78 0.1 55);
-  --color-division-lens: oklch(0.78 0.1 85);
-  --color-division-ledger: oklch(0.78 0.1 115);
-  --color-division-compass: oklch(0.78 0.1 145);
-  --color-division-atlas: oklch(0.78 0.1 175);
-  --color-division-bridge: oklch(0.78 0.1 205);
-  --color-division-harbor: oklch(0.78 0.1 235);
-  --color-division-bastion: oklch(0.78 0.1 265);
-  --color-division-nexus: oklch(0.78 0.1 295);
-  --color-division-lyceum: oklch(0.78 0.1 325);
-  --color-division-atelier: oklch(0.78 0.1 355);
-
   /* SF Pro cannot be self-hosted (Apple's license covers Apple platforms only),
      so Apple devices get it from the system and everyone else gets Plus Jakarta Sans. */
   --font-sans:
@@ -79,7 +65,23 @@
   --shadow-glow: 0 0 24px color-mix(in srgb, var(--color-accent-glow) 45%, transparent);
 }
 
+/* Division colors live in :root, not @theme: they are only read through var()
+   at runtime (see divisionColor()), and Tailwind drops theme variables that no
+   utility class references. Equal lightness and chroma, so no division
+   outshouts the accent blue. */
 :root {
+  --color-division-crucible: oklch(0.78 0.1 25);
+  --color-division-forge: oklch(0.78 0.1 55);
+  --color-division-lens: oklch(0.78 0.1 85);
+  --color-division-ledger: oklch(0.78 0.1 115);
+  --color-division-compass: oklch(0.78 0.1 145);
+  --color-division-atlas: oklch(0.78 0.1 175);
+  --color-division-bridge: oklch(0.78 0.1 205);
+  --color-division-harbor: oklch(0.78 0.1 235);
+  --color-division-bastion: oklch(0.78 0.1 265);
+  --color-division-nexus: oklch(0.78 0.1 295);
+  --color-division-lyceum: oklch(0.78 0.1 325);
+  --color-division-atelier: oklch(0.78 0.1 355);
   --navbar-height: 4.5rem;
 }
 
