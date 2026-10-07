@@ -22,7 +22,7 @@ export function InstallTerminal() {
           panelId={panelId}
           onSelect={setPlatformId}
         />
-        <CopyButton text={platform.commands.join("\n")} />
+        <CopyButton text={platform.commands.join("\n")} platformId={platform.id} />
       </div>
       <pre
         id={panelId}

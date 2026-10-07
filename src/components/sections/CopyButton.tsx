@@ -1,14 +1,22 @@
+import { track } from "@vercel/analytics";
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 import home from "@/content/home.json";
+import { analyticsEvents } from "@/lib/analytics";
 
 const resetDelay = 2000;
 
-export function CopyButton({ text }: { text: string }) {
+type CopyButtonProps = {
+  text: string;
+  platformId: string;
+};
+
+export function CopyButton({ text, platformId }: CopyButtonProps) {
   const [hasCopied, setHasCopied] = useState(false);
 
   async function copy() {
     await navigator.clipboard.writeText(text);
+    track(analyticsEvents.installCopied, { location: platformId });
     setHasCopied(true);
     setTimeout(() => setHasCopied(false), resetDelay);
   }
