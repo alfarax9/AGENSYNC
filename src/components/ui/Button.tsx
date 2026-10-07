@@ -2,13 +2,14 @@ import type { ReactNode } from "react";
 
 type ButtonProps = {
   href: string;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "inverse";
   children: ReactNode;
 };
 
 const variantClasses = {
-  primary: "border-accent bg-accent",
-  secondary: "border-border bg-overlay",
+  primary: "rounded-full border-accent bg-accent text-text",
+  secondary: "rounded-full border-border bg-overlay text-text",
+  inverse: "rounded-xl border-text bg-text text-bg",
 };
 
 // Hover is a glow and a brighter border, never a lighter background:
@@ -17,7 +18,7 @@ export function Button({ href, variant = "primary", children }: ButtonProps) {
   return (
     <a
       href={href}
-      className={`relative inline-flex items-center justify-center gap-2 rounded-full border px-5 py-2.5 text-sm font-semibold text-text before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:opacity-0 before:shadow-glow before:transition-opacity hover:border-accent-glow hover:before:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-glow ${variantClasses[variant]}`}
+      className={`relative inline-flex items-center justify-center gap-2 border px-5 py-2.5 text-sm font-semibold before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:opacity-0 before:shadow-glow before:transition-opacity hover:border-accent-glow hover:before:opacity-100 ${variantClasses[variant]}`}
     >
       {children}
     </a>

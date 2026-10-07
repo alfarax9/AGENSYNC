@@ -25,7 +25,7 @@ export function MobileMenu({ children }: { children: ReactNode }) {
       <dialog
         ref={dialogRef}
         aria-label={site.nav.label}
-        className="m-0 h-dvh max-h-none w-full max-w-none bg-bg text-text"
+        className="m-0 h-dvh max-h-none w-full max-w-none bg-bg text-text opacity-0 transition-[opacity,display,overlay] transition-discrete duration-300 open:opacity-100 motion-reduce:transition-none starting:open:opacity-0"
       >
         <Container className="flex h-navbar items-center justify-end">
           <IconButton label={site.nav.closeMenu} icon={X} onClick={closeMenu} />
@@ -33,7 +33,7 @@ export function MobileMenu({ children }: { children: ReactNode }) {
         <Container className="flex flex-col gap-10 pt-6">
           <NavLinks
             className="flex flex-col gap-6"
-            linkClassName="text-h4 text-text focus-visible:outline-2 focus-visible:outline-accent-glow"
+            linkClassName="text-h4 text-text"
             onNavigate={closeMenu}
           />
           {children}

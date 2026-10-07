@@ -21,7 +21,7 @@ export function IconButton({
       aria-label={label}
       aria-haspopup={hasPopup ? "dialog" : undefined}
       onClick={onClick}
-      className={`rounded-full p-2 text-text focus-visible:outline-2 focus-visible:outline-accent-glow ${className}`}
+      className={`rounded-full p-2 text-text ${className}`}
     >
       <Icon aria-hidden className="size-6" />
     </button>

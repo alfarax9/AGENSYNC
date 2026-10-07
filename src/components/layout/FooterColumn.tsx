@@ -14,10 +14,7 @@ export function FooterColumn({ title, links }: FooterColumnProps) {
       <ul className="mt-4 flex flex-col gap-3">
         {links.map((item) => (
           <li key={item.label}>
-            <a
-              href={site.links[item.link as LinkKey]}
-              className="hover:text-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-glow"
-            >
+            <a href={site.links[item.link as LinkKey]} className="hover:text-text">
               {item.label}
             </a>
           </li>

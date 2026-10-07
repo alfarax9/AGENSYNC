@@ -9,11 +9,11 @@ export async function StarButton() {
   const starCount = await getStarCount(site.links.github);
 
   return (
-    <Button href={site.links.github} variant="secondary">
+    <Button href={site.links.github} variant="inverse">
       <Star aria-hidden className="size-4" />
       {site.nav.star}
       {starCount !== null && (
-        <span className="font-mono text-text-tertiary">
+        <span className="font-mono text-bg/70">
           <span className="sr-only">{site.nav.starCountLabel}: </span>
           {compactNumber.format(starCount)}
         </span>

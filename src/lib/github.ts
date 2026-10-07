@@ -1,5 +1,7 @@
 import { cacheLife } from "next/cache";
 
+// A slow GitHub must never hold up the page; past this the button shows no count.
+const requestTimeoutMs = 5000;
 const repoPathPattern = /^https:\/\/github\.com\/([^/]+\/[^/#]+)/;
 
 function requestHeaders(): HeadersInit {
@@ -18,6 +20,7 @@ export async function getStarCount(repoUrl: string): Promise<number | null> {
   try {
     const response = await fetch(`https://api.github.com/repos/${repoPath}`, {
       headers: requestHeaders(),
+      signal: AbortSignal.timeout(requestTimeoutMs),
     });
     if (!response.ok) return null;
     const repo: { stargazers_count?: number } = await response.json();
