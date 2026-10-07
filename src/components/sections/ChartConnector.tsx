@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import * as m from "motion/react-m";
 import { lineDraw } from "@/components/motion/variants";
 
 const lineHeight = 48;
@@ -11,7 +11,7 @@ const lineHeight = 48;
 export function ChartConnector({ isActive }: { isActive: boolean }) {
   return (
     <span className="relative flex h-12 w-2 justify-center">
-      <motion.span
+      <m.span
         variants={lineDraw}
         initial="hidden"
         whileInView="visible"
@@ -19,7 +19,7 @@ export function ChartConnector({ isActive }: { isActive: boolean }) {
         className="h-full w-px origin-top bg-text-tertiary"
       />
       {isActive && (
-        <motion.span
+        <m.span
           className="absolute top-0 size-2 rounded-full bg-accent-glow motion-reduce:hidden"
           animate={{ y: [0, lineHeight], opacity: [0, 1, 0] }}
           transition={{ duration: 1, repeat: Infinity, repeatDelay: 2, ease: "easeInOut" }}
