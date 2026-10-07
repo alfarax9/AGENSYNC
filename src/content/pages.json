@@ -14,6 +14,7 @@
     "code": "404",
     "title": "This room doesn't exist.",
     "body": "We couldn't find anything at this address.",
-    "cta": "Back to home"
+    "cta": "Back to home",
+    "metaTitle": "Page not found"
   }
 }
