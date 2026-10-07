@@ -1,0 +1,517 @@
+{
+  "requirements": {
+    "V": { "symbol": "V", "label": "Vision", "description": "Reads images", "kind": "model" },
+    "T": {
+      "symbol": "T",
+      "label": "Tool use",
+      "description": "Calls tools and functions",
+      "kind": "model"
+    },
+    "S": {
+      "symbol": "S",
+      "label": "Structured output",
+      "description": "Returns JSON that matches a schema",
+      "kind": "model"
+    },
+    "LC": {
+      "symbol": "LC",
+      "label": "Long context",
+      "description": "Holds large codebases and documents",
+      "kind": "model"
+    },
+    "R": {
+      "symbol": "R",
+      "label": "Strong reasoning",
+      "description": "Plans and solves multi-step problems",
+      "kind": "model"
+    },
+    "Cheap": {
+      "symbol": "Cheap",
+      "label": "Lightweight",
+      "description": "High volume, so a small, fast model is enough",
+      "kind": "model"
+    },
+    "W": {
+      "symbol": "W",
+      "label": "Web search",
+      "description": "Web search plugin",
+      "kind": "plugin"
+    },
+    "Canvas": {
+      "symbol": "Canvas",
+      "label": "Canvas",
+      "description": "Figma or HTML mockup plugin",
+      "kind": "plugin"
+    },
+    "Diff": {
+      "symbol": "≠",
+      "label": "Different family",
+      "description": "Uses a different model family from the worker it reviews",
+      "kind": "crossCheck"
+    }
+  },
+  "divisions": [
+    {
+      "id": "forge",
+      "name": "Forge",
+      "function": "Engineering",
+      "summary": "The workshop where the product is forged into code.",
+      "workers": [
+        {
+          "id": "slice-markup-engineer",
+          "name": "Slice / Markup Engineer",
+          "subdivision": "Frontend",
+          "requirements": ["V", "T"],
+          "wave": 1
+        },
+        {
+          "id": "logic-developer",
+          "name": "Logic Developer",
+          "subdivision": "Frontend",
+          "requirements": ["T", "LC", "R"],
+          "wave": 1
+        },
+        {
+          "id": "api-integration-specialist",
+          "name": "API & Integration Specialist",
+          "subdivision": "Frontend",
+          "requirements": ["T", "S"],
+          "wave": 1
+        },
+        {
+          "id": "performance-optimization",
+          "name": "Performance & Optimization",
+          "subdivision": "Frontend",
+          "requirements": ["T", "LC"],
+          "wave": 1
+        },
+        {
+          "id": "api-designer",
+          "name": "API Designer",
+          "subdivision": "Backend",
+          "requirements": ["R", "S"],
+          "wave": 1
+        },
+        {
+          "id": "service-developer",
+          "name": "Service Developer",
+          "subdivision": "Backend",
+          "requirements": ["T", "LC", "R"],
+          "wave": 1
+        },
+        {
+          "id": "database-engineer",
+          "name": "Database Engineer",
+          "subdivision": "Backend",
+          "requirements": ["T", "S"],
+          "wave": 1
+        },
+        {
+          "id": "technical-researcher",
+          "name": "Technical Researcher",
+          "subdivision": "Research",
+          "requirements": ["T", "LC", "W"],
+          "wave": 1
+        },
+        {
+          "id": "ci-cd-engineer",
+          "name": "CI/CD Engineer",
+          "subdivision": "DevOps",
+          "requirements": ["T", "S"],
+          "wave": 2
+        },
+        {
+          "id": "infrastructure-engineer",
+          "name": "Infrastructure Engineer",
+          "subdivision": "DevOps",
+          "requirements": ["T", "S"],
+          "wave": 2
+        },
+        {
+          "id": "observability-engineer",
+          "name": "Observability Engineer",
+          "subdivision": "DevOps",
+          "requirements": ["T", "LC", "R"],
+          "wave": 2
+        },
+        {
+          "id": "mobile-ui-engineer",
+          "name": "Mobile UI Engineer",
+          "subdivision": "Mobile",
+          "requirements": ["V", "T"],
+          "wave": 3
+        },
+        {
+          "id": "mobile-logic-developer",
+          "name": "Mobile Logic Developer",
+          "subdivision": "Mobile",
+          "requirements": ["T", "LC", "R"],
+          "wave": 3
+        },
+        {
+          "id": "data-engineer",
+          "name": "Data Engineer",
+          "subdivision": "Data & AI",
+          "requirements": ["T", "S"],
+          "wave": 3
+        },
+        {
+          "id": "ai-integration-engineer",
+          "name": "AI Integration Engineer",
+          "subdivision": "Data & AI",
+          "requirements": ["T", "LC", "R"],
+          "wave": 3
+        }
+      ]
+    },
+    {
+      "id": "atelier",
+      "name": "Atelier",
+      "function": "Design",
+      "summary": "The studio where designers work.",
+      "workers": [
+        { "id": "ux-architect", "name": "UX Architect", "requirements": ["R", "S"], "wave": 1 },
+        {
+          "id": "ui-visual-designer",
+          "name": "UI Visual Designer",
+          "requirements": ["V", "T", "Canvas"],
+          "wave": 1
+        },
+        {
+          "id": "design-system-engineer",
+          "name": "Design System Engineer",
+          "requirements": ["R", "S"],
+          "wave": 1
+        },
+        {
+          "id": "accessibility-designer",
+          "name": "Accessibility Designer",
+          "requirements": ["V", "T"],
+          "wave": 1
+        },
+        {
+          "id": "design-researcher",
+          "name": "Design Researcher",
+          "requirements": ["V", "T", "W"],
+          "wave": 1
+        }
+      ]
+    },
+    {
+      "id": "compass",
+      "name": "Compass",
+      "function": "Product",
+      "summary": "Sets the direction: which features get built, and why.",
+      "workers": [
+        {
+          "id": "product-manager",
+          "name": "Product Manager",
+          "requirements": ["R", "S"],
+          "wave": 1
+        },
+        {
+          "id": "feedback-synthesizer",
+          "name": "Feedback Synthesizer",
+          "requirements": ["LC"],
+          "wave": 1
+        },
+        {
+          "id": "backlog-strategist",
+          "name": "Backlog Strategist",
+          "requirements": ["R", "S"],
+          "wave": 1
+        },
+        {
+          "id": "market-researcher",
+          "name": "Market Researcher",
+          "requirements": ["T", "LC", "W"],
+          "wave": 1
+        }
+      ]
+    },
+    {
+      "id": "bridge",
+      "name": "Bridge",
+      "function": "Project Management",
+      "summary": "The command deck of a ship, where the course is set and the voyage is run.",
+      "workers": [
+        {
+          "id": "project-planner",
+          "name": "Project Planner",
+          "requirements": ["R", "S"],
+          "wave": 1
+        },
+        {
+          "id": "task-dispatcher",
+          "name": "Task Dispatcher",
+          "requirements": ["S", "Cheap"],
+          "wave": 1
+        },
+        {
+          "id": "risk-dependency-tracker",
+          "name": "Risk & Dependency Tracker",
+          "requirements": ["R", "S"],
+          "wave": 1
+        },
+        {
+          "id": "status-reporter",
+          "name": "Status Reporter",
+          "requirements": ["S", "Cheap"],
+          "wave": 1
+        },
+        {
+          "id": "delivery-researcher",
+          "name": "Delivery Researcher",
+          "requirements": ["T", "LC", "W"],
+          "wave": 1
+        }
+      ]
+    },
+    {
+      "id": "crucible",
+      "name": "Crucible",
+      "function": "Testing",
+      "summary": "The vessel where work is tested under heat before release.",
+      "workers": [
+        { "id": "test-planner", "name": "Test Planner", "requirements": ["R", "S"], "wave": 1 },
+        {
+          "id": "unit-integration-tester",
+          "name": "Unit & Integration Tester",
+          "requirements": ["T", "S"],
+          "wave": 1
+        },
+        { "id": "e2e-visual-qa", "name": "E2E & Visual QA", "requirements": ["V", "T"], "wave": 1 },
+        { "id": "api-tester", "name": "API Tester", "requirements": ["T", "S"], "wave": 1 },
+        {
+          "id": "reality-checker",
+          "name": "Reality Checker",
+          "requirements": ["R", "Diff"],
+          "wave": 1
+        },
+        {
+          "id": "qa-researcher",
+          "name": "QA Researcher",
+          "requirements": ["T", "LC", "W"],
+          "wave": 1
+        }
+      ]
+    },
+    {
+      "id": "bastion",
+      "name": "Bastion",
+      "function": "Security",
+      "summary": "The fortress that defends the agency and its output.",
+      "workers": [
+        { "id": "threat-modeler", "name": "Threat Modeler", "requirements": ["R", "S"], "wave": 2 },
+        {
+          "id": "code-security-reviewer",
+          "name": "Code Security Reviewer",
+          "requirements": ["T", "LC", "R"],
+          "wave": 2
+        },
+        {
+          "id": "dependency-auditor",
+          "name": "Dependency Auditor",
+          "requirements": ["T", "S"],
+          "wave": 2
+        },
+        {
+          "id": "secrets-config-auditor",
+          "name": "Secrets & Config Auditor",
+          "requirements": ["T", "S"],
+          "wave": 2
+        },
+        {
+          "id": "threat-intelligence-researcher",
+          "name": "Threat Intelligence Researcher",
+          "requirements": ["T", "LC", "W"],
+          "wave": 2
+        }
+      ]
+    },
+    {
+      "id": "harbor",
+      "name": "Harbor",
+      "function": "Support",
+      "summary": "The port where users come for help.",
+      "workers": [
+        {
+          "id": "support-responder",
+          "name": "Support Responder",
+          "requirements": ["S", "Cheap"],
+          "wave": 2
+        },
+        {
+          "id": "knowledge-base-writer",
+          "name": "Knowledge Base Writer",
+          "requirements": ["LC"],
+          "wave": 2
+        },
+        {
+          "id": "bug-triage-specialist",
+          "name": "Bug Triage Specialist",
+          "requirements": ["T", "S"],
+          "wave": 2
+        },
+        {
+          "id": "customer-insight-researcher",
+          "name": "Customer Insight Researcher",
+          "requirements": ["T", "LC", "W"],
+          "wave": 2
+        }
+      ]
+    },
+    {
+      "id": "nexus",
+      "name": "Nexus",
+      "function": "Specialized",
+      "summary": "The meeting point that connects every division: planning, plugins, prompts, and models.",
+      "workers": [
+        {
+          "id": "planner-decomposer",
+          "name": "Planner / Decomposer",
+          "requirements": ["R", "S"],
+          "wave": 1
+        },
+        {
+          "id": "plugin-mcp-builder",
+          "name": "Plugin (MCP) Builder",
+          "requirements": ["T", "LC", "R"],
+          "wave": 2
+        },
+        {
+          "id": "prompt-eval-engineer",
+          "name": "Prompt & Eval Engineer",
+          "requirements": ["R", "LC"],
+          "wave": 2
+        },
+        { "id": "technical-writer", "name": "Technical Writer", "requirements": ["LC"], "wave": 2 },
+        {
+          "id": "model-tooling-scout",
+          "name": "Model & Tooling Scout",
+          "requirements": ["T", "LC", "W"],
+          "wave": 2
+        }
+      ]
+    },
+    {
+      "id": "ledger",
+      "name": "Ledger",
+      "function": "Finance",
+      "summary": "The ledger that tracks every cost and estimate.",
+      "workers": [
+        {
+          "id": "cost-controller",
+          "name": "Cost Controller",
+          "requirements": ["S", "Cheap"],
+          "wave": 2
+        },
+        {
+          "id": "project-estimator",
+          "name": "Project Estimator",
+          "requirements": ["R", "S"],
+          "wave": 2
+        },
+        {
+          "id": "financial-modeler",
+          "name": "Financial Modeler",
+          "requirements": ["T", "S"],
+          "wave": 2
+        },
+        {
+          "id": "cost-pricing-researcher",
+          "name": "Cost & Pricing Researcher",
+          "requirements": ["T", "LC", "W"],
+          "wave": 2
+        }
+      ]
+    },
+    {
+      "id": "lyceum",
+      "name": "Lyceum",
+      "function": "Academic",
+      "summary": "Named after Aristotle's school, a symbol of scholarly rigor.",
+      "workers": [
+        {
+          "id": "methodology-advisor",
+          "name": "Methodology Advisor",
+          "requirements": ["R", "S"],
+          "wave": 3
+        },
+        {
+          "id": "scientific-writer",
+          "name": "Scientific Writer",
+          "requirements": ["LC"],
+          "wave": 3
+        },
+        {
+          "id": "citation-verifier",
+          "name": "Citation Verifier",
+          "requirements": ["W", "S", "Diff"],
+          "wave": 3
+        },
+        {
+          "id": "literature-researcher",
+          "name": "Literature Researcher",
+          "requirements": ["T", "LC", "W"],
+          "wave": 3
+        }
+      ]
+    },
+    {
+      "id": "atlas",
+      "name": "Atlas",
+      "function": "GIS",
+      "summary": "A collection of maps.",
+      "workers": [
+        {
+          "id": "spatial-data-engineer",
+          "name": "Spatial Data Engineer",
+          "requirements": ["T", "S"],
+          "wave": 3
+        },
+        {
+          "id": "spatial-analyst",
+          "name": "Spatial Analyst",
+          "requirements": ["T", "R", "S"],
+          "wave": 3
+        },
+        {
+          "id": "web-map-developer",
+          "name": "Web Map Developer",
+          "requirements": ["V", "T"],
+          "wave": 3
+        },
+        { "id": "imagery-analyst", "name": "Imagery Analyst", "requirements": ["V"], "wave": 3 },
+        {
+          "id": "geodata-source-researcher",
+          "name": "Geodata Source Researcher",
+          "requirements": ["T", "LC", "W"],
+          "wave": 3
+        }
+      ]
+    },
+    {
+      "id": "lens",
+      "name": "Lens",
+      "function": "Research",
+      "summary": "The instrument for seeing closer and sharper.",
+      "workers": [
+        {
+          "id": "source-finder",
+          "name": "Source Finder",
+          "requirements": ["T", "LC", "W"],
+          "wave": 3
+        },
+        {
+          "id": "evidence-evaluator",
+          "name": "Evidence Evaluator",
+          "requirements": ["R", "S"],
+          "wave": 3
+        },
+        { "id": "synthesis-writer", "name": "Synthesis Writer", "requirements": ["LC"], "wave": 3 },
+        { "id": "fact-checker", "name": "Fact Checker", "requirements": ["W", "Diff"], "wave": 3 }
+      ]
+    }
+  ]
+}
