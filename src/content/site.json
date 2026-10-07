@@ -1,0 +1,44 @@
+{
+  "name": "AMORA",
+  "description": "An open source AI software agency where every worker has its own brain.",
+  "links": {
+    "github": "https://github.com/PLACEHOLDER-OWNER/amora",
+    "docs": "https://github.com/PLACEHOLDER-OWNER/amora#readme",
+    "telegram": "https://t.me/PLACEHOLDER_AMORA",
+    "license": "https://github.com/PLACEHOLDER-OWNER/amora/blob/main/LICENSE"
+  },
+  "skipLink": "Skip to content",
+  "nav": {
+    "label": "Primary",
+    "homeLabel": "AMORA home",
+    "items": [
+      { "label": "How it works", "href": "/#how-it-works" },
+      { "label": "Divisions", "href": "/#divisions" },
+      { "label": "Brains", "href": "/#brains" },
+      { "label": "Install", "href": "/#install" },
+      { "label": "FAQ", "href": "/#faq" }
+    ],
+    "star": "Star on GitHub",
+    "starCountLabel": "GitHub stars",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "tagline": "12 divisions, 66 AI workers, one Telegram group. Open source.",
+    "columns": [
+      {
+        "title": "Project",
+        "links": [
+          { "label": "GitHub", "link": "github" },
+          { "label": "Documentation", "link": "docs" },
+          { "label": "License", "link": "license" }
+        ]
+      },
+      {
+        "title": "Community",
+        "links": [{ "label": "Telegram", "link": "telegram" }]
+      }
+    ],
+    "copyright": "© 2026 AMORA. License to be announced."
+  }
+}

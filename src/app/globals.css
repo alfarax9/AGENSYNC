@@ -1,6 +1,72 @@
 @import "tailwindcss";
 
-@theme inline {
+@theme {
+  /* Only AMORA tokens exist, so components cannot reach for raw palette colors. */
+  --color-*: initial;
+  --color-bg: #080b11;
+  --color-bg-alt: #0a0d14;
+  --color-depth-from: #0d1527;
+  --color-depth-to: #101b35;
+  --color-accent: #2563eb;
+  --color-accent-glow: #3b82f6;
+  --color-highlight-from: #38bdf8;
+  --color-highlight-to: #60a5fa;
+  --color-text: #ffffff;
+  --color-text-secondary: #d1d5db;
+  --color-text-tertiary: #9ca3af;
+  --color-overlay: rgb(255 255 255 / 0.05);
+  --color-border: rgb(255 255 255 / 0.08);
+  --color-danger: #ff6b6b;
+
+  /* Equal lightness and chroma, so no division outshouts the accent blue. */
+  --color-division-crucible: oklch(0.78 0.1 25);
+  --color-division-forge: oklch(0.78 0.1 55);
+  --color-division-lens: oklch(0.78 0.1 85);
+  --color-division-ledger: oklch(0.78 0.1 115);
+  --color-division-compass: oklch(0.78 0.1 145);
+  --color-division-atlas: oklch(0.78 0.1 175);
+  --color-division-bridge: oklch(0.78 0.1 205);
+  --color-division-harbor: oklch(0.78 0.1 235);
+  --color-division-bastion: oklch(0.78 0.1 265);
+  --color-division-nexus: oklch(0.78 0.1 295);
+  --color-division-lyceum: oklch(0.78 0.1 325);
+  --color-division-atelier: oklch(0.78 0.1 355);
+
   --font-sans: var(--font-plus-jakarta-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Type scale measured from the reference layout at 390px and 1440px. */
+  --text-display: clamp(2.25rem, 1.646rem + 2.476vw, 3.875rem);
+  --text-display--line-height: 1.2;
+  --text-display--font-weight: 500;
+  --text-h2: clamp(2rem, 1.536rem + 1.905vw, 3.25rem);
+  --text-h2--line-height: 1.24;
+  --text-h2--font-weight: 500;
+  --text-h3: clamp(1.75rem, 1.425rem + 1.333vw, 2.625rem);
+  --text-h3--line-height: 1.25;
+  --text-h3--font-weight: 500;
+  --text-h4: clamp(1.5rem, 1.314rem + 0.762vw, 2rem);
+  --text-h4--line-height: 1.25;
+  --text-h4--font-weight: 500;
+
+  --radius-card: 8px;
+  --container-site: 75.5rem;
+  --spacing-navbar: var(--navbar-height);
+  --shadow-glow: 0 0 24px color-mix(in srgb, var(--color-accent-glow) 45%, transparent);
+}
+
+:root {
+  --navbar-height: 4rem;
+}
+
+@media (width >= 48rem) {
+  :root {
+    --navbar-height: 5.25rem;
+  }
+}
+
+html {
+  /* Lenis and native anchor jumps both read this, so targets land below the fixed navbar. */
+  scroll-padding-top: var(--navbar-height);
+  color-scheme: dark;
 }

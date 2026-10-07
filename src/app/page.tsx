@@ -1,7 +1,9 @@
+import site from "@/content/site.json";
+
 export default function Home() {
   return (
-    <main>
-      <h1>AMORA</h1>
+    <main id="main" className="pt-navbar">
+      <h1 className="text-display text-text">{site.name}</h1>
     </main>
   );
 }
