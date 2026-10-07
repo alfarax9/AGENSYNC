@@ -3,12 +3,15 @@ import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { LenisProvider } from "@/components/layout/LenisProvider";
 import { Navbar } from "@/components/layout/Navbar";
+import { MotionProvider } from "@/components/motion/MotionProvider";
 import site from "@/content/site.json";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
+  // Only a fallback now; Apple devices render SF Pro and never need this file.
+  preload: false,
 });
 
 const geistMono = Geist_Mono({
@@ -32,9 +35,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {site.skipLink}
         </a>
         <LenisProvider />
-        <Navbar />
-        {children}
-        <Footer />
+        <MotionProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

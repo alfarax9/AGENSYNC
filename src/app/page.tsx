@@ -1,9 +1,31 @@
-import site from "@/content/site.json";
+import { Brains } from "@/components/sections/Brains";
+import { DivisionMarquee } from "@/components/sections/DivisionMarquee";
+import { Divisions } from "@/components/sections/Divisions";
+import { Faq } from "@/components/sections/Faq";
+import { FinalCta } from "@/components/sections/FinalCta";
+import { Hero } from "@/components/sections/Hero";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { Install } from "@/components/sections/Install";
+import { Pillars } from "@/components/sections/Pillars";
+import { Security } from "@/components/sections/Security";
+import { Stats } from "@/components/sections/Stats";
+import { Telegram } from "@/components/sections/Telegram";
 
 export default function Home() {
   return (
-    <main id="main" className="pt-navbar">
-      <h1 className="text-display text-text">{site.name}</h1>
+    <main id="main">
+      <Hero />
+      <DivisionMarquee />
+      <Stats />
+      <Pillars />
+      <HowItWorks />
+      <Divisions />
+      <Brains />
+      <Telegram />
+      <Install />
+      <Security />
+      <Faq />
+      <FinalCta />
     </main>
   );
 }
