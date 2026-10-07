@@ -12,11 +12,26 @@
     "label": "Primary",
     "homeLabel": "AMORA home",
     "items": [
-      { "label": "How it works", "href": "/#how-it-works" },
-      { "label": "Divisions", "href": "/#divisions" },
-      { "label": "Brains", "href": "/#brains" },
-      { "label": "Install", "href": "/#install" },
-      { "label": "FAQ", "href": "/#faq" }
+      {
+        "label": "How it works",
+        "href": "/#how-it-works"
+      },
+      {
+        "label": "Divisions",
+        "href": "/#divisions"
+      },
+      {
+        "label": "Brains",
+        "href": "/#brains"
+      },
+      {
+        "label": "Install",
+        "href": "/#install"
+      },
+      {
+        "label": "FAQ",
+        "href": "/#faq"
+      }
     ],
     "star": "Star on GitHub",
     "starCountLabel": "GitHub stars",
@@ -24,19 +39,33 @@
     "closeMenu": "Close menu"
   },
   "footer": {
-    "tagline": "12 divisions, 66 AI workers, one Telegram group. Open source.",
+    "tagline": "An AI software agency you run from a Telegram group. Open source and still experimental.",
     "columns": [
       {
         "title": "Project",
         "links": [
-          { "label": "GitHub", "link": "github" },
-          { "label": "Documentation", "link": "docs" },
-          { "label": "License", "link": "license" }
+          {
+            "label": "GitHub",
+            "link": "github"
+          },
+          {
+            "label": "Documentation",
+            "link": "docs"
+          },
+          {
+            "label": "License",
+            "link": "license"
+          }
         ]
       },
       {
         "title": "Community",
-        "links": [{ "label": "Telegram", "link": "telegram" }]
+        "links": [
+          {
+            "label": "Telegram",
+            "link": "telegram"
+          }
+        ]
       }
     ],
     "copyright": "© 2026 AMORA. License to be announced."
