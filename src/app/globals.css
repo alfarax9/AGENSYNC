@@ -11,6 +11,7 @@
   --color-accent-glow: #3b82f6;
   --color-highlight-from: #38bdf8;
   --color-highlight-to: #60a5fa;
+  --color-wave-mid: #6f6f6f;
   --color-text: #ffffff;
   --color-text-secondary: #d1d5db;
   --color-text-tertiary: #9ca3af;
@@ -32,7 +33,11 @@
   --color-division-lyceum: oklch(0.78 0.1 325);
   --color-division-atelier: oklch(0.78 0.1 355);
 
-  --font-sans: var(--font-plus-jakarta-sans);
+  /* SF Pro cannot be self-hosted (Apple's license covers Apple platforms only),
+     so Apple devices get it from the system and everyone else gets Plus Jakarta Sans. */
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    var(--font-plus-jakarta-sans), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
 
   /* Type scale measured from the reference layout at 390px and 1440px. */
@@ -49,6 +54,25 @@
   --text-h4--line-height: 1.25;
   --text-h4--font-weight: 500;
 
+  /* CSS rather than motion for these two: the headline must animate before
+     JavaScript loads (LCP), and the marquee runs forever without main-thread work. */
+  --animate-word-rise: word-rise 0.6s ease-out both;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee-reverse: marquee 30s linear infinite reverse;
+
+  @keyframes word-rise {
+    from {
+      opacity: 0;
+      transform: translateY(0.4em);
+    }
+  }
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
   --radius-card: 8px;
   --container-site: 75.5rem;
   --spacing-navbar: var(--navbar-height);
@@ -56,7 +80,7 @@
 }
 
 :root {
-  --navbar-height: 4rem;
+  --navbar-height: 4.5rem;
 }
 
 @media (width >= 48rem) {
@@ -69,4 +93,20 @@ html {
   /* Lenis and native anchor jumps both read this, so targets land below the fixed navbar. */
   scroll-padding-top: var(--navbar-height);
   color-scheme: dark;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-glow);
+  outline-offset: 3px;
+}
+
+@utility animation-paused {
+  animation-play-state: paused;
+}
+
+@utility bg-grid {
+  background-image:
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 2rem 2rem;
 }
