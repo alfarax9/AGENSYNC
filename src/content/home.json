@@ -1,0 +1,279 @@
+{
+  "hero": {
+    "badge": "Open source, still experimental",
+    "headline": "An AI software agency where every worker has its own brain.",
+    "subheadline": "AMORA runs 66 AI workers across 12 divisions. Each one gets the model and plugins its job calls for, and you direct the whole thing from a Telegram group.",
+    "primaryCta": "Install from GitHub",
+    "secondaryCta": "See how it works"
+  },
+  "marquee": {
+    "label": "AMORA divisions",
+    "pause": "Pause division ticker",
+    "play": "Play division ticker"
+  },
+  "stats": {
+    "heading": "AMORA in numbers",
+    "items": [
+      {
+        "id": "divisions",
+        "value": 12,
+        "label": "Divisions"
+      },
+      {
+        "id": "workers",
+        "value": 66,
+        "label": "AI workers"
+      },
+      {
+        "id": "commands",
+        "value": null,
+        "label": "Commands to install"
+      },
+      {
+        "id": "providers",
+        "value": null,
+        "label": "Model providers"
+      }
+    ],
+    "pendingValue": "TBD"
+  },
+  "pillars": {
+    "heading": "What makes it more than a prompt library",
+    "items": [
+      {
+        "id": "execution",
+        "title": "It does the work",
+        "body": "Workers edit files and run commands inside a sandbox. What comes back is something you can open and check."
+      },
+      {
+        "id": "gates",
+        "title": "The checks live in code",
+        "body": "You can talk a model out of following a prompt. You can't talk it past a failing test. Work that fails a quality gate stays inside the agency until someone fixes it."
+      },
+      {
+        "id": "brains",
+        "title": "Each worker has its own model",
+        "body": "The Slice / Markup Engineer reads screenshots, so it gets a model with vision. The Task Dispatcher hands out tasks all day, so it gets something cheap and fast."
+      }
+    ]
+  },
+  "howItWorks": {
+    "id": "how-it-works",
+    "heading": "What happens after you send a message",
+    "steps": [
+      {
+        "id": "brief",
+        "title": "You write a brief",
+        "body": "Drop the job into the agency's Telegram group, the way you'd explain it to a colleague.",
+        "activeNodes": ["telegram"]
+      },
+      {
+        "id": "plan",
+        "title": "The planner breaks it down",
+        "body": "The Planner / Decomposer in Nexus splits the brief into tasks and hands each one to the right division.",
+        "activeNodes": ["nexus"]
+      },
+      {
+        "id": "divisions",
+        "title": "Divisions pick it up",
+        "body": "Compass works out the scope, Atelier designs it, and Forge builds it, each worker on its own model.",
+        "activeNodes": ["compass", "atelier", "forge"]
+      },
+      {
+        "id": "dev-qa",
+        "title": "Dev and QA go back and forth",
+        "body": "Crucible tests what Forge builds. Anything that fails goes back to the developer, and the loop runs until the tests pass.",
+        "activeNodes": ["forge", "crucible"]
+      },
+      {
+        "id": "gatekeeper",
+        "title": "The Gatekeeper checks it",
+        "body": "Lint, type checks, tests, and accessibility checks run as code. A model can't argue its way past them.",
+        "activeNodes": ["gatekeeper"]
+      },
+      {
+        "id": "deliver",
+        "title": "You approve the result",
+        "body": "A summary lands in Telegram with buttons to approve it or ask for changes.",
+        "activeNodes": ["bridge", "telegram"]
+      }
+    ],
+    "telegramNode": "Telegram",
+    "gatekeeperNode": "Gatekeeper"
+  },
+  "divisions": {
+    "id": "divisions",
+    "heading": "Meet the 12 divisions",
+    "intro": "Each division is named after a room in the agency's headquarters. Open a card to see who works there.",
+    "waveLegend": "Workers ship in three waves: 29 in the first, 20 in the second, and the last 17 in the third.",
+    "waveLabel": "Wave",
+    "workersLabel": "workers",
+    "rosterLink": "Full roster"
+  },
+  "brains": {
+    "id": "brains",
+    "heading": "What's inside a worker",
+    "intro": "Each worker is a manifest with five slots. Swap the model or the plugins whenever you like. AMORA only refuses the change when the new setup can't do the job.",
+    "anatomy": [
+      {
+        "id": "model",
+        "title": "Model",
+        "body": "The LLM doing the thinking. You choose it per worker."
+      },
+      {
+        "id": "plugins",
+        "title": "Plugins",
+        "body": "Tools the worker can call, such as web search or a design canvas."
+      },
+      {
+        "id": "memory",
+        "title": "Memory",
+        "body": "What it remembers from one task to the next."
+      },
+      {
+        "id": "contract",
+        "title": "Input and output contract",
+        "body": "A schema for what the worker takes in and hands over, so the next worker knows what it's getting."
+      },
+      {
+        "id": "gate",
+        "title": "Quality gate",
+        "body": "Checks the output has to pass before anyone else sees it."
+      }
+    ],
+    "demo": {
+      "heading": "Try giving a worker the wrong model",
+      "workerLabel": "Worker",
+      "modelLabel": "Model",
+      "accepted": "Accepted",
+      "rejected": "Rejected",
+      "met": "Met",
+      "missing": "Missing",
+      "pluginAttached": "Comes with the worker's manifest",
+      "sameFamily": "Same model family as {model}, which the {worker} uses. A reviewer has to come from a different family.",
+      "differentFamily": "Different family from {model}, which the {worker} uses."
+    },
+    "manifestFile": "worker.manifest"
+  },
+  "telegram": {
+    "id": "telegram",
+    "heading": "You run it from Telegram",
+    "intro": "Each division has its own topic in the group. Workers post their handoffs there, and when something needs your decision, it shows up with a button.",
+    "groupName": "AMORA HQ",
+    "topics": ["General", "Nexus", "Compass", "Atelier", "Forge", "Crucible", "Bridge"],
+    "messages": [
+      {
+        "id": "brief",
+        "author": "You",
+        "topic": "General",
+        "text": "Can you add a pricing page to the marketing site? Three tiers, with a monthly/yearly toggle."
+      },
+      {
+        "id": "plan",
+        "author": "Planner / Decomposer",
+        "topic": "Nexus",
+        "text": "Splitting this into 4 tasks: tiers and copy to Compass, layout to Atelier, build to Forge, tests to Crucible."
+      },
+      {
+        "id": "scope",
+        "author": "Product Manager",
+        "topic": "Compass",
+        "text": "Draft tiers: Starter, Team, Agency. Yearly gets two months free."
+      },
+      {
+        "id": "design",
+        "author": "UX Architect",
+        "topic": "Atelier",
+        "text": "Wireframe's up. The toggle sits above the cards and the Team tier is highlighted."
+      },
+      {
+        "id": "build",
+        "author": "Logic Developer",
+        "topic": "Forge",
+        "text": "Page is built. The billing period lives in the URL, so a shared link opens on the same plan."
+      },
+      {
+        "id": "test",
+        "author": "Unit & Integration Tester",
+        "topic": "Crucible",
+        "text": "12 tests, 1 failing: yearly prices round down by a cent. Sending it back to Forge."
+      },
+      {
+        "id": "fix",
+        "author": "Logic Developer",
+        "topic": "Forge",
+        "text": "Fixed the rounding. 12/12 passing."
+      },
+      {
+        "id": "gate",
+        "author": "Gatekeeper",
+        "topic": "Forge",
+        "text": "Lint, types, tests, and accessibility all passed."
+      },
+      {
+        "id": "approval",
+        "author": "Status Reporter",
+        "topic": "Bridge",
+        "text": "Pricing page is ready for review. Ship it?",
+        "actions": ["Approve", "Request changes"]
+      }
+    ],
+    "topicsLabel": "topics"
+  },
+  "install": {
+    "id": "install",
+    "heading": "Install",
+    "intro": "AMORA runs on your own machine through Docker. You'll need an API key from at least one model provider.",
+    "notice": "[PLACEHOLDER] Final commands will follow the repository README.",
+    "copy": "Copy",
+    "copied": "Copied",
+    "platforms": [
+      {
+        "id": "unix",
+        "label": "macOS / Linux",
+        "commands": [
+          "git clone https://github.com/PLACEHOLDER-OWNER/amora.git",
+          "cd amora",
+          "docker compose up -d",
+          "agency doctor"
+        ]
+      },
+      {
+        "id": "windows",
+        "label": "Windows",
+        "commands": [
+          "git clone https://github.com/PLACEHOLDER-OWNER/amora.git",
+          "cd amora",
+          "docker compose up -d",
+          "agency doctor"
+        ]
+      }
+    ]
+  },
+  "security": {
+    "heading": "Your keys stay on your machine",
+    "items": [
+      {
+        "id": "secrets",
+        "title": "Secrets are encrypted",
+        "body": "API keys are stored encrypted on the machine running AMORA. They never go through Telegram."
+      },
+      {
+        "id": "sandbox",
+        "title": "Code runs in a sandbox",
+        "body": "Workers execute code in an isolated sandbox instead of directly on your computer."
+      },
+      {
+        "id": "providers",
+        "title": "You pick the providers",
+        "body": "You decide which provider and model each worker uses. None of it is routed through us."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Try it on a small project first",
+    "body": "AMORA is open source and still experimental. Bring your own model keys.",
+    "github": "Install from GitHub",
+    "telegram": "Join the Telegram community"
+  }
+}
