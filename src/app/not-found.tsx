@@ -1,6 +1,11 @@
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import pages from "@/content/pages.json";
+
+export const metadata: Metadata = {
+  title: pages.notFound.metaTitle,
+};
 
 export default function NotFound() {
   const content = pages.notFound;
