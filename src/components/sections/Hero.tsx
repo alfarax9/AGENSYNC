@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import home from "@/content/home.json";
 import site from "@/content/site.json";
+import { analyticsEvents } from "@/lib/analytics";
 import { HeroBackground } from "./HeroBackground";
 import { HeroHeadline } from "./HeroHeadline";
 
@@ -20,7 +21,12 @@ export function Hero() {
         <HeroHeadline text={hero.headline} />
         <p className="mt-6 max-w-2xl text-lg text-balance">{hero.subheadline}</p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <Button href={site.links.github}>{hero.primaryCta}</Button>
+          <Button
+            href={site.links.github}
+            tracking={{ event: analyticsEvents.githubClick, location: "hero" }}
+          >
+            {hero.primaryCta}
+          </Button>
           <Button href={`#${home.howItWorks.id}`} variant="secondary">
             {hero.secondaryCta}
           </Button>
