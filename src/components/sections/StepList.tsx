@@ -1,4 +1,5 @@
-import { type MotionValue, motion } from "motion/react";
+import type { MotionValue } from "motion/react";
+import * as m from "motion/react-m";
 
 type StepListProps = {
   steps: { id: string; title: string; body: string }[];
@@ -10,7 +11,7 @@ export function StepList({ steps, activeIndex, progress }: StepListProps) {
   return (
     <div className="relative lg:pl-8">
       <span aria-hidden className="absolute inset-y-0 left-0 hidden w-px bg-border lg:block">
-        <motion.span
+        <m.span
           style={{ scaleY: progress }}
           className="absolute inset-0 origin-top bg-accent-glow"
         />
