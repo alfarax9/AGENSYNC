@@ -1,5 +1,6 @@
 import { ChevronDown } from "lucide-react";
-import { motion, useReducedMotion } from "motion/react";
+import { useReducedMotion } from "motion/react";
+import * as m from "motion/react-m";
 import type { ReactNode } from "react";
 
 type AccordionItemProps = {
@@ -35,7 +36,7 @@ export function AccordionItem({ id, title, isOpen, onToggle, children }: Accordi
       </h3>
       {/* Height is the one non-transform property animated on purpose: the
           answer has to push the questions below it down. */}
-      <motion.div
+      <m.div
         id={panelId}
         role="region"
         aria-labelledby={buttonId}
@@ -46,7 +47,7 @@ export function AccordionItem({ id, title, isOpen, onToggle, children }: Accordi
         className="overflow-hidden"
       >
         <p className="max-w-2xl pb-6">{children}</p>
-      </motion.div>
+      </m.div>
     </div>
   );
 }
