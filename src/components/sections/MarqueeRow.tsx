@@ -12,7 +12,10 @@ const copies = ["original", "loop"];
 // the first row is exposed to assistive technology.
 export function MarqueeRow({ divisions, isReversed }: MarqueeRowProps) {
   return (
-    <div aria-hidden={isReversed} className="flex overflow-hidden py-2">
+    <div
+      aria-hidden={isReversed}
+      className="flex overflow-hidden mask-r-from-60% mask-r-to-82% mask-l-from-95% py-2 md:mask-r-from-85% md:mask-r-to-95%"
+    >
       {copies.map((copy) => (
         <ul
           key={copy}
