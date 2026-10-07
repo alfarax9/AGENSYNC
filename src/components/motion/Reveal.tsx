@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import * as m from "motion/react-m";
 import type { ReactNode } from "react";
 import { reveal } from "./variants";
 
@@ -12,7 +12,7 @@ type RevealProps = {
 
 export function Reveal({ index, className, children }: RevealProps) {
   return (
-    <motion.li
+    <m.li
       className={className}
       variants={reveal}
       custom={index}
@@ -21,6 +21,6 @@ export function Reveal({ index, className, children }: RevealProps) {
       viewport={{ once: true, amount: 0.3 }}
     >
       {children}
-    </motion.li>
+    </m.li>
   );
 }
