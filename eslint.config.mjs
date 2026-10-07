@@ -16,18 +16,9 @@ const eslintConfig = defineConfig([
       "react/jsx-max-depth": ["error", { max: 4 }],
     },
   },
-  {
-    // Third-party code copied verbatim; size limits apply only to code AMORA owns.
-    files: ["src/components/vendor/**"],
-    rules: {
-      "max-lines": "off",
-      "max-lines-per-function": "off",
-      "max-depth": "off",
-      complexity: "off",
-      "react/jsx-max-depth": "off",
-    },
-  },
-  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
+  // Third-party code is copied verbatim and never edited, so it is not linted;
+  // the AMORA code that wraps it is.
+  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts", "src/components/vendor/**"]),
 ]);
 
 export default eslintConfig;
