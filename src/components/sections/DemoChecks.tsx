@@ -1,5 +1,5 @@
 import { Check, Plug, X } from "lucide-react";
-import { motion } from "motion/react";
+import * as m from "motion/react-m";
 import { checkAppear } from "@/components/motion/variants";
 import home from "@/content/home.json";
 import { requirements } from "@/lib/divisions";
@@ -33,7 +33,7 @@ export function DemoChecks({ checks, isAccepted, selectionKey }: DemoChecksProps
         {checks.map((check, index) => {
           const display = statusDisplay[check.status];
           return (
-            <motion.li
+            <m.li
               key={`${selectionKey}-${check.code}`}
               variants={checkAppear}
               custom={index}
@@ -46,7 +46,7 @@ export function DemoChecks({ checks, isAccepted, selectionKey }: DemoChecksProps
                 <span className="text-text">{requirements[check.code].label}</span>
                 <span className="text-text-tertiary"> · {check.detail ?? display.text}</span>
               </span>
-            </motion.li>
+            </m.li>
           );
         })}
       </ul>
