@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { AnalyticsEvents } from "@/components/analytics/AnalyticsEvents";
 import { Footer } from "@/components/layout/Footer";
 import { LenisProvider } from "@/components/layout/LenisProvider";
 import { Navbar } from "@/components/layout/Navbar";
@@ -17,11 +19,29 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  // Only badges and labels use it; preloading put it on the LCP critical path.
+  preload: false,
 });
 
 export const metadata: Metadata = {
-  title: site.name,
+  metadataBase: new URL(site.url),
+  title: { default: site.seo.defaultTitle, template: site.seo.titleTemplate },
   description: site.description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    title: site.seo.defaultTitle,
+    description: site.description,
+    url: "/",
+    locale: "en_US",
+  },
+  twitter: { card: "summary_large_image" },
+};
+
+export const viewport: Viewport = {
+  themeColor: site.seo.themeColor,
+  colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -40,6 +60,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
           <Footer />
         </MotionProvider>
+        <AnalyticsEvents />
+        <Analytics />
       </body>
     </html>
   );
