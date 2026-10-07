@@ -6,9 +6,9 @@ import faq from "@/content/faq.json";
 export function Faq() {
   return (
     <Section id={faq.id} labelledBy="faq-heading">
-      <div className="grid gap-12 lg:grid-cols-3">
+      <div className="grid gap-12 lg:grid-cols-5">
         <SectionHeader headingId="faq-heading" heading={faq.heading} />
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-3">
           <Accordion items={faq.items} />
         </div>
       </div>

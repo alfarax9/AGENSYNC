@@ -7,9 +7,9 @@ export function Security() {
 
   return (
     <Section labelledBy="security-heading" tone="alt">
-      <div className="grid gap-12 lg:grid-cols-3">
+      <div className="grid gap-12 lg:grid-cols-5">
         <SectionHeader headingId="security-heading" heading={security.heading} />
-        <dl className="divide-y divide-border border-y border-border lg:col-span-2">
+        <dl className="divide-y divide-border border-y border-border lg:col-span-3">
           {security.items.map((item) => (
             <div key={item.id} className="grid gap-2 py-6 sm:grid-cols-3 sm:gap-6">
               <dt className="font-semibold text-text">{item.title}</dt>

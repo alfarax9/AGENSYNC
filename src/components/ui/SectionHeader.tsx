@@ -6,7 +6,7 @@ type SectionHeaderProps = {
 
 export function SectionHeader({ headingId, heading, intro }: SectionHeaderProps) {
   return (
-    <header className="max-w-2xl">
+    <header className="max-w-2xl lg:col-span-2">
       <h2 id={headingId} className="text-h2 text-text">
         {heading}
       </h2>
