@@ -1,4 +1,5 @@
 import site from "@/content/site.json";
+import { analyticsEvents } from "@/lib/analytics";
 
 type FooterColumnProps = {
   title: string;
@@ -7,6 +8,11 @@ type FooterColumnProps = {
 
 type LinkKey = keyof typeof site.links;
 
+const trackedLinks: Partial<Record<LinkKey, string>> = {
+  github: analyticsEvents.githubClick,
+  telegram: analyticsEvents.telegramClick,
+};
+
 export function FooterColumn({ title, links }: FooterColumnProps) {
   return (
     <div>
@@ -14,7 +20,12 @@ export function FooterColumn({ title, links }: FooterColumnProps) {
       <ul className="mt-4 flex flex-col gap-3">
         {links.map((item) => (
           <li key={item.label}>
-            <a href={site.links[item.link as LinkKey]} className="hover:text-text">
+            <a
+              href={site.links[item.link as LinkKey]}
+              data-track-event={trackedLinks[item.link as LinkKey]}
+              data-track-location="footer"
+              className="hover:text-text"
+            >
               {item.label}
             </a>
           </li>
