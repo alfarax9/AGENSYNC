@@ -8,10 +8,11 @@ import type { ReactNode } from "react";
 const loadFeatures = () => import("./motionFeatures").then((module) => module.default);
 
 // "user" drops transform animations under prefers-reduced-motion and keeps
-// opacity, so movement becomes a short fade instead.
+// opacity, so movement becomes a short fade instead. "strict" makes any
+// stray full `motion.*` component throw, so the lazy split cannot silently regress.
 export function MotionProvider({ children }: { children: ReactNode }) {
   return (
-    <LazyMotion features={loadFeatures}>
+    <LazyMotion features={loadFeatures} strict>
       <MotionConfig reducedMotion="user">{children}</MotionConfig>
     </LazyMotion>
   );
