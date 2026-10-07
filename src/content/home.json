@@ -117,27 +117,22 @@
     "anatomy": [
       {
         "id": "model",
-        "title": "Model",
         "body": "The LLM doing the thinking. You choose it per worker."
       },
       {
         "id": "plugins",
-        "title": "Plugins",
         "body": "Tools the worker can call, such as web search or a design canvas."
       },
       {
         "id": "memory",
-        "title": "Memory",
         "body": "What it remembers from one task to the next."
       },
       {
         "id": "contract",
-        "title": "Input and output contract",
         "body": "A schema for what the worker takes in and hands over, so the next worker knows what it's getting."
       },
       {
         "id": "gate",
-        "title": "Quality gate",
         "body": "Checks the output has to pass before anyone else sees it."
       }
     ],
