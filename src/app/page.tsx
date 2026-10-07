@@ -10,10 +10,12 @@ import { Pillars } from "@/components/sections/Pillars";
 import { Security } from "@/components/sections/Security";
 import { Stats } from "@/components/sections/Stats";
 import { Telegram } from "@/components/sections/Telegram";
+import { SoftwareJsonLd } from "@/components/seo/SoftwareJsonLd";
 
 export default function Home() {
   return (
     <main id="main">
+      <SoftwareJsonLd />
       <Hero />
       <DivisionMarquee />
       <Stats />
