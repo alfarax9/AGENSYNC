@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import * as m from "motion/react-m";
 import { messageAppear } from "@/components/motion/variants";
 import { divisionColor, findDivisionByName } from "@/lib/divisions";
 
@@ -11,7 +11,7 @@ export function TelegramMessage({ message, isVisible }: TelegramMessageProps) {
   const division = findDivisionByName(message.topic);
 
   return (
-    <motion.li
+    <m.li
       variants={messageAppear}
       initial={false}
       animate={isVisible ? "visible" : "hidden"}
@@ -37,6 +37,6 @@ export function TelegramMessage({ message, isVisible }: TelegramMessageProps) {
           ))}
         </p>
       )}
-    </motion.li>
+    </m.li>
   );
 }
