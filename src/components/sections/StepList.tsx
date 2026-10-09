@@ -21,15 +21,10 @@ export function StepList({ steps, activeIndex, progress }: StepListProps) {
           <li
             key={step.id}
             aria-current={index === activeIndex ? "step" : undefined}
-            className={`grid grid-cols-[auto_1fr] gap-x-5 transition-opacity duration-300 ${index === activeIndex ? "" : "lg:opacity-40"}`}
+            className={`transition-opacity duration-300 ${index === activeIndex ? "" : "lg:opacity-40"}`}
           >
-            <span className="font-mono text-sm text-text-tertiary">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <div>
-              <h3 className="text-xl font-semibold text-text">{step.title}</h3>
-              <p className="mt-2">{step.body}</p>
-            </div>
+            <h3 className="text-xl font-semibold text-text">{step.title}</h3>
+            <p className="mt-2">{step.body}</p>
           </li>
         ))}
       </ol>
