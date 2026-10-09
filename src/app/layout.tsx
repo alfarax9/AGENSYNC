@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { AnalyticsEvents } from "@/components/analytics/AnalyticsEvents";
 import { Footer } from "@/components/layout/Footer";
+import { GradualBlur } from "@/components/ui/GradualBlur";
 import { LenisProvider } from "@/components/layout/LenisProvider";
 import { MobileNavigation } from "@/components/layout/MobileNavigation";
 import { Navbar } from "@/components/layout/Navbar";
@@ -47,10 +48,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${plusJakartaSans.variable} ${geistMono.variable} antialiased`}
-    >
+    <html lang="en" className={`${plusJakartaSans.variable} ${geistMono.variable} antialiased`}>
       <body className="bg-bg font-sans text-text-secondary">
         <a
           href="#main"
@@ -64,6 +62,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <MobileNavigation />
           {children}
           <Footer />
+          <GradualBlur
+            target="page"
+            position="bottom"
+            height="6rem"
+            strength={2}
+            divCount={5}
+            curve="bezier"
+            exponential
+            style={{ zIndex: 40 }}
+          />
         </MotionProvider>
         <AnalyticsEvents />
         <Analytics />
