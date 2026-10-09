@@ -20,7 +20,8 @@ export function StepScroller({ steps }: StepScrollerProps) {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
 
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
-    setActiveIndex(Math.min(steps.length - 1, Math.floor(progress * steps.length)));
+    const next = Math.min(steps.length - 1, Math.floor(progress * steps.length));
+    requestAnimationFrame(() => setActiveIndex((prev) => (prev === next ? prev : next)));
   });
 
   const scrollLength = { "--scroll-length": `${steps.length * viewportsPerStep * 100}svh` };
