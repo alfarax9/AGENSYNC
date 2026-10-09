@@ -2,6 +2,7 @@
 
 import { LazyMotion, MotionConfig } from "motion/react";
 import type { ReactNode } from "react";
+import { MenuProvider } from "@/components/layout/MenuContext";
 
 // The animation engine loads after first paint instead of in the initial
 // bundle, which keeps about 24 KB of gzipped JavaScript off the critical path.
@@ -13,7 +14,9 @@ const loadFeatures = () => import("./motionFeatures").then((module) => module.de
 export function MotionProvider({ children }: { children: ReactNode }) {
   return (
     <LazyMotion features={loadFeatures} strict>
-      <MotionConfig reducedMotion="user">{children}</MotionConfig>
+      <MotionConfig reducedMotion="user">
+        <MenuProvider>{children}</MenuProvider>
+      </MotionConfig>
     </LazyMotion>
   );
 }
