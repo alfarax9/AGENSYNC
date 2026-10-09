@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import site from "@/content/site.json";
-import { MobileMenu } from "./MobileMenu";
+import { NavBurger } from "./NavBurger";
 import { NavLinks } from "./NavLinks";
 import { StarButton } from "./StarButton";
 
@@ -9,9 +9,9 @@ import { StarButton } from "./StarButton";
 // blurred surface keeps the links readable over any section beneath it.
 export function Navbar() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 h-navbar py-3">
+    <header className="fixed inset-x-0 top-0 z-[70] h-navbar py-3">
       <Container className="h-full">
-        <div className="flex h-full items-center justify-between gap-6 rounded-2xl border border-border bg-overlay pr-2 pl-5 backdrop-blur-xl lg:pr-3">
+        <div className="flex h-full items-center justify-between gap-6 rounded-2xl border border-border bg-overlay pr-2 pl-5 backdrop-blur-xl md:pr-3">
           <Link
             href="/"
             aria-label={site.nav.homeLabel}
@@ -19,16 +19,14 @@ export function Navbar() {
           >
             {site.name}
           </Link>
-          <div className="hidden items-center gap-10 lg:flex">
+          <div className="hidden items-center gap-6 md:flex lg:gap-8">
             <NavLinks
-              className="flex gap-8"
+              className="flex gap-6 lg:gap-8"
               linkClassName="text-sm text-text-secondary hover:text-text"
             />
             <StarButton />
           </div>
-          <MobileMenu>
-            <StarButton />
-          </MobileMenu>
+          <NavBurger />
         </div>
       </Container>
     </header>

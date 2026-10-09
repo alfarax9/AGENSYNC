@@ -66,8 +66,7 @@
   --radius-card: 8px;
   --container-site: 75.5rem;
   --spacing-navbar: var(--navbar-height);
-  --shadow-glow: 0 0 24px
-    color-mix(in srgb, var(--color-accent-glow) 45%, transparent);
+  --shadow-glow: 0 0 24px color-mix(in srgb, var(--color-accent-glow) 45%, transparent);
 }
 
 /* Division colors live in :root, not @theme: they are only read through var()
@@ -128,4 +127,212 @@ html {
   border-radius: revert-layer;
   background-color: revert-layer;
   padding: revert-layer;
+}
+
+/* React Bits StaggeredMenu adaptation for AMORA */
+.amora-staggered.staggered-menu-wrapper.fixed-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  z-index: 60;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Ensure closed panel never flashes, leaks clicks, or sticks out */
+.amora-staggered:not([data-open]) .staggered-menu-panel,
+.amora-staggered:not([data-open]) .sm-prelayers {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.amora-staggered[data-open] .staggered-menu-panel {
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.amora-staggered .staggered-menu-header {
+  display: none !important;
+}
+
+/* Burger toggle button styled to sit seamlessly inside the navbar pill */
+.sm-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border-radius: 0.75rem;
+  background-color: var(--color-overlay);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.sm-toggle:hover,
+.sm-toggle[aria-expanded="true"] {
+  background-color: color-mix(in srgb, var(--color-overlay) 200%, white);
+  border-color: var(--color-accent-glow);
+}
+
+.sm-toggle:active {
+  transform: scale(0.96);
+}
+
+.sm-toggle:focus-visible {
+  outline: 2px solid var(--color-accent-glow);
+  outline-offset: 2px;
+}
+
+@media (min-width: 48rem) {
+  .sm-toggle,
+  .amora-staggered {
+    display: none !important;
+  }
+}
+
+/* Interactive Burger to X Icon */
+.sm-burger {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.125rem;
+  height: 0.8125rem;
+  pointer-events: none;
+}
+
+.sm-burger-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 9999px;
+  transform-origin: center;
+  transition:
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Morph from Burger to X when open */
+.sm-toggle[aria-expanded="true"] .sm-burger-bar-top {
+  transform: translateY(5.5px) rotate(45deg);
+}
+
+.sm-toggle[aria-expanded="true"] .sm-burger-bar-mid {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.sm-toggle[aria-expanded="true"] .sm-burger-bar-bot {
+  transform: translateY(-5.5px) rotate(-45deg);
+}
+
+/* Menu panel: full screen on mobile device */
+.amora-staggered .staggered-menu-panel,
+.amora-staggered .sm-prelayers {
+  width: 100% !important;
+  max-width: 100vw !important;
+}
+
+.amora-staggered .staggered-menu-panel {
+  background: var(--color-bg) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-left: 1px solid var(--color-border);
+  padding: calc(var(--navbar-height) + 1.5rem) 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+@media (width >= 48rem) {
+  .amora-staggered .staggered-menu-panel {
+    padding: calc(var(--navbar-height) + 2rem) 2.5rem 2.5rem;
+  }
+}
+
+.amora-staggered .sm-panel-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.amora-staggered .sm-panel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.amora-staggered .sm-panel-itemWrap {
+  line-height: 1.2;
+}
+
+.amora-staggered .sm-panel-item {
+  color: var(--color-text);
+  font-size: clamp(2rem, 7vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  text-transform: none;
+  line-height: 1.15;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.amora-staggered .sm-panel-item:hover,
+.amora-staggered .sm-panel-item:focus-visible {
+  color: var(--color-accent-glow);
+  transform: translateX(4px);
+}
+
+.amora-staggered .sm-socials {
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.amora-staggered .sm-socials-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+.amora-staggered .sm-socials-list {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.amora-staggered .sm-socials-link {
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.amora-staggered .sm-socials-link:hover,
+.amora-staggered .sm-socials-link:focus-visible {
+  color: var(--color-text);
 }
