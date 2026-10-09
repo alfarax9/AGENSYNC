@@ -28,16 +28,20 @@
 
   /* Type scale measured from the reference layout at 390px and 1440px. */
   --text-display: clamp(2.25rem, 1.646rem + 2.476vw, 3.875rem);
-  --text-display--line-height: 1.2;
+  --text-display--line-height: 1.08;
+  --text-display--letter-spacing: -0.03em;
   --text-display--font-weight: 500;
   --text-h2: clamp(2rem, 1.536rem + 1.905vw, 3.25rem);
-  --text-h2--line-height: 1.24;
+  --text-h2--line-height: 1.12;
+  --text-h2--letter-spacing: -0.025em;
   --text-h2--font-weight: 500;
   --text-h3: clamp(1.75rem, 1.425rem + 1.333vw, 2.625rem);
-  --text-h3--line-height: 1.25;
+  --text-h3--line-height: 1.15;
+  --text-h3--letter-spacing: -0.02em;
   --text-h3--font-weight: 500;
   --text-h4: clamp(1.5rem, 1.314rem + 0.762vw, 2rem);
-  --text-h4--line-height: 1.25;
+  --text-h4--line-height: 1.2;
+  --text-h4--letter-spacing: -0.015em;
   --text-h4--font-weight: 500;
 
   /* CSS rather than motion for these two: the headline must animate before
@@ -62,7 +66,8 @@
   --radius-card: 8px;
   --container-site: 75.5rem;
   --spacing-navbar: var(--navbar-height);
-  --shadow-glow: 0 0 24px color-mix(in srgb, var(--color-accent-glow) 45%, transparent);
+  --shadow-glow: 0 0 24px
+    color-mix(in srgb, var(--color-accent-glow) 45%, transparent);
 }
 
 /* Division colors live in :root, not @theme: they are only read through var()
