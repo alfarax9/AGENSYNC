@@ -2,7 +2,7 @@
   "hero": {
     "badge": "Open source, still experimental",
     "headline": "An AI software agency where every worker has its own brain.",
-    "subheadline": "AMORA runs 66 AI workers across 12 divisions. Each one gets the model and plugins its job calls for, and you direct the whole thing from a Telegram group.",
+    "subheadline": "66 AI workers in 12 divisions, each with its own model and plugins. You run all of it from Telegram.",
     "primaryCta": "Install from GitHub",
     "secondaryCta": "See how it works"
   },
