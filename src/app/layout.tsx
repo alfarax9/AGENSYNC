@@ -4,6 +4,7 @@ import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { AnalyticsEvents } from "@/components/analytics/AnalyticsEvents";
 import { Footer } from "@/components/layout/Footer";
 import { LenisProvider } from "@/components/layout/LenisProvider";
+import { MobileNavigation } from "@/components/layout/MobileNavigation";
 import { Navbar } from "@/components/layout/Navbar";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import site from "@/content/site.json";
@@ -46,17 +47,21 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${geistMono.variable} antialiased`}>
+    <html
+      lang="en"
+      className={`${plusJakartaSans.variable} ${geistMono.variable} antialiased`}
+    >
       <body className="bg-bg font-sans text-text-secondary">
         <a
           href="#main"
-          className="sr-only rounded-full bg-accent px-5 py-2.5 text-text focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60"
+          className="sr-only rounded-full bg-accent px-5 py-2.5 text-text focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[80]"
         >
           {site.skipLink}
         </a>
         <LenisProvider />
         <MotionProvider>
           <Navbar />
+          <MobileNavigation />
           {children}
           <Footer />
         </MotionProvider>
