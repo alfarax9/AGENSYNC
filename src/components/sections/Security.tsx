@@ -7,17 +7,15 @@ export function Security() {
 
   return (
     <Section labelledBy="security-heading" tone="alt">
-      <div className="grid gap-12 lg:grid-cols-5">
-        <SectionHeader headingId="security-heading" heading={security.heading} />
-        <dl className="divide-y divide-border border-y border-border lg:col-span-3">
-          {security.items.map((item) => (
-            <div key={item.id} className="grid gap-2 py-6 sm:grid-cols-3 sm:gap-6">
-              <dt className="font-semibold text-text">{item.title}</dt>
-              <dd className="sm:col-span-2">{item.body}</dd>
-            </div>
-          ))}
-        </dl>
-      </div>
+      <SectionHeader headingId="security-heading" heading={security.heading} />
+      <dl className="mt-10 divide-y divide-border border-y border-border">
+        {security.items.map((item) => (
+          <div key={item.id} className="grid gap-2 py-6 sm:grid-cols-3 sm:gap-6">
+            <dt className="font-semibold text-text">{item.title}</dt>
+            <dd className="sm:col-span-2">{item.body}</dd>
+          </div>
+        ))}
+      </dl>
     </Section>
   );
 }
