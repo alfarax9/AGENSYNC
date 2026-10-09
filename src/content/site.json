@@ -36,7 +36,17 @@
     "star": "Star on GitHub",
     "starCountLabel": "GitHub stars",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "menuSocials": [
+      {
+        "label": "GitHub",
+        "link": "github"
+      },
+      {
+        "label": "Telegram",
+        "link": "telegram"
+      }
+    ]
   },
   "footer": {
     "tagline": "An AI software agency you run from a Telegram group. Open source and still experimental.",
