@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { whenIdle } from "./whenIdle";
 
 const gradientTokens = ["--color-highlight-to", "--color-wave-mid", "--color-accent-glow"];
 
@@ -10,16 +11,6 @@ function supportsWebGL() {
   } catch {
     return false;
   }
-}
-
-// Safari has no requestIdleCallback; a timeout still defers past first paint.
-function whenIdle(callback: () => void) {
-  if ("requestIdleCallback" in window) {
-    const handle = window.requestIdleCallback(callback, { timeout: 2000 });
-    return () => window.cancelIdleCallback(handle);
-  }
-  const handle = setTimeout(callback, 200);
-  return () => clearTimeout(handle);
 }
 
 // Returns null until the browser is idle and WebGL is confirmed, so three.js
