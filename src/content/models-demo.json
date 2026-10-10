@@ -1,6 +1,6 @@
 {
-  "updated": "Oct 7, 2026",
-  "notice": "[PLACEHOLDER] Demo models stand in for the providers AMORA will support. Static data, no API calls.",
+  "updated": "Oct 10, 2026",
+  "notice": "[PLACEHOLDER] Demo models stand in for real ones until the default combos are chosen. Static data, no API calls.",
   "models": [
     {
       "id": "frontier-multimodal",
