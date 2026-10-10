@@ -25,9 +25,9 @@ export default function Home() {
       <Divisions />
       <Brains />
       <Dashboard />
-      <Telegram />
       <Install />
       <Security />
+      <Telegram />
       <Faq />
       <FinalCta />
     </main>

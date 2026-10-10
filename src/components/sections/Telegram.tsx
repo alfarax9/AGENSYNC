@@ -7,7 +7,7 @@ export function Telegram() {
   const { telegram } = home;
 
   return (
-    <Section id={telegram.id} labelledBy="telegram-heading" tone="alt">
+    <Section id={telegram.id} labelledBy="telegram-heading">
       <div className="grid gap-12 lg:grid-cols-5">
         <div className="lg:col-span-2">
           <SectionHeader

@@ -16,7 +16,7 @@ export function TelegramMessage({ message, isVisible }: TelegramMessageProps) {
       initial={false}
       animate={isVisible ? "visible" : "hidden"}
       style={division ? divisionColor(division.id) : undefined}
-      className="max-w-md rounded-card border border-border bg-bg-alt px-4 py-3 text-sm"
+      className="max-w-md rounded-card border border-border bg-bg px-4 py-3 text-sm"
     >
       <p className="flex flex-wrap items-baseline gap-x-2">
         <span className="font-semibold text-(--division-color,var(--color-text))">
