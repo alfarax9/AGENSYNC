@@ -13,6 +13,11 @@
       "answer": "AMORA is free. What costs money is model usage: you pay your providers for the tokens your workers use. You set a spending limit per task and per day, and the Costs page shows what each successful task cost. Those figures come from gateway telemetry, so some of them are estimates, and the page says which."
     },
     {
+      "id": "telegram",
+      "question": "Do I need Telegram?",
+      "answer": "No. The dashboard does everything. Telegram is optional and only gets summaries and approval buttons. Discord is the next adapter on the list."
+    },
+    {
       "id": "local-models",
       "question": "Can I use local models?",
       "answer": "[PLACEHOLDER] Local model support is still being confirmed. A local model can only be assigned to workers whose requirements it meets."
