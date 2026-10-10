@@ -144,8 +144,8 @@
       "met": "Met",
       "missing": "Missing",
       "pluginAttached": "Comes with the worker's manifest",
-      "sameFamily": "Same model family as {model}, which the {worker} uses. A reviewer has to come from a different family.",
-      "differentFamily": "Different family from {model}, which the {worker} uses."
+      "sameFamily": "Same base family as {model}, which the {worker} uses. A reviewer has to come from a different family.",
+      "differentFamily": "Different base family from {model}, which the {worker} uses."
     },
     "manifestFile": "worker.manifest"
   },

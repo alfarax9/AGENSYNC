@@ -5,31 +5,31 @@
     {
       "id": "frontier-multimodal",
       "name": "Frontier multimodal",
-      "family": "Provider A",
+      "family": "Family A",
       "capabilities": ["V", "T", "S", "LC", "R"]
     },
     {
       "id": "reasoning-specialist",
       "name": "Reasoning specialist",
-      "family": "Provider B",
+      "family": "Family B",
       "capabilities": ["T", "S", "LC", "R"]
     },
     {
       "id": "multimodal-lite",
       "name": "Multimodal lite",
-      "family": "Provider B",
+      "family": "Family B",
       "capabilities": ["V", "T", "S", "Cheap"]
     },
     {
       "id": "small-fast",
       "name": "Small and fast",
-      "family": "Provider A",
+      "family": "Family A",
       "capabilities": ["T", "S", "Cheap"]
     },
     {
       "id": "local-open-weights",
       "name": "Local open-weights",
-      "family": "Provider C",
+      "family": "Family C",
       "capabilities": ["S", "Cheap"]
     }
   ],
