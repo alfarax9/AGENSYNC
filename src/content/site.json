@@ -25,6 +25,10 @@
         "href": "/#brains"
       },
       {
+        "label": "Dashboard",
+        "href": "/#dashboard"
+      },
+      {
         "label": "Install",
         "href": "/#install"
       },
