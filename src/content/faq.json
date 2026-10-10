@@ -5,7 +5,7 @@
     {
       "id": "default-model",
       "question": "Which model does AMORA use by default?",
-      "answer": "[PLACEHOLDER] The default model per worker is still being decided. Every worker can be pointed at any model that meets its requirements."
+      "answer": "[PLACEHOLDER] The default combos are still being chosen. Every model in a combo has to pass AMORA's probes for tool use, structured output, and vision before it can be a default."
     },
     {
       "id": "cost",
