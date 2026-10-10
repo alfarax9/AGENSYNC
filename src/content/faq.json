@@ -10,7 +10,7 @@
     {
       "id": "cost",
       "question": "Do I have to pay?",
-      "answer": "AMORA is free. What costs money is model usage: you pay your providers for the tokens your workers use, so the bill depends on which models you pick and how much work you hand over. High-volume roles like the Task Dispatcher are flagged so you can give them a cheaper model."
+      "answer": "AMORA is free. What costs money is model usage: you pay your providers for the tokens your workers use. You set a spending limit per task and per day, and the Costs page shows what each successful task cost. Those figures come from gateway telemetry, so some of them are estimates, and the page says which."
     },
     {
       "id": "local-models",
