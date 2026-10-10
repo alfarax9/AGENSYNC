@@ -276,58 +276,47 @@
     "topics": ["General", "Nexus", "Compass", "Atelier", "Forge", "Crucible", "Bridge"],
     "messages": [
       {
-        "id": "brief",
-        "author": "You",
-        "topic": "General",
-        "text": "Can you add a pricing page to the marketing site? Three tiers, with a monthly/yearly toggle."
-      },
-      {
         "id": "plan",
         "author": "Planner / Decomposer",
         "topic": "Nexus",
-        "text": "Splitting this into 4 tasks: tiers and copy to Compass, layout to Atelier, build to Forge, tests to Crucible."
+        "text": "Plan for \"Pricing page\" is ready: 4 steps, 5 workers. Approve it in the dashboard or here.",
+        "actions": ["Approve plan", "Open dashboard"]
       },
       {
         "id": "scope",
         "author": "Product Manager",
         "topic": "Compass",
-        "text": "Draft tiers: Starter, Team, Agency. Yearly gets two months free."
+        "text": "Scope done: Starter, Team, and Agency tiers. Yearly gets two months free."
       },
       {
         "id": "design",
         "author": "UX Architect",
         "topic": "Atelier",
-        "text": "Wireframe's up. The toggle sits above the cards and the Team tier is highlighted."
-      },
-      {
-        "id": "build",
-        "author": "Logic Developer",
-        "topic": "Forge",
-        "text": "Page is built. The billing period lives in the URL, so a shared link opens on the same plan."
+        "text": "Wireframe handed to Forge as design_spec.v1. Validation passed."
       },
       {
         "id": "test",
         "author": "Unit & Integration Tester",
         "topic": "Crucible",
-        "text": "12 tests, 1 failing: yearly prices round down by a cent. Sending it back to Forge."
+        "text": "Attempt 1: 11 of 12 tests pass. Yearly prices round down by a cent, so it's back with Forge."
       },
       {
         "id": "fix",
         "author": "Logic Developer",
         "topic": "Forge",
-        "text": "Fixed the rounding. 12/12 passing."
+        "text": "Attempt 2: rounding fixed, 12 of 12 passing."
       },
       {
         "id": "gate",
         "author": "Gatekeeper",
         "topic": "Forge",
-        "text": "Lint, types, tests, and accessibility all passed."
+        "text": "Gate passed: lint, types, tests, and accessibility."
       },
       {
         "id": "approval",
         "author": "Status Reporter",
         "topic": "Bridge",
-        "text": "Pricing page is ready for review. Ship it?",
+        "text": "Pricing page is ready. It cost $1.84 of its $5.00 budget. Ship it?",
         "actions": ["Approve", "Request changes"]
       }
     ],
