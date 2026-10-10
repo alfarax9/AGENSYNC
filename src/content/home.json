@@ -112,27 +112,27 @@
   "brains": {
     "id": "brains",
     "heading": "What's inside a worker",
-    "intro": "Each worker is a manifest with five slots. Swap the model or the plugins whenever you like. AMORA only refuses the change when the new setup can't do the job.",
+    "intro": "Each worker is a manifest file. Point its model slot at whatever you like. AMORA probes the model and refuses the change when it can't do the job.",
     "anatomy": [
       {
         "id": "model",
-        "body": "The LLM doing the thinking. You choose it per worker."
+        "body": "A slot, not a model name. It resolves from global to division to worker, so you can change one worker without touching the rest. Fallbacks have to meet the same requirements."
+      },
+      {
+        "id": "requires",
+        "body": "What the model must support, like vision or tool use. AMORA probes for each one and rejects a model that misses any."
       },
       {
         "id": "plugins",
-        "body": "Tools the worker can call, such as web search or a design canvas."
-      },
-      {
-        "id": "memory",
-        "body": "What it remembers from one task to the next."
+        "body": "Capabilities the worker needs, like design_source. Figma, Penpot, or a folder of images can each provide it."
       },
       {
         "id": "contract",
-        "body": "A schema for what the worker takes in and hands over, so the next worker knows what it's getting."
+        "body": "Typed input and output, like design_spec.v1, so the next worker knows exactly what it's getting."
       },
       {
-        "id": "gate",
-        "body": "Checks the output has to pass before anyone else sees it."
+        "id": "permissions",
+        "body": "Which files it can touch, which commands it can run, and whether it can reach the network."
       }
     ],
     "demo": {
