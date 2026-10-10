@@ -51,7 +51,7 @@
     ]
   },
   "footer": {
-    "tagline": "An AI software agency you run from a Telegram group. Open source and still experimental.",
+    "tagline": "An AI software agency that runs on your own machine. Open source and still experimental.",
     "columns": [
       {
         "title": "Project",
