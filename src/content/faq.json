@@ -30,7 +30,7 @@
     {
       "id": "change-model",
       "question": "How do I change the model for one worker?",
-      "answer": "Open the worker's manifest and change the model. AMORA checks the new model against the worker's requirements and refuses it if anything is missing. Give the Slice / Markup Engineer a text-only model, for example, and it gets rejected, because that role needs vision."
+      "answer": "Assign a different model from the Models page in the dashboard. AMORA checks it against the worker's requirements and refuses it with a clear reason if anything is missing. Give the Slice / Markup Engineer a text-only model, for example, and it gets rejected, because that role needs vision."
     },
     {
       "id": "prompt-collections",
