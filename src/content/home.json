@@ -270,8 +270,8 @@
   },
   "telegram": {
     "id": "telegram",
-    "heading": "You run it from Telegram",
-    "intro": "Each division has its own topic in the group. Workers post their handoffs there, and when something needs your decision, it shows up with a button.",
+    "heading": "Approvals follow you to Telegram",
+    "intro": "Connecting a bot is optional. Each division gets its own topic in your group, and you get short summaries with approval buttons. Full detail and every key stay in the dashboard.",
     "groupName": "AMORA HQ",
     "topics": ["General", "Nexus", "Compass", "Atelier", "Forge", "Crucible", "Bridge"],
     "messages": [
