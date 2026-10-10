@@ -1,4 +1,5 @@
 import { Brains } from "@/components/sections/Brains";
+import { Dashboard } from "@/components/sections/Dashboard";
 import { DivisionMarquee } from "@/components/sections/DivisionMarquee";
 import { Divisions } from "@/components/sections/Divisions";
 import { Faq } from "@/components/sections/Faq";
@@ -23,6 +24,7 @@ export default function Home() {
       <HowItWorks />
       <Divisions />
       <Brains />
+      <Dashboard />
       <Telegram />
       <Install />
       <Security />
