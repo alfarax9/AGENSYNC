@@ -19,9 +19,9 @@ export function Navbar() {
           >
             {site.name}
           </Link>
-          <div className="hidden items-center gap-6 md:flex lg:gap-8">
+          <div className="hidden items-center gap-4 whitespace-nowrap md:flex lg:gap-8">
             <NavLinks
-              className="flex gap-6 lg:gap-8"
+              className="flex gap-4 lg:gap-8"
               linkClassName="text-sm text-text-secondary hover:text-text"
             />
             <StarButton />
