@@ -87,7 +87,7 @@
     "defaultTitle": "AMORA: an AI software agency where every worker has its own brain",
     "titleTemplate": "%s · AMORA",
     "ogImageAlt": "AMORA: an AI software agency where every worker has its own brain",
-    "ogTagline": "66 AI workers across 12 divisions, run from a Telegram group.",
+    "ogTagline": "66 AI workers across 12 divisions, run from a dashboard on your own machine.",
     "themeColor": "#080b11",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "macOS, Linux, Windows"
