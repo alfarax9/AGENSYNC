@@ -2,7 +2,7 @@
   "hero": {
     "badge": "Open source, still experimental",
     "headline": "An AI software agency where every worker has its own brain.",
-    "subheadline": "66 AI workers in 12 divisions, each with its own model and plugins. You run all of it from Telegram.",
+    "subheadline": "66 AI workers in 12 divisions, each with its own model and plugins. One command starts them on your own machine.",
     "primaryCta": "Install from GitHub",
     "secondaryCta": "See how it works"
   },
