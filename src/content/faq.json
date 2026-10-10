@@ -20,7 +20,7 @@
     {
       "id": "local-models",
       "question": "Can I use local models?",
-      "answer": "[PLACEHOLDER] Local model support is still being confirmed. A local model can only be assigned to workers whose requirements it meets."
+      "answer": "Yes, through Ollama. A local model is probed like any other, and it can only be assigned to workers whose requirements it meets."
     },
     {
       "id": "training",
