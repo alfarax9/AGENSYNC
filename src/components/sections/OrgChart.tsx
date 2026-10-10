@@ -11,8 +11,8 @@ export function OrgChart({ activeNodes }: { activeNodes: string[] }) {
 
   return (
     <Card tone="alt" isDecorative className="hidden flex-col items-center bg-grid p-8 lg:flex">
-      <ChartNode label={howItWorks.telegramNode} isActive={isActive("telegram")} />
-      <ChartConnector isActive={isActive("telegram") || isActive("nexus")} />
+      <ChartNode label={howItWorks.dashboardNode} isActive={isActive("dashboard")} />
+      <ChartConnector isActive={isActive("dashboard") || isActive("nexus")} />
       <ul className="grid w-full grid-cols-4 gap-3">
         {divisions.map((division) => (
           <li key={division.id}>

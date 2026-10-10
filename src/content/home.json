@@ -63,14 +63,14 @@
       {
         "id": "brief",
         "title": "You write a brief",
-        "body": "Drop the job into the agency's Telegram group, the way you'd explain it to a colleague.",
-        "activeNodes": ["telegram"]
+        "body": "Type the job into the dashboard the way you'd explain it to a colleague. Attach designs or specs if you have them, and set a budget for the task.",
+        "activeNodes": ["dashboard"]
       },
       {
         "id": "plan",
-        "title": "The planner breaks it down",
-        "body": "The Planner / Decomposer in Nexus splits the brief into tasks and hands each one to the right division.",
-        "activeNodes": ["nexus"]
+        "title": "You approve the plan",
+        "body": "The Planner / Decomposer in Nexus shows which workers it wants and in what order. Nothing runs until you approve it, so a bad plan costs nothing.",
+        "activeNodes": ["dashboard", "nexus"]
       },
       {
         "id": "divisions",
@@ -81,24 +81,24 @@
       {
         "id": "dev-qa",
         "title": "Dev and QA go back and forth",
-        "body": "Crucible tests what Forge builds. Anything that fails goes back to the developer, and the loop runs until the tests pass.",
+        "body": "Crucible tests what Forge builds, and failures go back to the developer. After three attempts the task stops and comes to you instead of looping forever.",
         "activeNodes": ["forge", "crucible"]
       },
       {
         "id": "gatekeeper",
         "title": "The Gatekeeper checks it",
-        "body": "Lint, type checks, tests, and accessibility checks run as code. A model can't argue its way past them.",
+        "body": "Lint, type checks, tests, and visual diffs run as code. When something fails you get the reason, like \"Visual diff 4.2%, limit 3%\".",
         "activeNodes": ["gatekeeper"]
       },
       {
         "id": "deliver",
         "title": "You approve the result",
-        "body": "A summary lands in Telegram with buttons to approve it or ask for changes.",
-        "activeNodes": ["bridge", "telegram"]
+        "body": "The diff waits in the dashboard with an Approve button. If you've connected Telegram, a summary with the same buttons lands there too.",
+        "activeNodes": ["bridge", "dashboard"]
       }
     ],
-    "telegramNode": "Telegram",
-    "gatekeeperNode": "Gatekeeper"
+    "gatekeeperNode": "Gatekeeper",
+    "dashboardNode": "Dashboard"
   },
   "divisions": {
     "id": "divisions",
