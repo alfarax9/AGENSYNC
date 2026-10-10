@@ -325,8 +325,8 @@
   "install": {
     "id": "install",
     "heading": "Install",
-    "intro": "AMORA runs on your own machine through Docker. You'll need an API key from at least one model provider.",
-    "notice": "[PLACEHOLDER] Final commands will follow the repository README.",
+    "intro": "One command starts the runtime and opens the dashboard in your browser. You'll need Node.js and a key for at least one model gateway. Docker is optional and only sandboxes code execution.",
+    "notice": "[PLACEHOLDER] The package isn't published yet. These commands follow the spec until the first release.",
     "copy": "Copy",
     "copied": "Copied",
     "platforms": [
