@@ -5,7 +5,7 @@ import faq from "@/content/faq.json";
 
 export function Faq() {
   return (
-    <Section id={faq.id} labelledBy="faq-heading">
+    <Section id={faq.id} labelledBy="faq-heading" tone="alt">
       <div className="grid gap-12 lg:grid-cols-5">
         <SectionHeader headingId="faq-heading" heading={faq.heading} />
         <div className="lg:col-span-3">

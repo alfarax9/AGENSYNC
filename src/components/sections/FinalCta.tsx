@@ -8,7 +8,7 @@ export function FinalCta() {
   const { finalCta } = home;
 
   return (
-    <Section labelledBy="final-cta-heading" tone="alt">
+    <Section labelledBy="final-cta-heading">
       <div className="flex flex-col items-center py-12 text-center">
         <h2 id="final-cta-heading" className="text-h2 text-text">
           {finalCta.heading}
