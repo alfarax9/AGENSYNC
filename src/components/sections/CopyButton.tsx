@@ -8,15 +8,15 @@ const resetDelay = 2000;
 
 type CopyButtonProps = {
   text: string;
-  platformId: string;
+  methodId: string;
 };
 
-export function CopyButton({ text, platformId }: CopyButtonProps) {
+export function CopyButton({ text, methodId }: CopyButtonProps) {
   const [hasCopied, setHasCopied] = useState(false);
 
   async function copy() {
     await navigator.clipboard.writeText(text);
-    track(analyticsEvents.installCopied, { location: platformId });
+    track(analyticsEvents.installCopied, { location: methodId });
     setHasCopied(true);
     setTimeout(() => setHasCopied(false), resetDelay);
   }

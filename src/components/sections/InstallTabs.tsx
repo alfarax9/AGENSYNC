@@ -1,40 +1,40 @@
 import type { KeyboardEvent } from "react";
 
-type PlatformTabsProps = {
-  platforms: { id: string; label: string }[];
+type InstallTabsProps = {
+  methods: { id: string; label: string }[];
   selectedId: string;
   panelId: string;
   onSelect: (id: string) => void;
 };
 
-export function PlatformTabs({ platforms, selectedId, panelId, onSelect }: PlatformTabsProps) {
+export function InstallTabs({ methods, selectedId, panelId, onSelect }: InstallTabsProps) {
   // Arrow keys move between tabs, as the ARIA tabs pattern expects.
   function handleKeyDown(event: KeyboardEvent<HTMLDivElement>) {
     if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
     const step = event.key === "ArrowRight" ? 1 : -1;
-    const index = platforms.findIndex((platform) => platform.id === selectedId);
-    const next = platforms[(index + step + platforms.length) % platforms.length];
+    const index = methods.findIndex((method) => method.id === selectedId);
+    const next = methods[(index + step + methods.length) % methods.length];
     onSelect(next.id);
     document.getElementById(`tab-${next.id}`)?.focus();
   }
 
   return (
     <div role="tablist" onKeyDown={handleKeyDown} className="flex gap-5">
-      {platforms.map((platform) => {
-        const isSelected = platform.id === selectedId;
+      {methods.map((method) => {
+        const isSelected = method.id === selectedId;
         return (
           <button
-            key={platform.id}
-            id={`tab-${platform.id}`}
+            key={method.id}
+            id={`tab-${method.id}`}
             type="button"
             role="tab"
             aria-selected={isSelected}
             aria-controls={panelId}
             tabIndex={isSelected ? 0 : -1}
-            onClick={() => onSelect(platform.id)}
+            onClick={() => onSelect(method.id)}
             className={`border-b-2 py-3 text-sm ${isSelected ? "border-accent-glow text-text" : "border-transparent text-text-tertiary"}`}
           >
-            {platform.label}
+            {method.label}
           </button>
         );
       })}

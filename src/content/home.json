@@ -329,26 +329,16 @@
     "notice": "[PLACEHOLDER] The package isn't published yet. These commands follow the spec until the first release.",
     "copy": "Copy",
     "copied": "Copied",
-    "platforms": [
+    "methods": [
       {
-        "id": "unix",
-        "label": "macOS / Linux",
-        "commands": [
-          "git clone https://github.com/PLACEHOLDER-OWNER/amora.git",
-          "cd amora",
-          "docker compose up -d",
-          "agency doctor"
-        ]
+        "id": "try",
+        "label": "Try it",
+        "commands": ["npx amora"]
       },
       {
-        "id": "windows",
-        "label": "Windows",
-        "commands": [
-          "git clone https://github.com/PLACEHOLDER-OWNER/amora.git",
-          "cd amora",
-          "docker compose up -d",
-          "agency doctor"
-        ]
+        "id": "global",
+        "label": "Install globally",
+        "commands": ["npm install -g amora", "amora doctor", "amora"]
       }
     ]
   },
