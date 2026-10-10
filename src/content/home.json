@@ -139,7 +139,7 @@
       "heading": "Try giving a worker the wrong model",
       "workerLabel": "Worker",
       "modelLabel": "Model",
-      "accepted": "Accepted",
+      "accepted": "Accepted as unverified",
       "rejected": "Rejected",
       "met": "Met",
       "missing": "Missing",
