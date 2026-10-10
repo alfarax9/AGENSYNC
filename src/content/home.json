@@ -3,7 +3,7 @@
     "badge": "Open source, still experimental",
     "headline": "An AI software agency where every worker has its own brain.",
     "subheadline": "66 AI workers in 12 divisions, each with its own model and plugins. One command starts them on your own machine.",
-    "primaryCta": "Install from GitHub",
+    "primaryCta": "View on GitHub",
     "secondaryCta": "See how it works"
   },
   "marquee": {
@@ -268,7 +268,7 @@
   "finalCta": {
     "heading": "Try it on a small project first",
     "body": "AMORA is open source and still experimental. Bring your own model keys.",
-    "github": "Install from GitHub",
+    "github": "View on GitHub",
     "telegram": "Join the Telegram community"
   }
 }
