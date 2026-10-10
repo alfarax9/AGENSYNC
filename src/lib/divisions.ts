@@ -26,6 +26,10 @@ export function findDivisionByName(name: string) {
   return divisions.find((division) => division.name === name);
 }
 
+export function findDivisionOfWorker(workerId: string) {
+  return divisions.find((division) => division.workers.some((worker) => worker.id === workerId));
+}
+
 export function divisionWaves(division: Division) {
   return [...new Set(division.workers.map((worker) => worker.wave))].sort();
 }
