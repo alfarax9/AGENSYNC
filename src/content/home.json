@@ -100,6 +100,125 @@
     "gatekeeperNode": "Gatekeeper",
     "dashboardNode": "Dashboard"
   },
+  "dashboard": {
+    "id": "dashboard",
+    "heading": "Decisions first, then everything else",
+    "intro": "Running amora opens a dashboard on your own machine. What's waiting on you sits at the top, followed by what's running and what it's costing.",
+    "features": [
+      {
+        "id": "plan",
+        "title": "A plan before any spend",
+        "body": "Every task starts with a plan preview. No worker touches it until you approve who does what."
+      },
+      {
+        "id": "handoffs",
+        "title": "Every handoff, inspectable",
+        "body": "Open a task to see each handoff with its contract, validation result, gate result, the model that answered, and the cost."
+      },
+      {
+        "id": "budget",
+        "title": "Budgets that actually stop work",
+        "body": "Set limits per task and per day. When one is hit, dispatching stops until you decide what happens next."
+      },
+      {
+        "id": "pause",
+        "title": "One button stops everything",
+        "body": "Pause all workers sits on every page. Queued work stops, task state is kept, and Resume picks up where it left off."
+      }
+    ],
+    "mockup": {
+      "address": "127.0.0.1:4310",
+      "nav": ["Overview", "Tasks", "Workers", "Models", "Plugins", "Costs", "Settings"],
+      "newTask": "New task",
+      "runtime": [
+        {
+          "label": "Bus",
+          "status": "OK"
+        },
+        {
+          "label": "Orchestrator",
+          "status": "OK"
+        },
+        {
+          "label": "Gateway",
+          "status": "OK"
+        },
+        {
+          "label": "Sandbox",
+          "status": "Off"
+        }
+      ],
+      "budget": {
+        "label": "Today",
+        "spent": "$3.42",
+        "limit": "$10.00",
+        "percent": 34
+      },
+      "pause": "Pause all workers",
+      "summary": [
+        {
+          "id": "active",
+          "label": "Active tasks",
+          "value": "2"
+        },
+        {
+          "id": "decisions",
+          "label": "Needs your decision",
+          "value": "1",
+          "isHighlighted": true
+        },
+        {
+          "id": "spend",
+          "label": "Spent today",
+          "value": "$3.42",
+          "detail": "of $10.00"
+        }
+      ],
+      "approval": {
+        "text": "Pricing page is ready for review",
+        "actions": ["View diff", "Approve"]
+      },
+      "pipeline": {
+        "task": "Settings page",
+        "stages": ["Brief", "Plan", "Build", "Test", "Gate"],
+        "currentIndex": 3,
+        "attempt": "Attempt 2 of 3"
+      },
+      "workers": {
+        "columns": ["Worker", "Model", "Status", "Today"],
+        "rows": [
+          {
+            "workerId": "logic-developer",
+            "model": "builder.primary",
+            "label": "verified",
+            "status": "Working",
+            "cost": "$1.12"
+          },
+          {
+            "workerId": "unit-integration-tester",
+            "model": "reviewer.primary",
+            "label": "other family",
+            "status": "In review",
+            "cost": "$0.48"
+          },
+          {
+            "workerId": "ux-architect",
+            "model": "design.primary",
+            "label": "experimental",
+            "status": "Passed",
+            "cost": "$0.36"
+          },
+          {
+            "workerId": "task-dispatcher",
+            "model": "dispatch.cheap",
+            "label": "unverified",
+            "status": "Idle",
+            "cost": "$0.04"
+          }
+        ]
+      }
+    }
+  },
   "divisions": {
     "id": "divisions",
     "heading": "Meet the 12 divisions",
