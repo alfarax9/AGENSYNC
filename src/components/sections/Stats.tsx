@@ -15,7 +15,7 @@ export function Stats() {
           <div key={item.id} className="flex flex-col-reverse gap-2 border-l border-border pl-6">
             <dt className="text-sm text-text-tertiary">{item.label}</dt>
             <dd className="font-mono text-h2 text-text tabular-nums">
-              {item.value === null ? stats.pendingValue : <CountUp value={item.value} />}
+              <CountUp value={item.value} />
             </dd>
           </div>
         ))}

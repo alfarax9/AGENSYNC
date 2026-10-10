@@ -25,17 +25,16 @@
         "label": "AI workers"
       },
       {
-        "id": "commands",
-        "value": null,
-        "label": "Commands to install"
+        "id": "gateways",
+        "value": 4,
+        "label": "Ways to connect models"
       },
       {
-        "id": "providers",
-        "value": null,
-        "label": "Model providers"
+        "id": "attempts",
+        "value": 3,
+        "label": "Tries before it asks you"
       }
-    ],
-    "pendingValue": "TBD"
+    ]
   },
   "pillars": {
     "heading": "What makes it more than a prompt library",
