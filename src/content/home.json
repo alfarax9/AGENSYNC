@@ -365,19 +365,29 @@
     "heading": "Your keys stay on your machine",
     "items": [
       {
-        "id": "secrets",
-        "title": "Secrets are encrypted",
-        "body": "API keys are stored encrypted on the machine running AMORA. They never go through Telegram."
+        "id": "keychain",
+        "title": "Keys live in your OS keychain",
+        "body": "Keychain on macOS, Credential Manager on Windows, Secret Service on Linux. The dashboard only ever shows the last four characters, and keys never go through Telegram."
+      },
+      {
+        "id": "local",
+        "title": "The dashboard only listens on 127.0.0.1",
+        "body": "Every request needs the session from your one-time sign-in link, and requests from other websites are turned away. Nothing loads from third-party hosts."
+      },
+      {
+        "id": "scanner",
+        "title": "Handoffs are scanned for secrets",
+        "body": "A secret scanner reads every handoff before it's written to disk, and keys are never written to logs."
+      },
+      {
+        "id": "plugins",
+        "title": "Plugins ask before they get access",
+        "body": "Each plugin lists the folders and network access it wants. You approve them before it's switched on."
       },
       {
         "id": "sandbox",
-        "title": "Code runs in a sandbox",
-        "body": "Workers execute code in an isolated sandbox instead of directly on your computer."
-      },
-      {
-        "id": "providers",
-        "title": "You pick the providers",
-        "body": "You decide which provider and model each worker uses. None of it is routed through us."
+        "title": "Code can run in a sandbox",
+        "body": "Turn on Docker and workers execute code in an isolated container instead of directly on your computer."
       }
     ]
   },
