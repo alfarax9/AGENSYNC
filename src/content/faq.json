@@ -33,6 +33,11 @@
       "answer": "Assign a different model from the Models page in the dashboard. AMORA checks it against the worker's requirements and refuses it with a clear reason if anything is missing. Give the Slice / Markup Engineer a text-only model, for example, and it gets rejected, because that role needs vision."
     },
     {
+      "id": "failing",
+      "question": "What happens when a worker keeps failing?",
+      "answer": "Each task gets three attempts. After the third, work stops and the decision comes to you. The worker's Interactions tab lists every handoff it sent or received, with the failed ones a click away."
+    },
+    {
       "id": "prompt-collections",
       "question": "How is this different from prompt collections like agency-agents?",
       "answer": "A prompt collection gives you role descriptions to paste into a single model. AMORA runs the work itself: workers execute tasks, pass results to each other through typed contracts, and have to clear quality gates written in code. Each worker also runs on its own model instead of everyone sharing one."
