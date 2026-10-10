@@ -340,6 +340,25 @@
         "label": "Install globally",
         "commands": ["npm install -g amora", "amora doctor", "amora"]
       }
+    ],
+    "commandsHeading": "Other commands",
+    "commands": [
+      {
+        "command": "amora doctor",
+        "body": "Checks your keys, plugins, model capabilities, and hardware."
+      },
+      {
+        "command": "amora models",
+        "body": "Shows which worker uses which model."
+      },
+      {
+        "command": "amora cost",
+        "body": "Shows what you've spent with each provider."
+      },
+      {
+        "command": "amora --port <n>",
+        "body": "Runs the dashboard on a port you choose."
+      }
     ]
   },
   "security": {
