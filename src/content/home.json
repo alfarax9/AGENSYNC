@@ -40,19 +40,19 @@
     "heading": "What makes it more than a prompt library",
     "items": [
       {
-        "id": "execution",
-        "title": "It does the work",
-        "body": "Workers edit files and run commands inside a sandbox. What comes back is something you can open and check."
-      },
-      {
-        "id": "gates",
-        "title": "The checks live in code",
-        "body": "You can talk a model out of following a prompt. You can't talk it past a failing test. Work that fails a quality gate stays inside the agency until someone fixes it."
+        "id": "rules",
+        "title": "The rules live in code",
+        "body": "A plain-code orchestrator owns the task queue, the quality gates, the retries, and the budget. Models help plan and review, but none of them can argue past a failing test or a spending limit."
       },
       {
         "id": "brains",
         "title": "Each worker has its own model",
         "body": "The Slice / Markup Engineer reads screenshots, so it gets a model with vision. The Task Dispatcher hands out tasks all day, so it gets something cheap and fast."
+      },
+      {
+        "id": "handoffs",
+        "title": "Every handoff is on record",
+        "body": "When one worker passes work to the next, AMORA logs the contract, whether it validated, the gate result, which model answered, and what it cost."
       }
     ]
   },
