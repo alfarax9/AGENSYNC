@@ -1,3 +1,4 @@
+import { RevealWords } from "@/components/motion/RevealWords";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import home from "@/content/home.json";
@@ -22,8 +23,12 @@ export function Dashboard() {
           >
             <p className="font-mono text-xs text-text-tertiary">{feature.tag}</p>
             <div>
-              <h3 className="font-semibold text-text">{feature.title}</h3>
-              <p className="mt-1 text-sm">{feature.body}</p>
+              <h3 className="reveal-text font-semibold text-text">
+                <RevealWords text={feature.title} />
+              </h3>
+              <p className="reveal-text mt-1 text-sm">
+                <RevealWords text={feature.body} />
+              </p>
             </div>
           </li>
         ))}
