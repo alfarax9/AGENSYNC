@@ -52,6 +52,7 @@
   /* The How it works diagram loops these inside an SVG, where CSS keeps them
      off the main thread and motion-reduce can switch them off without JavaScript. */
   --animate-dash: dash 1.2s linear infinite;
+  --animate-blink: blink 1s steps(1) infinite;
   --animate-step-fill: step-fill 3.2s linear both;
   --animate-sheet-in: sheet-in 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 
@@ -71,6 +72,12 @@
   @keyframes dash {
     to {
       stroke-dashoffset: -14;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
     }
   }
 
