@@ -20,14 +20,14 @@ export function Hero() {
         <Badge>{hero.badge}</Badge>
         <HeroHeadline text={hero.headline} />
         <p className="mt-6 max-w-2xl text-lg text-balance">{hero.subheadline}</p>
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
           <Button
             href={site.links.github}
             tracking={{ event: analyticsEvents.githubClick, location: "hero" }}
           >
             {hero.primaryCta}
           </Button>
-          <Button href={`#${home.howItWorks.id}`} variant="secondary">
+          <Button href={`#${home.howItWorks.id}`} variant="link">
             {hero.secondaryCta}
           </Button>
         </div>
