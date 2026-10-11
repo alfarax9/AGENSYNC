@@ -1,35 +1,38 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { Section } from "@/components/ui/Section";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { Spotlight } from "@/components/ui/Spotlight";
 import home from "@/content/home.json";
+import { PillarEvidence } from "./PillarEvidence";
 
-const accentTint = "color-mix(in oklch, var(--color-accent-glow) 16%, transparent)";
-
-// One wide lead cell over two supporting cells: the first point is the one
-// the rest depend on, so it gets the space instead of three equal columns.
+// Heading pinned on the left while the three points scroll past on the right.
+// Each point is a ruled row with its evidence, not a card.
 export function Pillars() {
   const { pillars } = home;
 
   return (
     <Section labelledBy="pillars-heading" tone="alt">
-      <SectionHeader headingId="pillars-heading" heading={pillars.heading} />
-      <ol className="mt-12 grid gap-4 md:grid-cols-2">
-        {pillars.items.map((item, index) => {
-          const isLead = index === 0;
-          return (
-            <Reveal key={item.id} index={index} className={isLead ? "md:col-span-2" : undefined}>
-              <Spotlight
-                tint={accentTint}
-                className={`flex h-full flex-col justify-end p-6 md:p-8 ${isLead ? "min-h-56 bg-grid" : ""}`}
-              >
-                <h3 className={`text-text ${isLead ? "text-h3" : "text-h4"}`}>{item.title}</h3>
-                <p className={`mt-3 max-w-xl ${isLead ? "text-lg" : ""}`}>{item.body}</p>
-              </Spotlight>
+      <div className="grid gap-12 lg:grid-cols-12">
+        <h2
+          id="pillars-heading"
+          className="self-start text-h2 text-balance text-text lg:sticky lg:top-32 lg:col-span-4"
+        >
+          {pillars.heading}
+        </h2>
+        <ol className="lg:col-span-8">
+          {pillars.items.map((item, index) => (
+            <Reveal
+              key={item.id}
+              index={index}
+              className="border-t border-border py-10 first:border-t-0 first:pt-0 lg:first:pt-2"
+            >
+              <h3 className="text-h4 text-text">{item.title}</h3>
+              <p className="mt-3 max-w-xl">{item.body}</p>
+              <div className="mt-6">
+                <PillarEvidence lines={item.evidence} />
+              </div>
             </Reveal>
-          );
-        })}
-      </ol>
+          ))}
+        </ol>
+      </div>
     </Section>
   );
 }
