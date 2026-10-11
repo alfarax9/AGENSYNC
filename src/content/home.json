@@ -37,17 +37,58 @@
       {
         "id": "rules",
         "title": "The rules live in code",
-        "body": "A plain-code orchestrator owns the task queue, the quality gates, the retries, and the budget. Models help plan and review, but none of them can argue past a failing test or a spending limit."
+        "body": "A plain-code orchestrator owns the task queue, the quality gates, the retries, and the budget. Models help plan and review, but none of them can argue past a failing test or a spending limit.",
+        "evidence": [
+          {
+            "label": "visual diff",
+            "value": "4.2% against a 3% limit",
+            "status": "failed"
+          },
+          {
+            "label": "next",
+            "value": "back to Forge, attempt 2 of 3"
+          }
+        ]
       },
       {
         "id": "brains",
         "title": "Each worker has its own model",
-        "body": "The Slice / Markup Engineer reads screenshots, so it gets a model with vision. The Task Dispatcher hands out tasks all day, so it gets something cheap and fast."
+        "body": "The Slice / Markup Engineer reads screenshots, so it gets a model with vision. The Task Dispatcher hands out tasks all day, so it gets something cheap and fast.",
+        "evidence": [
+          {
+            "label": "worker",
+            "value": "Slice / Markup Engineer"
+          },
+          {
+            "label": "model",
+            "value": "Small and fast"
+          },
+          {
+            "label": "vision",
+            "value": "not supported",
+            "status": "rejected"
+          }
+        ]
       },
       {
         "id": "handoffs",
         "title": "Every handoff is on record",
-        "body": "When one worker passes work to the next, AMORA logs the contract, whether it validated, the gate result, which model answered, and what it cost."
+        "body": "When one worker passes work to the next, AMORA logs the contract, whether it validated, the gate result, which model answered, and what it cost.",
+        "evidence": [
+          {
+            "label": "contract",
+            "value": "design_spec.v1",
+            "status": "valid"
+          },
+          {
+            "label": "handoff",
+            "value": "UX Architect to Logic Developer"
+          },
+          {
+            "label": "answered by",
+            "value": "design.primary, $0.12"
+          }
+        ]
       }
     ]
   },
