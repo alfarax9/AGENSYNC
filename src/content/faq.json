@@ -15,7 +15,7 @@
     {
       "id": "telegram",
       "question": "Do I need Telegram?",
-      "answer": "No. The dashboard does everything. Telegram is optional and only gets summaries and approval buttons. Discord is the next adapter on the list."
+      "answer": "No. The dashboard does everything. If you want approvals on your phone, connect a Telegram bot in Settings. It gets short summaries and approval buttons, never your keys. Discord is the next adapter on the list."
     },
     {
       "id": "local-models",
