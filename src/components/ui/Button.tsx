@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import type { Tracking } from "@/lib/analytics";
 
 type BaseProps = {
-  variant?: "primary" | "secondary" | "inverse" | "outline";
+  variant?: "primary" | "secondary" | "inverse" | "outline" | "link";
   tracking?: Tracking;
   className?: string;
   children?: ReactNode;
@@ -24,6 +24,7 @@ const variantClasses = {
   inverse: "rounded-xl border-text bg-text text-bg",
   outline:
     "rounded-card border-border bg-overlay/50 text-text hover:bg-overlay hover:border-accent-glow",
+  link: "rounded-sm border-transparent! px-0! before:hidden text-text underline underline-offset-4 decoration-text-tertiary hover:decoration-text hover:border-transparent!",
 };
 
 // Hover is a glow and a brighter border, never a lighter background:
