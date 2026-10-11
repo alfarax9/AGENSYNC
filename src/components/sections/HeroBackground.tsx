@@ -21,7 +21,8 @@ const waveSettings: ComponentProps<typeof FloatingLines> = {
 
 // The static depth gradient is always there: before three.js loads, without
 // WebGL, and under reduced motion. The waves are unmounted while the hero is
-// off screen, because the vendor code renders every frame regardless.
+// off screen, because the vendor code renders every frame regardless. The
+// bottom fade hands the hero over to the page background without a hard edge.
 export function HeroBackground() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref);
@@ -41,6 +42,7 @@ export function HeroBackground() {
           <FloatingLines linesGradient={colors} {...waveSettings} />
         </div>
       )}
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-linear-to-b from-transparent to-bg" />
     </div>
   );
 }
