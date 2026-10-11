@@ -45,7 +45,7 @@
         "link": "github"
       },
       {
-        "label": "Telegram",
+        "label": "Community chat",
         "link": "telegram"
       }
     ]
@@ -74,7 +74,7 @@
         "title": "Community",
         "links": [
           {
-            "label": "Telegram",
+            "label": "Telegram community",
             "link": "telegram"
           }
         ]
