@@ -100,7 +100,7 @@
       {
         "id": "brief",
         "title": "You write a brief",
-        "body": "Type the job into the dashboard the way you'd explain it to a colleague. Attach designs or specs if you have them, and set a budget for the task."
+        "body": "Type the job into the dashboard the way you'd explain it to a colleague. Attach designs or specs, set a budget, and choose whether you sign off at every gate or only at the end."
       },
       {
         "id": "plan",
@@ -125,7 +125,7 @@
       {
         "id": "deliver",
         "title": "You approve the result",
-        "body": "The diff waits in the dashboard with an Approve button. If you've connected Telegram, a summary with the same buttons lands there too."
+        "body": "The diff waits in the dashboard with an Approve button. If you've connected Telegram, a summary with the same two buttons reaches your phone."
       }
     ],
     "diagram": {
