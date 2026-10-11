@@ -304,7 +304,7 @@
   "divisions": {
     "id": "divisions",
     "heading": "Meet the 12 divisions",
-    "intro": "Each division is named after a room in the agency's headquarters. Open a card to see who works there.",
+    "intro": "Each division is named after a room in the agency's headquarters. Open a row to see who works there.",
     "waveLegend": "Workers ship in three waves: 29 in the first, 20 in the second, and the last 17 in the third.",
     "waveLabel": "Wave",
     "workersLabel": "workers",

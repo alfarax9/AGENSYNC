@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
+import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
 type DivisionWorkersProps = {
@@ -17,21 +17,26 @@ export function DivisionWorkers({
   workerNames,
 }: DivisionWorkersProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const Icon = isOpen ? Minus : Plus;
 
   return (
-    <div className="mt-4 border-t border-border pt-4">
+    <div className="md:col-span-12">
       <button
         type="button"
         aria-expanded={isOpen}
         aria-controls={listId}
         aria-describedby={describedBy}
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between text-sm text-text"
+        className="flex items-center gap-2 font-mono text-xs text-text-secondary hover:text-text"
       >
+        <Icon aria-hidden className="size-3.5" />
         {toggleLabel}
-        <ChevronDown aria-hidden className={`size-4 ${isOpen ? "rotate-180" : ""}`} />
       </button>
-      <ul id={listId} hidden={!isOpen} className="mt-3 flex flex-col gap-1.5 text-sm">
+      <ul
+        id={listId}
+        hidden={!isOpen}
+        className="mt-4 gap-x-8 gap-y-1.5 text-sm sm:columns-2 lg:columns-3"
+      >
         {workerNames.map((name) => (
           <li key={name}>{name}</li>
         ))}

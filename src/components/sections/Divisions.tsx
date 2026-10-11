@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import home from "@/content/home.json";
 import { divisions } from "@/lib/divisions";
-import { DivisionCard } from "./DivisionCard";
+import { DivisionRow } from "./DivisionRow";
 
 export function Divisions() {
   const content = home.divisions;
@@ -15,11 +15,11 @@ export function Divisions() {
         heading={content.heading}
         intro={content.intro}
       />
-      <p className="mt-4 text-sm text-text-tertiary">{content.waveLegend}</p>
-      <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <p className="mt-4 font-mono text-xs text-text-tertiary">{content.waveLegend}</p>
+      <ul className="mt-12 divide-y divide-border border-y border-border">
         {divisions.map((division, index) => (
-          <Reveal key={division.id} index={index % 4}>
-            <DivisionCard division={division} />
+          <Reveal key={division.id} index={index % 3}>
+            <DivisionRow division={division} />
           </Reveal>
         ))}
       </ul>
