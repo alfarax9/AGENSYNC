@@ -1,15 +1,10 @@
 {
   "hero": {
-    "badge": "Open source, still experimental",
     "headline": "An AI software agency where every worker has its own brain.",
     "subheadline": "66 AI workers in 12 divisions, each with its own model and plugins. One command starts them on your own machine.",
     "primaryCta": "View on GitHub",
-    "secondaryCta": "See how it works"
-  },
-  "marquee": {
-    "label": "AMORA divisions",
-    "pause": "Pause division ticker",
-    "play": "Play division ticker"
+    "secondaryCta": "See how it works",
+    "badge": "Open source, still experimental"
   },
   "stats": {
     "heading": "AMORA in numbers",
@@ -97,6 +92,59 @@
         "activeNodes": ["bridge", "dashboard"]
       }
     ],
+    "diagram": {
+      "label": "A brief goes to the planner, workers in each division pick up their part, AMORA checks the work against its gates, and finished tasks stack up for your approval.",
+      "brief": "Brief",
+      "workers": [
+        {
+          "workerId": "product-manager",
+          "initials": "PM",
+          "status": "scoping"
+        },
+        {
+          "workerId": "logic-developer",
+          "initials": "LD",
+          "status": "building"
+        },
+        {
+          "workerId": "unit-integration-tester",
+          "initials": "QA",
+          "status": "testing"
+        },
+        {
+          "workerId": "ux-architect",
+          "initials": "UX",
+          "status": "designing"
+        },
+        {
+          "workerId": "status-reporter",
+          "initials": "SR",
+          "status": "idle",
+          "isIdle": true
+        }
+      ],
+      "hub": "AMORA",
+      "gateChecks": ["lint", "types", "tests", "a11y"],
+      "taskPrefix": "TASK #",
+      "firstTask": 141,
+      "tests": "12/12 tests",
+      "approve": "Approve",
+      "attempt": "attempt 2 of 3",
+      "captions": {
+        "brief": "Brief received. Budget $5.00, sign-off at every gate.",
+        "plan": "Plan ready: 4 steps, 5 workers. Nothing runs until you approve.",
+        "divisions": "Compass scopes it, Atelier designs it, Forge builds it.",
+        "dev-qa": "Attempt 1: 11 of 12 tests pass. Back to Forge for attempt 2.",
+        "gatekeeper": "Gate checks run as code: lint, types, tests, accessibility.",
+        "deliver": "Task #{task} is ready. $1.84 of $5.00 spent. Click it to ship."
+      }
+    },
+    "controls": {
+      "tablist": "Steps in a task",
+      "pause": "Pause",
+      "play": "Play",
+      "hint": "Click a step or any part of the diagram"
+    },
     "gatekeeperNode": "Gatekeeper",
     "dashboardNode": "Dashboard"
   },
@@ -273,7 +321,6 @@
     "heading": "Approvals follow you to Telegram",
     "intro": "Connecting a bot is optional. Each division gets its own topic in your group, and you get short summaries with approval buttons. Full detail and every key stay in the dashboard.",
     "groupName": "AMORA HQ",
-    "topics": ["General", "Nexus", "Compass", "Atelier", "Forge", "Crucible", "Bridge"],
     "messages": [
       {
         "id": "plan",
@@ -320,7 +367,8 @@
         "actions": ["Approve", "Request changes"]
       }
     ],
-    "topicsLabel": "topics"
+    "topicsLabel": "topics",
+    "topics": ["General", "Nexus", "Compass", "Atelier", "Forge", "Crucible", "Bridge"]
   },
   "install": {
     "id": "install",
@@ -396,5 +444,10 @@
     "body": "AMORA is open source and still experimental. Bring your own model keys and set a budget before the first task.",
     "github": "View on GitHub",
     "telegram": "Join the Telegram community"
+  },
+  "marquee": {
+    "label": "AMORA divisions",
+    "pause": "Pause division ticker",
+    "play": "Play division ticker"
   }
 }
