@@ -1,5 +1,4 @@
 import { RiseText } from "@/components/motion/RiseText";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import home from "@/content/home.json";
@@ -23,12 +22,11 @@ export function Hero() {
     >
       <HeroBackground />
       <Container className="flex flex-col items-center py-24 text-center">
-        <Badge>{hero.badge}</Badge>
         <RiseText
           as="h1"
           id="hero-heading"
           text={hero.headline}
-          className="mt-6 max-w-4xl text-display text-balance text-text"
+          className="max-w-4xl text-display text-balance text-text"
         />
         <RiseText
           text={hero.subheadline}
