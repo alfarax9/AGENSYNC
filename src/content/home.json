@@ -8,28 +8,7 @@
   },
   "stats": {
     "heading": "AMORA in numbers",
-    "items": [
-      {
-        "id": "divisions",
-        "value": 12,
-        "label": "Divisions"
-      },
-      {
-        "id": "workers",
-        "value": 66,
-        "label": "AI workers"
-      },
-      {
-        "id": "gateways",
-        "value": 4,
-        "label": "Ways to connect models"
-      },
-      {
-        "id": "attempts",
-        "value": 3,
-        "label": "Tries before it asks you"
-      }
-    ]
+    "statement": "AMORA runs *66* workers across *12* divisions. Models plug in *4* ways, and no task gets more than *3* tries before it comes back to you."
   },
   "pillars": {
     "heading": "What makes it more than a prompt library",
