@@ -512,10 +512,5 @@
     ],
     "terminalLabel": "What running AMORA for the first time prints",
     "terminalTitle": "~/my-small-project"
-  },
-  "marquee": {
-    "label": "AMORA divisions",
-    "pause": "Pause division ticker",
-    "play": "Play division ticker"
   }
 }

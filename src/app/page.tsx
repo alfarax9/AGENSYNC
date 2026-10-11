@@ -1,6 +1,5 @@
 import { Brains } from "@/components/sections/Brains";
 import { Dashboard } from "@/components/sections/Dashboard";
-import { DivisionMarquee } from "@/components/sections/DivisionMarquee";
 import { Divisions } from "@/components/sections/Divisions";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
@@ -18,7 +17,6 @@ export default function Home() {
     <main id="main">
       <SoftwareJsonLd />
       <Hero />
-      <DivisionMarquee />
       <Stats />
       <Pillars />
       <HowItWorks />
