@@ -148,18 +148,6 @@ html {
   background-size: 2rem 2rem;
 }
 
-/* React Bits SpotlightCard ships unlayered CSS with its own border, radius,
-   background and padding, which always beats Tailwind's layered utilities.
-   revert-layer hands those properties back to the utility classes, so the
-   card is styled with AMORA tokens like every other component. The doubled
-   class keeps this rule ahead of the vendor one. */
-.card-spotlight.amora-spotlight {
-  border: revert-layer;
-  border-radius: revert-layer;
-  background-color: revert-layer;
-  padding: revert-layer;
-}
-
 /* React Bits StaggeredMenu adaptation for AMORA */
 .amora-staggered.staggered-menu-wrapper.fixed-wrapper {
   position: fixed;
