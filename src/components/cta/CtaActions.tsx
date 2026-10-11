@@ -1,5 +1,6 @@
 "use client";
 
+import { RevealWords } from "@/components/motion/RevealWords";
 import * as m from "motion/react-m";
 import { reveal } from "@/components/motion/variants";
 import { Button } from "@/components/ui/Button";
@@ -14,8 +15,8 @@ const firstIndex = finalCta.heading.split(" ").length;
 export function CtaActions() {
   return (
     <m.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.6 }}>
-      <m.p variants={reveal} custom={firstIndex} className="mt-6 max-w-xl text-lg">
-        {finalCta.body}
+      <m.p variants={reveal} custom={firstIndex} className="reveal-text mt-6 max-w-xl text-lg">
+        <RevealWords text={finalCta.body} />
       </m.p>
       <m.div
         variants={reveal}
