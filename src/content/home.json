@@ -190,22 +190,26 @@
       {
         "id": "plan",
         "title": "A plan before any spend",
-        "body": "Every task starts with a plan preview. No worker touches it until you approve who does what."
+        "body": "Every task starts with a plan preview. No worker touches it until you approve who does what.",
+        "tag": "plan preview"
       },
       {
         "id": "handoffs",
         "title": "Every handoff, inspectable",
-        "body": "Open a task to see each handoff with its contract, validation result, gate result, the model that answered, and the cost."
+        "body": "Open a task to see each handoff with its contract, validation result, gate result, the model that answered, and the cost.",
+        "tag": "handoff log"
       },
       {
         "id": "budget",
         "title": "Budgets that actually stop work",
-        "body": "Set limits per task and per day. When one is hit, dispatching stops until you decide what happens next."
+        "body": "Set limits per task and per day. When one is hit, dispatching stops until you decide what happens next.",
+        "tag": "budget limits"
       },
       {
         "id": "pause",
         "title": "One button stops everything",
-        "body": "Pause all workers sits on every page. Queued work stops, task state is kept, and Resume picks up where it left off."
+        "body": "Pause all workers sits on every page. Queued work stops, task state is kept, and Resume picks up where it left off.",
+        "tag": "pause all"
       }
     ],
     "mockup": {

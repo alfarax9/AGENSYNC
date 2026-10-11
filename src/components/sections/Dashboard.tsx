@@ -14,11 +14,17 @@ export function Dashboard() {
         intro={dashboard.intro}
       />
       <DashboardMockup />
-      <ul className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <ul className="mt-12 gap-x-16 md:columns-2">
         {dashboard.features.map((feature) => (
-          <li key={feature.id} className="border-l border-border pl-5">
-            <h3 className="text-lg font-semibold text-text">{feature.title}</h3>
-            <p className="mt-2">{feature.body}</p>
+          <li
+            key={feature.id}
+            className="grid break-inside-avoid gap-1 border-t border-border py-6 sm:grid-cols-[8.5rem_1fr] sm:gap-6"
+          >
+            <p className="font-mono text-xs text-text-tertiary">{feature.tag}</p>
+            <div>
+              <h3 className="font-semibold text-text">{feature.title}</h3>
+              <p className="mt-1 text-sm">{feature.body}</p>
+            </div>
           </li>
         ))}
       </ul>
