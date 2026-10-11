@@ -22,8 +22,3 @@ export const checkAppear: Variants = {
     transition: { duration: 0.2, delay: index * 0.2 },
   }),
 };
-
-export const lineDraw: Variants = {
-  hidden: { scaleY: 0 },
-  visible: { scaleY: 1, transition: { duration: 1.2, ease: "easeOut" } },
-};

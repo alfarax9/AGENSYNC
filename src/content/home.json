@@ -53,43 +53,38 @@
   },
   "howItWorks": {
     "id": "how-it-works",
-    "heading": "What happens after you send a message",
+    "heading": "What happens",
+    "headingMuted": "after you write a brief",
     "steps": [
       {
         "id": "brief",
         "title": "You write a brief",
-        "body": "Type the job into the dashboard the way you'd explain it to a colleague. Attach designs or specs if you have them, and set a budget for the task.",
-        "activeNodes": ["dashboard"]
+        "body": "Type the job into the dashboard the way you'd explain it to a colleague. Attach designs or specs if you have them, and set a budget for the task."
       },
       {
         "id": "plan",
         "title": "You approve the plan",
-        "body": "The Planner / Decomposer in Nexus shows which workers it wants and in what order. Nothing runs until you approve it, so a bad plan costs nothing.",
-        "activeNodes": ["dashboard", "nexus"]
+        "body": "The Planner / Decomposer in Nexus shows which workers it wants and in what order. Nothing runs until you approve it, so a bad plan costs nothing."
       },
       {
         "id": "divisions",
         "title": "Divisions pick it up",
-        "body": "Compass works out the scope, Atelier designs it, and Forge builds it, each worker on its own model.",
-        "activeNodes": ["compass", "atelier", "forge"]
+        "body": "Compass works out the scope, Atelier designs it, and Forge builds it, each worker on its own model."
       },
       {
         "id": "dev-qa",
         "title": "Dev and QA go back and forth",
-        "body": "Crucible tests what Forge builds, and failures go back to the developer. After three attempts the task stops and comes to you instead of looping forever.",
-        "activeNodes": ["forge", "crucible"]
+        "body": "Crucible tests what Forge builds, and failures go back to the developer. After three attempts the task stops and comes to you instead of looping forever."
       },
       {
         "id": "gatekeeper",
         "title": "The Gatekeeper checks it",
-        "body": "Lint, type checks, tests, and visual diffs run as code. When something fails you get the reason, like \"Visual diff 4.2%, limit 3%\".",
-        "activeNodes": ["gatekeeper"]
+        "body": "Lint, type checks, tests, and visual diffs run as code. When something fails you get the reason, like \"Visual diff 4.2%, limit 3%\"."
       },
       {
         "id": "deliver",
         "title": "You approve the result",
-        "body": "The diff waits in the dashboard with an Approve button. If you've connected Telegram, a summary with the same buttons lands there too.",
-        "activeNodes": ["bridge", "dashboard"]
+        "body": "The diff waits in the dashboard with an Approve button. If you've connected Telegram, a summary with the same buttons lands there too."
       }
     ],
     "diagram": {
@@ -144,9 +139,7 @@
       "pause": "Pause",
       "play": "Play",
       "hint": "Click a step or any part of the diagram"
-    },
-    "gatekeeperNode": "Gatekeeper",
-    "dashboardNode": "Dashboard"
+    }
   },
   "dashboard": {
     "id": "dashboard",
