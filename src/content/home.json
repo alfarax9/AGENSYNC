@@ -393,7 +393,7 @@
   "install": {
     "id": "install",
     "heading": "Install",
-    "intro": "One command starts the runtime and opens the dashboard in your browser. You'll need Node.js and a key for at least one model gateway. Docker is optional and only sandboxes code execution.",
+    "intro": "One command starts the runtime and opens the dashboard in your browser, where a short setup gets you to your first task. You'll need Node.js and a key for at least one model gateway. Docker is optional and only sandboxes the code workers run.",
     "notice": "[PLACEHOLDER] The package isn't published yet. These commands follow the spec until the first release.",
     "copy": "Copy",
     "copied": "Copied",
@@ -407,6 +407,34 @@
         "id": "global",
         "label": "Install globally",
         "commands": ["npm install -g amora", "amora doctor", "amora"]
+      }
+    ],
+    "setupHeading": "What the first run asks you",
+    "setup": [
+      {
+        "id": "gateway",
+        "title": "Connect a gateway",
+        "body": "OmniRoute by default, or OpenRouter, a provider directly, or local models through Ollama. The key goes into your OS keychain."
+      },
+      {
+        "id": "probes",
+        "title": "Check your models",
+        "body": "AMORA tests each model for tool use, structured output, and vision. A model that fails a check a worker needs can't be given to that worker."
+      },
+      {
+        "id": "waves",
+        "title": "Pick your workers",
+        "body": "Wave 1 is switched on: 29 workers, enough to plan, design, build, and test a web feature. Add more waves later."
+      },
+      {
+        "id": "budget",
+        "title": "Set a budget",
+        "body": "A limit per task and per day. No task starts without one."
+      },
+      {
+        "id": "telegram",
+        "title": "Connect Telegram, if you want",
+        "body": "Paste the bot token here, never in a chat. You can skip this and add it later in Settings."
       }
     ],
     "commandsHeading": "Other commands",
