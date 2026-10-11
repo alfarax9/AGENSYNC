@@ -357,56 +357,38 @@
   "telegram": {
     "id": "telegram",
     "heading": "Approvals follow you to Telegram",
-    "intro": "Connecting a bot is optional. Each division gets its own topic in your group, and you get short summaries with approval buttons. Full detail and every key stay in the dashboard.",
+    "intro": "It's optional. Paste a bot token into the dashboard's settings, and each division gets its own topic in your group. You hear about a task when it changes state, and you get a button when it needs you. The diffs, handoffs, and keys stay in the dashboard.",
     "groupName": "AMORA HQ",
     "messages": [
       {
         "id": "plan",
-        "author": "Planner / Decomposer",
+        "author": "AMORA",
         "topic": "Nexus",
-        "text": "Plan for \"Pricing page\" is ready: 4 steps, 5 workers. Approve it in the dashboard or here.",
-        "actions": ["Approve plan", "Open dashboard"]
+        "text": "Plan for \"Pricing page\" is ready: 4 steps across Compass, Atelier, Forge, and Crucible. It needs your approval before anything runs.",
+        "actions": ["Open dashboard"]
       },
       {
-        "id": "scope",
-        "author": "Product Manager",
-        "topic": "Compass",
-        "text": "Scope done: Starter, Team, and Agency tiers. Yearly gets two months free."
-      },
-      {
-        "id": "design",
-        "author": "UX Architect",
-        "topic": "Atelier",
-        "text": "Wireframe handed to Forge as design_spec.v1. Validation passed."
-      },
-      {
-        "id": "test",
-        "author": "Unit & Integration Tester",
+        "id": "returned",
+        "author": "AMORA",
         "topic": "Crucible",
-        "text": "Attempt 1: 11 of 12 tests pass. Yearly prices round down by a cent, so it's back with Forge."
+        "text": "\"Pricing page\" failed a test on attempt 1 of 3: yearly prices round down by a cent. Sent back to Forge."
       },
       {
-        "id": "fix",
-        "author": "Logic Developer",
-        "topic": "Forge",
-        "text": "Attempt 2: rounding fixed, 12 of 12 passing."
-      },
-      {
-        "id": "gate",
-        "author": "Gatekeeper",
-        "topic": "Forge",
-        "text": "Gate passed: lint, types, tests, and accessibility."
-      },
-      {
-        "id": "approval",
-        "author": "Status Reporter",
+        "id": "ready",
+        "author": "AMORA",
         "topic": "Bridge",
-        "text": "Pricing page is ready. It cost $1.84 of its $5.00 budget. Ship it?",
+        "text": "\"Pricing page\" passed every gate. It cost $1.84 of its $5.00 budget. Ship it?",
         "actions": ["Approve", "Request changes"]
+      },
+      {
+        "id": "budget",
+        "author": "AMORA",
+        "topic": "General",
+        "text": "Today's budget is 86% spent ($8.60 of $10.00). When it runs out, new work waits for your call."
       }
     ],
     "topicsLabel": "topics",
-    "topics": ["General", "Nexus", "Compass", "Atelier", "Forge", "Crucible", "Bridge"]
+    "generalTopic": "General"
   },
   "install": {
     "id": "install",

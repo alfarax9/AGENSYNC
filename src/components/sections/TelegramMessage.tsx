@@ -26,11 +26,11 @@ export function TelegramMessage({ message, isVisible }: TelegramMessageProps) {
       </p>
       <p className="mt-1">{message.text}</p>
       {message.actions && (
-        <p className="mt-3 grid grid-cols-2 gap-2">
+        <p className="mt-3 flex flex-wrap gap-2">
           {message.actions.map((action) => (
             <span
               key={action}
-              className="rounded-card border border-border py-1.5 text-center text-xs text-text"
+              className="min-w-32 flex-1 rounded-card border border-border px-3 py-1.5 text-center text-xs text-text"
             >
               {action}
             </span>
