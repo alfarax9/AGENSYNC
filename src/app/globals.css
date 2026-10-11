@@ -139,6 +139,39 @@ html {
   outline-offset: 3px;
 }
 
+/* Scroll-driven word reveal for reading text (RevealWords). Each .reveal-text
+   element owns a view timeline, and each word lights up over its own slice of
+   it: from when the block's top is at 95% of the viewport height to when its
+   bottom reaches 55%, early enough that text near the end of the page still
+   finishes on tall screens. Browsers without scroll-driven
+   animations, and reduced motion, show the text as is. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-text {
+      view-timeline: --reveal-text block;
+    }
+
+    .reveal-word {
+      animation: reveal-word linear both;
+      animation-timeline: --reveal-text;
+      /* Offsets from the start of the entry range (block top at the viewport
+         bottom), where 100% is the block's own height: 5vh is "top at 95%",
+         100% + 45vh is "bottom at 55%". Entry is measured before position:
+         sticky engages, so a sticky heading (Pillars) reveals on time; a
+         cover range would stretch over the whole time it stays stuck. */
+      animation-range: entry calc(5vh + (100% + 40vh) * var(--reveal-from)) entry
+        calc(5vh + (100% + 40vh) * var(--reveal-to));
+    }
+  }
+}
+
+@keyframes reveal-word {
+  from {
+    opacity: 0.15;
+    transform: translateY(0.25em);
+  }
+}
+
 @utility bg-grid {
   background-image:
     linear-gradient(var(--color-border) 1px, transparent 1px),
