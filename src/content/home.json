@@ -2,8 +2,8 @@
   "hero": {
     "headline": "An AI software agency where every worker has its own brain.",
     "subheadline": "66 AI workers in 12 divisions, each with its own model and plugins. One command starts them on your own machine.",
-    "primaryCta": "View on GitHub",
-    "secondaryCta": "See how it works",
+    "primaryCta": "Try it in one command",
+    "secondaryCta": "View on GitHub",
     "badge": "Open source, still experimental"
   },
   "stats": {
