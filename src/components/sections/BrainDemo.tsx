@@ -1,5 +1,6 @@
 "use client";
 
+import { RevealWords } from "@/components/motion/RevealWords";
 import { useState } from "react";
 import { Card } from "@/components/ui/Card";
 import home from "@/content/home.json";
@@ -26,7 +27,9 @@ export function BrainDemo() {
 
   return (
     <Card tone="alt" className="flex flex-col gap-6 p-5 md:p-6">
-      <h3 className="text-xl font-semibold text-text">{labels.heading}</h3>
+      <h3 className="reveal-text text-xl font-semibold text-text">
+        <RevealWords text={labels.heading} />
+      </h3>
       <div className="grid gap-4 sm:grid-cols-2">
         <DemoSelect
           id="demo-worker"

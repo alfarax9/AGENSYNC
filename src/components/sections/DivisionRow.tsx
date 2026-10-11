@@ -1,3 +1,4 @@
+import { RevealWords } from "@/components/motion/RevealWords";
 import Link from "next/link";
 import home from "@/content/home.json";
 import { type Division, divisionColor, divisionWaves } from "@/lib/divisions";
@@ -18,11 +19,15 @@ export function DivisionRow({ division }: { division: Division }) {
       <div className="md:col-span-3">
         <h3 id={headingId} className="flex items-center gap-3 text-2xl font-medium text-text">
           <span aria-hidden className="size-2 rounded-full bg-(--division-color)" />
-          {division.name}
+          <span className="reveal-text">
+            <RevealWords text={division.name} />
+          </span>
         </h3>
         <p className="mt-1 font-mono text-xs text-text-tertiary uppercase">{division.function}</p>
       </div>
-      <p className="max-w-md text-sm md:col-span-5">{division.summary}</p>
+      <p className="reveal-text max-w-md text-sm md:col-span-5">
+        <RevealWords text={division.summary} />
+      </p>
       <div className="flex items-baseline justify-between gap-4 text-sm md:col-span-4 md:justify-end md:gap-8">
         <span className="font-mono text-xs text-text-tertiary">
           {content.waveLabel} {divisionWaves(division).join(" · ")}

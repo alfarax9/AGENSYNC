@@ -1,3 +1,4 @@
+import { RevealWords } from "@/components/motion/RevealWords";
 import { Card } from "@/components/ui/Card";
 import home from "@/content/home.json";
 
@@ -16,7 +17,9 @@ export function BrainManifest({ slots }: BrainManifestProps) {
         {slots.map((slot) => (
           <div key={slot.id} className="grid gap-1 px-5 py-4 sm:grid-cols-3 sm:gap-4">
             <dt className="font-mono text-sm text-text-tertiary">{slot.id}:</dt>
-            <dd className="sm:col-span-2">{slot.body}</dd>
+            <dd className="reveal-text sm:col-span-2">
+              <RevealWords text={slot.body} />
+            </dd>
           </div>
         ))}
       </dl>
