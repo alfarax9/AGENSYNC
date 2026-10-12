@@ -90,10 +90,20 @@
     }
   }
 
-  --radius-card: 8px;
-  --container-site: 75.5rem;
+  /* Panels (cards, mockups, FAQ items) are 24px; controls, chips and inner
+     surfaces 12px; buttons sit between at 16px (rounded-2xl). */
+  --radius-panel: 24px;
+  --radius-card: 12px;
+  --container-site: 75rem;
   --spacing-navbar: var(--navbar-height);
-  --shadow-glow: 0 0 24px color-mix(in srgb, var(--color-accent-glow) 45%, transparent);
+  /* Blue below, amber further out: the halo the duo-bordered controls carry. */
+  --shadow-duo:
+    0 0 14px -2px color-mix(in srgb, var(--color-accent-glow) 60%, transparent),
+    0 8px 26px -10px color-mix(in srgb, var(--color-amber) 55%, transparent);
+  --shadow-duo-strong:
+    0 0 22px 0 color-mix(in srgb, var(--color-accent-glow) 70%, transparent),
+    0 10px 34px -8px color-mix(in srgb, var(--color-amber) 65%, transparent);
+  --shadow-glass: inset -3px -2px 8px 0 rgb(255 255 255 / 0.07);
 }
 
 /* Division colors live in :root, not @theme: they are only read through var()
