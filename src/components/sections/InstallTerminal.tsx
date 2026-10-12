@@ -14,8 +14,8 @@ export function InstallTerminal() {
   const panelId = "install-commands";
 
   return (
-    <Card tone="alt" className="overflow-hidden">
-      <div className="flex items-center justify-between gap-4 border-b border-border px-4">
+    <Card className="overflow-hidden">
+      <div className="flex items-center justify-between gap-4 border-b border-border px-3 py-3 sm:px-4">
         <InstallTabs
           methods={methods}
           selectedId={methodId}
@@ -29,7 +29,7 @@ export function InstallTerminal() {
         role="tabpanel"
         aria-labelledby={`tab-${methodId}`}
         tabIndex={0}
-        className="overflow-x-auto p-5 font-mono text-sm leading-7 text-text"
+        className="overflow-x-auto px-6 py-6 font-mono text-sm leading-7 text-text"
       >
         {method.commands.map((command) => (
           <code key={command} className="block before:text-text-tertiary before:content-['$_']">
