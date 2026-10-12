@@ -201,6 +201,22 @@ html {
   color: transparent;
 }
 
+/* Amber and blue clouds on black. --nebula-x / --nebula-y move the pair so
+   neighbouring panels do not glow identically. */
+@utility bg-nebula {
+  background-image:
+    radial-gradient(
+      55% 60% at calc(var(--nebula-x, 30%)) calc(var(--nebula-y, 65%)),
+      color-mix(in oklab, var(--color-amber) 60%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      50% 55% at calc(100% - var(--nebula-x, 30%)) calc(100% - var(--nebula-y, 65%)),
+      color-mix(in oklab, var(--color-accent-glow) 65%, transparent),
+      transparent 72%
+    );
+}
+
 @utility bg-grid {
   background-image:
     linear-gradient(var(--color-border) 1px, transparent 1px),
