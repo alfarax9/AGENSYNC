@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import type { Tracking } from "@/lib/analytics";
 
 type BaseProps = {
-  variant?: "primary" | "secondary" | "inverse" | "outline" | "link";
+  variant?: "primary" | "secondary" | "link";
   tracking?: Tracking;
   className?: string;
   children?: ReactNode;
@@ -19,16 +19,14 @@ type RegularButtonProps = BaseProps & {
 export type ButtonProps = LinkButtonProps | RegularButtonProps;
 
 const variantClasses = {
-  primary: "rounded-full border-accent bg-accent text-text",
-  secondary: "rounded-full border-border bg-overlay text-text",
-  inverse: "rounded-xl border-text bg-text text-bg",
-  outline:
-    "rounded-card border-border bg-overlay/50 text-text hover:bg-overlay hover:border-accent-glow",
-  link: "rounded-sm border-transparent! px-0! before:hidden text-text underline underline-offset-4 decoration-text-tertiary hover:decoration-text hover:border-transparent!",
+  primary: "border-duo shadow-duo hover:shadow-duo-strong",
+  secondary: "border border-border-strong bg-surface hover:border-text-tertiary",
+  link: "px-0! py-0! underline decoration-text-tertiary underline-offset-4 hover:decoration-text",
 };
 
-// Hover is a glow and a brighter border, never a lighter background:
-// white text on --accent-glow fails WCAG AA.
+// After the Cosmoq reference: the primary action is page black inside a
+// blue-to-amber hairline, with a halo that grows on hover. Hover never lightens
+// the fill, so the white label keeps its contrast.
 export function Button({
   href,
   variant = "primary",
@@ -37,7 +35,7 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const baseClassName = `relative inline-flex items-center justify-center gap-2 border px-5 py-2.5 text-sm font-semibold transition-transform before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:opacity-0 before:shadow-glow before:transition-opacity hover:border-accent-glow hover:before:opacity-100 active:scale-98 ${variantClasses[variant]} ${className}`;
+  const baseClassName = `inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3 text-sm font-semibold text-text transition-[box-shadow,border-color,scale] duration-300 active:scale-98 ${variantClasses[variant]} ${className}`;
 
   if (href !== undefined) {
     return (
