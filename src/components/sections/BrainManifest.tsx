@@ -9,7 +9,7 @@ type BrainManifestProps = {
 // Shown as a manifest file because that is literally how a worker's brain is defined.
 export function BrainManifest({ slots }: BrainManifestProps) {
   return (
-    <Card tone="alt" className="overflow-hidden">
+    <Card tone="alt" className="overflow-clip">
       <p className="border-b border-border px-5 py-3 font-mono text-xs text-text-tertiary">
         {home.brains.manifestFile}
       </p>

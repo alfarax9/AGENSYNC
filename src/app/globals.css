@@ -141,10 +141,15 @@ html {
 
 /* Scroll-driven word reveal for reading text (RevealWords). Each .reveal-text
    element owns a view timeline, and each word lights up over its own slice of
-   it: from when the block's top is at 95% of the viewport height to when its
-   bottom reaches 55%, early enough that text near the end of the page still
-   finishes on tall screens. Browsers without scroll-driven
-   animations, and reduced motion, show the text as is. */
+   it: from when the block's top enters at the bottom of the viewport to when
+   its bottom reaches 85% of the viewport height. That is just above the
+   GradualBlur band, so everything that is comfortably on screen is fully lit.
+   Browsers without scroll-driven animations, and reduced motion, show the text
+   as is.
+
+   An ancestor with overflow other than visible or clip becomes the timeline's
+   scroller, and since it never scrolls the words would freeze part-way. Put
+   overflow-clip, not overflow-hidden, on anything that contains .reveal-text. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .reveal-text {
@@ -155,12 +160,12 @@ html {
       animation: reveal-word linear both;
       animation-timeline: --reveal-text;
       /* Offsets from the start of the entry range (block top at the viewport
-         bottom), where 100% is the block's own height: 5vh is "top at 95%",
-         100% + 45vh is "bottom at 55%". Entry is measured before position:
-         sticky engages, so a sticky heading (Pillars) reveals on time; a
-         cover range would stretch over the whole time it stays stuck. */
-      animation-range: entry calc(5vh + (100% + 40vh) * var(--reveal-from)) entry
-        calc(5vh + (100% + 40vh) * var(--reveal-to));
+         bottom), where 100% is the block's own height: 100% + 15vh is "bottom
+         at 85%". Entry is measured before position: sticky engages, so a
+         sticky heading (Pillars) reveals on time; a cover range would stretch
+         over the whole time it stays stuck. */
+      animation-range: entry calc((100% + 15vh) * var(--reveal-from)) entry
+        calc((100% + 15vh) * var(--reveal-to));
     }
   }
 }
