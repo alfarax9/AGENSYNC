@@ -3,20 +3,27 @@
 @theme {
   /* Only AMORA tokens exist, so components cannot reach for raw palette colors. */
   --color-*: initial;
-  --color-bg: #080b11;
-  --color-bg-alt: #0a0d14;
+  /* Black page, two raised surfaces, and a white-glass overlay, after the
+     Cosmoq reference. Contrast checked against all three (AA or better). */
+  --color-bg: #000000;
+  --color-bg-alt: #06070a;
+  --color-surface: #0c0f16;
   --color-depth-from: #0d1527;
   --color-depth-to: #101b35;
+  /* Blue is still the action colour; amber is its warm partner in the duo
+     gradient, glows and nebulae, never a second action colour on its own. */
   --color-accent: #2563eb;
   --color-accent-glow: #3b82f6;
+  --color-amber: #ffcd7d;
   --color-highlight-from: #38bdf8;
   --color-highlight-to: #60a5fa;
   --color-wave-mid: #6f6f6f;
   --color-text: #ffffff;
-  --color-text-secondary: #d1d5db;
-  --color-text-tertiary: #9ca3af;
-  --color-overlay: rgb(255 255 255 / 0.05);
+  --color-text-secondary: #9ba9c4;
+  --color-text-tertiary: #7c8597;
+  --color-overlay: rgb(255 255 255 / 0.07);
   --color-border: rgb(255 255 255 / 0.08);
+  --color-border-strong: rgb(255 255 255 / 0.16);
   --color-danger: #ff6b6b;
 
   /* SF Pro cannot be self-hosted (Apple's license covers Apple platforms only),
