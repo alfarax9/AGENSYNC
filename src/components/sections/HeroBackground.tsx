@@ -2,7 +2,7 @@
 
 import { useInView, useReducedMotion } from "motion/react";
 import dynamic from "next/dynamic";
-import { type ComponentProps, useRef } from "react";
+import { type ComponentProps, type CSSProperties, useRef } from "react";
 import { FadeInWhenReady } from "@/components/motion/FadeInWhenReady";
 import { useWaveColors } from "@/lib/useWaveColors";
 
@@ -22,8 +22,10 @@ const waveSettings: ComponentProps<typeof FloatingLines> = {
   mixBlendMode: "normal",
 };
 
-// The static depth gradient is always there: before three.js loads, without
-// WebGL, and under reduced motion. The waves fade in over it once their canvas
+const nebulaStyle = { "--nebula-x": "30%", "--nebula-y": "85%" } as CSSProperties;
+
+// The static nebula is always there: before three.js loads, without WebGL, and
+// under reduced motion. The waves fade in over it once their canvas
 // has drawn, and are unmounted while the hero is off screen, because the vendor
 // code renders every frame regardless. The bottom fade hands the hero over to
 // the page background without a hard edge.
@@ -35,12 +37,12 @@ export function HeroBackground() {
   const shouldRenderWaves = colors && isInView && shouldReduceMotion === false;
 
   return (
-    <div
-      ref={ref}
-      aria-hidden
-      className="absolute inset-0 -z-10 bg-radial from-depth-to via-depth-from to-bg"
-    >
-      <div className="absolute inset-0 bg-grid opacity-40" />
+    <div ref={ref} aria-hidden className="absolute inset-0 -z-10 bg-bg">
+      <div
+        style={nebulaStyle}
+        className="absolute inset-x-0 bottom-0 h-3/4 bg-nebula opacity-30 blur-3xl"
+      />
+      <div className="absolute inset-0 bg-grid mask-radial-from-20% mask-radial-to-70% opacity-25" />
       {shouldRenderWaves && (
         <FadeInWhenReady>
           <FloatingLines linesGradient={colors} {...waveSettings} />
