@@ -18,8 +18,8 @@ export function Divisions() {
         heading={content.heading}
         intro={content.intro}
       />
-      <p className="mt-4 font-mono text-xs text-text-tertiary">{content.waveLegend}</p>
-      <ul className="mt-12 divide-y divide-border border-y border-border">
+      <p className="mt-6 font-mono text-xs text-text-tertiary">{content.waveLegend}</p>
+      <ul className="mt-10 divide-y divide-border overflow-clip rounded-panel border border-border bg-bg-alt">
         {divisions.map((division, index) => (
           <Reveal key={division.id} index={index % 3}>
             <DivisionRow division={division} />
