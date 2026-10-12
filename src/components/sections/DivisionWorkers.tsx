@@ -2,6 +2,7 @@
 
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
+import { Collapse } from "@/components/ui/Collapse";
 
 type DivisionWorkersProps = {
   listId: string;
@@ -27,20 +28,20 @@ export function DivisionWorkers({
         aria-controls={listId}
         aria-describedby={describedBy}
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 font-mono text-xs text-text-secondary hover:text-text"
+        className="flex items-center gap-2 rounded-full border border-border-strong px-3 py-1 font-mono text-xs text-text-secondary transition-colors hover:border-text-tertiary hover:text-text"
       >
         <Icon aria-hidden className="size-3.5" />
         {toggleLabel}
       </button>
-      <ul
-        id={listId}
-        hidden={!isOpen}
-        className="mt-4 gap-x-8 gap-y-1.5 text-sm sm:columns-2 lg:columns-3"
-      >
-        {workerNames.map((name) => (
-          <li key={name}>{name}</li>
-        ))}
-      </ul>
+      <Collapse id={listId} isOpen={isOpen}>
+        <ul className="flex flex-wrap gap-2 pt-4 text-sm">
+          {workerNames.map((name) => (
+            <li key={name} className="rounded-card border border-border-strong px-3 py-1.5">
+              {name}
+            </li>
+          ))}
+        </ul>
+      </Collapse>
     </div>
   );
 }
