@@ -19,7 +19,11 @@ export function InstallTabs({ methods, selectedId, panelId, onSelect }: InstallT
   }
 
   return (
-    <div role="tablist" onKeyDown={handleKeyDown} className="flex gap-5">
+    <div
+      role="tablist"
+      onKeyDown={handleKeyDown}
+      className="flex gap-1 rounded-full border border-border-strong bg-bg p-1"
+    >
       {methods.map((method) => {
         const isSelected = method.id === selectedId;
         return (
@@ -32,7 +36,7 @@ export function InstallTabs({ methods, selectedId, panelId, onSelect }: InstallT
             aria-controls={panelId}
             tabIndex={isSelected ? 0 : -1}
             onClick={() => onSelect(method.id)}
-            className={`border-b-2 py-3 text-sm ${isSelected ? "border-accent-glow text-text" : "border-transparent text-text-tertiary"}`}
+            className={`rounded-full border px-4 py-1.5 text-sm transition-colors ${isSelected ? "border-border-strong bg-surface text-text shadow-glass" : "border-transparent text-text-secondary hover:text-text"}`}
           >
             {method.label}
           </button>
