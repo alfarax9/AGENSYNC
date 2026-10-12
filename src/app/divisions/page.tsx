@@ -28,12 +28,12 @@ export default function DivisionsPage() {
   return (
     <main id="main" className="pt-navbar">
       <Container className="py-12 md:py-20">
-        <h1 className="text-h2 text-text">{content.title}</h1>
+        <h1 className="text-display text-text">{content.title}</h1>
         <p className="mt-4 max-w-2xl text-lg">{content.intro}</p>
         <RequirementLegend />
       </Container>
-      {divisions.map((division, index) => (
-        <DivisionRoster key={division.id} division={division} tone={index % 2 ? "base" : "alt"} />
+      {divisions.map((division) => (
+        <DivisionRoster key={division.id} division={division} />
       ))}
     </main>
   );

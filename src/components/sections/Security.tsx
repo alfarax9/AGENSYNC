@@ -7,7 +7,7 @@ export function Security() {
   const { security } = home;
 
   return (
-    <Section labelledBy="security-heading" tone="alt">
+    <Section labelledBy="security-heading">
       <SectionHeader headingId="security-heading" heading={security.heading} />
       <dl className="mt-10 divide-y divide-border border-y border-border">
         {security.items.map((item) => (

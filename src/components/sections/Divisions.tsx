@@ -9,7 +9,7 @@ export function Divisions() {
   const content = home.divisions;
 
   return (
-    <Section id={content.id} labelledBy="divisions-heading" tone="alt">
+    <Section id={content.id} labelledBy="divisions-heading">
       <SectionHeader
         headingId="divisions-heading"
         heading={content.heading}

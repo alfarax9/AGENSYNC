@@ -8,7 +8,7 @@ export function Dashboard() {
   const { dashboard } = home;
 
   return (
-    <Section id={dashboard.id} labelledBy="dashboard-heading" tone="alt">
+    <Section id={dashboard.id} labelledBy="dashboard-heading">
       <SectionHeader
         headingId="dashboard-heading"
         heading={dashboard.heading}

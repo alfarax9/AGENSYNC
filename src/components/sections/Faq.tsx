@@ -7,7 +7,7 @@ import faq from "@/content/faq.json";
 // widget, and visitors skim them side by side.
 export function Faq() {
   return (
-    <Section id={faq.id} labelledBy="faq-heading" tone="alt">
+    <Section id={faq.id} labelledBy="faq-heading">
       <SectionHeader headingId="faq-heading" heading={faq.heading} />
       <dl className="mt-12 gap-x-16 md:columns-2">
         {faq.items.map((item) => (

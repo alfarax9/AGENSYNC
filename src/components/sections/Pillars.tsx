@@ -10,7 +10,7 @@ export function Pillars() {
   const { pillars } = home;
 
   return (
-    <Section labelledBy="pillars-heading" tone="alt">
+    <Section labelledBy="pillars-heading">
       <div className="grid gap-12 lg:grid-cols-12">
         <h2
           id="pillars-heading"
