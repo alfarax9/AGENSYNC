@@ -191,6 +191,11 @@ html {
     var(--gradient-duo) border-box;
 }
 
+/* The small glowing dot that marks a division or a file. */
+@utility dot-glow {
+  box-shadow: 0 0 10px currentColor;
+}
+
 @utility bg-duo {
   background-image: var(--gradient-duo);
 }
