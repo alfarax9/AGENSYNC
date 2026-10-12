@@ -124,6 +124,7 @@
   --color-division-lyceum: oklch(0.78 0.1 325);
   --color-division-atelier: oklch(0.78 0.1 355);
   --navbar-height: 4.5rem;
+  --gradient-duo: linear-gradient(277deg, var(--color-accent-glow) 0%, var(--color-amber) 100%);
 }
 
 @media (width >= 48rem) {
@@ -179,6 +180,15 @@ html {
     opacity: 0.15;
     transform: translateY(0.25em);
   }
+}
+
+/* A 1px border painted with the duo gradient: the fill goes on the padding box,
+   the gradient on the border box. --duo-fill picks the fill (page black by default). */
+@utility border-duo {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--duo-fill, var(--color-bg)), var(--duo-fill, var(--color-bg))) padding-box,
+    var(--gradient-duo) border-box;
 }
 
 @utility bg-grid {
