@@ -17,7 +17,7 @@ export function Brains() {
         heading={brains.heading}
         intro={brains.intro}
       />
-      <div className="mt-12 grid gap-8 lg:grid-cols-2">
+      <div className="mt-12 grid gap-6 md:mt-16 lg:grid-cols-2">
         <BrainManifest slots={brains.anatomy} />
         <BrainDemo />
       </div>
