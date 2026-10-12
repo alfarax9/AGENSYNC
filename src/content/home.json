@@ -379,7 +379,7 @@
   "install": {
     "id": "install",
     "eyebrow": "Install",
-    "heading": "Install",
+    "heading": "One command to a running agency",
     "intro": "One command starts the runtime and opens the dashboard in your browser, where a short setup gets you to your first task. You'll need Node.js and a key for at least one model gateway. Docker is optional and only sandboxes the code workers run.",
     "notice": "[PLACEHOLDER] The package isn't published yet. These commands follow the spec until the first release.",
     "copy": "Copy",
