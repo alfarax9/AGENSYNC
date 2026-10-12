@@ -13,6 +13,7 @@
   "pillars": {
     "eyebrow": "Why AMORA",
     "heading": "What makes it more than a prompt library",
+    "intro": "Three things a folder of prompts cannot do on its own.",
     "items": [
       {
         "id": "rules",
