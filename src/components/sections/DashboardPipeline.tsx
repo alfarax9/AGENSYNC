@@ -3,7 +3,7 @@ import home from "@/content/home.json";
 const { pipeline } = home.dashboard.mockup;
 
 function stageClasses(index: number) {
-  if (index < pipeline.currentIndex) return { bar: "bg-accent-glow", text: "text-text-secondary" };
+  if (index < pipeline.currentIndex) return { bar: "bg-duo", text: "text-text-secondary" };
   if (index === pipeline.currentIndex) {
     return { bar: "bg-highlight-to", text: "font-semibold text-text" };
   }
@@ -12,7 +12,7 @@ function stageClasses(index: number) {
 
 export function DashboardPipeline() {
   return (
-    <div className="rounded-card border border-border bg-bg-alt p-4">
+    <div className="rounded-card border border-border bg-surface p-4">
       <p className="flex justify-between gap-3 text-xs">
         <span className="text-text">{pipeline.task}</span>
         <span className="font-mono text-text-tertiary">{pipeline.attempt}</span>
