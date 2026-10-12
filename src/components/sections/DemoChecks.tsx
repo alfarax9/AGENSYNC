@@ -29,7 +29,7 @@ export function DemoChecks({ checks, isAccepted, selectionKey }: DemoChecksProps
       >
         {isAccepted ? labels.accepted : labels.rejected}
       </p>
-      <ul className="divide-y divide-border border-y border-border">
+      <ul className="divide-y divide-border rounded-card border border-border bg-bg/60 px-4">
         {checks.map((check, index) => {
           const display = statusDisplay[check.status];
           return (
