@@ -50,26 +50,12 @@
   --text-h4--letter-spacing: -0.015em;
   --text-h4--font-weight: 500;
 
-  /* Hero words come down into place, in CSS rather than motion: the headline is
-     the LCP element, so it has to animate before JavaScript loads. */
-  --animate-rise-in: rise-in 0.7s linear both;
   /* The How it works diagram loops these inside an SVG, where CSS keeps them
      off the main thread and motion-reduce can switch them off without JavaScript. */
   --animate-dash: dash 1.2s linear infinite;
   --animate-blink: blink 1s steps(1) infinite;
   --animate-step-fill: step-fill 3.2s linear both;
   --animate-sheet-in: sheet-in 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-
-  @keyframes rise-in {
-    from {
-      opacity: 0;
-      transform: translateY(-0.8em);
-    }
-    50% {
-      opacity: 0.5;
-      transform: translateY(0.08em);
-    }
-  }
 
   @keyframes dash {
     to {
