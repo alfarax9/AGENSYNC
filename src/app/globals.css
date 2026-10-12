@@ -191,6 +191,16 @@ html {
     var(--gradient-duo) border-box;
 }
 
+@utility bg-duo {
+  background-image: var(--gradient-duo);
+}
+
+@utility text-duo {
+  background-image: var(--gradient-duo);
+  background-clip: text;
+  color: transparent;
+}
+
 @utility bg-grid {
   background-image:
     linear-gradient(var(--color-border) 1px, transparent 1px),
