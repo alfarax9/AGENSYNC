@@ -11,6 +11,7 @@
     "statement": "AMORA runs *66* workers across *12* divisions. Models plug in *4* ways, and no task gets more than *3* tries before it comes back to you."
   },
   "pillars": {
+    "eyebrow": "Why AMORA",
     "heading": "What makes it more than a prompt library",
     "items": [
       {
@@ -73,6 +74,7 @@
   },
   "howItWorks": {
     "id": "how-it-works",
+    "eyebrow": "How it works",
     "heading": "What happens",
     "headingMuted": "after you write a brief",
     "steps": [
@@ -163,6 +165,7 @@
   },
   "dashboard": {
     "id": "dashboard",
+    "eyebrow": "Dashboard",
     "heading": "Decisions first, then everything else",
     "intro": "Running amora opens a dashboard on your own machine. What's waiting on you sits at the top, followed by what's running and what it's costing.",
     "features": [
@@ -286,6 +289,7 @@
   },
   "divisions": {
     "id": "divisions",
+    "eyebrow": "Divisions",
     "heading": "Meet the 12 divisions",
     "intro": "Each division is named after a room in the agency's headquarters. Open a row to see who works there.",
     "waveLegend": "Workers ship in three waves: 29 in the first, 20 in the second, and the last 17 in the third.",
@@ -295,6 +299,7 @@
   },
   "brains": {
     "id": "brains",
+    "eyebrow": "Workers",
     "heading": "What's inside a worker",
     "intro": "Each worker is a manifest file. Point its model slot at whatever you like. AMORA probes the model and refuses the change when it can't do the job.",
     "anatomy": [
@@ -335,6 +340,7 @@
   },
   "telegram": {
     "id": "telegram",
+    "eyebrow": "Telegram",
     "heading": "Approvals follow you to Telegram",
     "intro": "It's optional. Paste a bot token into the dashboard's settings, and each division gets its own topic in your group. You hear about a task when it changes state, and you get a button when it needs you. The diffs, handoffs, and keys stay in the dashboard.",
     "groupName": "AMORA HQ",
@@ -371,6 +377,7 @@
   },
   "install": {
     "id": "install",
+    "eyebrow": "Install",
     "heading": "Install",
     "intro": "One command starts the runtime and opens the dashboard in your browser, where a short setup gets you to your first task. You'll need Node.js and a key for at least one model gateway. Docker is optional and only sandboxes the code workers run.",
     "notice": "[PLACEHOLDER] The package isn't published yet. These commands follow the spec until the first release.",
@@ -437,6 +444,7 @@
     ]
   },
   "security": {
+    "eyebrow": "Security",
     "heading": "Your keys stay on your machine",
     "items": [
       {
@@ -467,6 +475,7 @@
     ]
   },
   "finalCta": {
+    "eyebrow": "Get started",
     "heading": "Try it on a small project first",
     "body": "AMORA is open source and still experimental. Bring your own model keys and set a budget before the first task.",
     "github": "View on GitHub",
