@@ -6,19 +6,22 @@ import { DivisionWorkers } from "./DivisionWorkers";
 
 const content = home.divisions;
 
-// A directory entry rather than a card: the division's color is only a mark
-// beside its name, and the row lights up under the pointer.
+// A directory entry inside one shared panel: the division's color is only a
+// glowing mark beside its name, and the row lights up under the pointer.
 export function DivisionRow({ division }: { division: Division }) {
   const headingId = `${division.id}-row-heading`;
 
   return (
     <article
       style={divisionColor(division.id)}
-      className="grid gap-x-8 gap-y-2 px-2 py-5 transition-colors hover:bg-overlay md:grid-cols-12 md:px-4"
+      className="grid gap-x-8 gap-y-3 px-5 py-6 transition-colors hover:bg-overlay md:grid-cols-12 md:px-8"
     >
       <div className="md:col-span-3">
-        <h3 id={headingId} className="flex items-center gap-3 text-2xl font-medium text-text">
-          <span aria-hidden className="size-2 rounded-full bg-(--division-color)" />
+        <h3 id={headingId} className="flex items-center gap-3 text-h4 text-text">
+          <span
+            aria-hidden
+            className="size-2 rounded-full bg-current text-(--division-color) dot-glow"
+          />
           <span className="reveal-text">
             <RevealWords text={division.name} />
           </span>
@@ -32,7 +35,7 @@ export function DivisionRow({ division }: { division: Division }) {
         <span className="font-mono text-xs text-text-tertiary">
           {content.waveLabel} {divisionWaves(division).join(" · ")}
         </span>
-        <Link href={`/divisions#${division.id}`} className="text-text underline">
+        <Link href={`/divisions#${division.id}`} className="text-text underline underline-offset-4">
           {content.rosterLink}
           <span className="sr-only">: {division.name}</span>
         </Link>
