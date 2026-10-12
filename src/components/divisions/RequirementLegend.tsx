@@ -6,8 +6,11 @@ const codes = Object.keys(requirements) as Code[];
 
 export function RequirementLegend() {
   return (
-    <section aria-labelledby="legend-heading" className="mt-12">
-      <h2 id="legend-heading" className="font-mono text-xs text-text-tertiary uppercase">
+    <section
+      aria-labelledby="legend-heading"
+      className="mt-12 rounded-panel border border-border bg-bg-alt p-6 md:p-8"
+    >
+      <h2 id="legend-heading" className="text-sm tracking-wider text-text-secondary uppercase">
         {pages.divisions.legendHeading}
       </h2>
       <dl className="mt-4 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
