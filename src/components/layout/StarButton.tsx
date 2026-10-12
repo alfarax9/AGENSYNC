@@ -12,13 +12,13 @@ export async function StarButton() {
   return (
     <Button
       href={site.links.github}
-      variant="inverse"
+      className="py-2.5"
       tracking={{ event: analyticsEvents.githubClick, location: "navbar" }}
     >
       <Star aria-hidden className="size-4" />
       {site.nav.star}
       {starCount !== null && (
-        <span className="font-mono text-bg/70">
+        <span className="font-mono text-text-secondary">
           <span className="sr-only">{site.nav.starCountLabel}: </span>
           {compactNumber.format(starCount)}
         </span>
