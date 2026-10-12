@@ -34,12 +34,15 @@ export function FlowStepTab({ step, index, status, onSelect, onAdvance }: FlowSt
           key={isActive ? status.run : "idle"}
           style={isActive ? playState : undefined}
           onAnimationEnd={isActive ? onAdvance : undefined}
-          className={`absolute inset-0 origin-left bg-accent-glow ${barClasses(index, status.activeIndex)}`}
+          className={`absolute inset-0 origin-left bg-duo ${barClasses(index, status.activeIndex)}`}
         />
       </span>
       <span
-        className={`mt-4 block font-semibold transition-colors duration-300 ${isActive ? "text-text" : "text-text-secondary group-hover/step:text-text"}`}
+        className={`mt-4 flex gap-3 text-lg transition-colors duration-300 ${isActive ? "text-text" : "text-text-secondary group-hover/step:text-text"}`}
       >
+        <span aria-hidden className={`font-mono ${isActive ? "text-duo" : "text-text-tertiary"}`}>
+          {String(index + 1).padStart(2, "0")}.
+        </span>
         {step.title}
       </span>
       <span className="mt-2 block text-sm leading-relaxed">{step.body}</span>
