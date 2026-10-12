@@ -16,7 +16,7 @@ const trackedLinks: Partial<Record<LinkKey, string>> = {
 export function FooterColumn({ title, links }: FooterColumnProps) {
   return (
     <div>
-      <h2 className="text-sm font-semibold text-text">{title}</h2>
+      <h2 className="text-sm text-text">{title}</h2>
       <ul className="mt-4 flex flex-col gap-3">
         {links.map((item) => (
           <li key={item.label}>
@@ -24,7 +24,7 @@ export function FooterColumn({ title, links }: FooterColumnProps) {
               href={site.links[item.link as LinkKey]}
               data-track-event={trackedLinks[item.link as LinkKey]}
               data-track-location="footer"
-              className="hover:text-text"
+              className="transition-colors hover:text-text"
             >
               {item.label}
             </a>
