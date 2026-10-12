@@ -13,7 +13,7 @@ export function CtaTerminalTitle({ progress }: { progress: MotionValue<number> }
       {home.finalCta.terminalTitle}
       <m.span
         style={{ scaleX: bootScale }}
-        className="absolute inset-x-0 -bottom-px h-px origin-left bg-accent-glow motion-reduce:transform-none!"
+        className="absolute inset-x-0 -bottom-px h-px origin-left bg-duo motion-reduce:transform-none!"
       />
     </p>
   );
