@@ -24,7 +24,11 @@ export function CopyButton({ text, methodId }: CopyButtonProps) {
   const Icon = hasCopied ? Check : Copy;
 
   return (
-    <button type="button" onClick={copy} className="flex items-center gap-2 py-3 text-sm text-text">
+    <button
+      type="button"
+      onClick={copy}
+      className="flex items-center gap-2 rounded-full border border-border-strong px-3 py-1.5 text-sm text-text transition-colors hover:border-text-tertiary"
+    >
       <Icon aria-hidden className="size-4" />
       <span aria-live="polite">{hasCopied ? home.install.copied : home.install.copy}</span>
     </button>
