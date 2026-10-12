@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { whenIdle } from "./whenIdle";
 
-const gradientTokens = ["--color-highlight-to", "--color-wave-mid", "--color-accent-glow"];
+const gradientTokens = ["--color-amber", "--color-wave-mid", "--color-accent-glow"];
 
 function supportsWebGL() {
   try {
