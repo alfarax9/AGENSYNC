@@ -3,6 +3,8 @@
 import { useScroll, useSpring, useTransform } from "motion/react";
 import * as m from "motion/react-m";
 import { useRef } from "react";
+import { Badge } from "@/components/ui/Badge";
+import home from "@/content/home.json";
 import { CtaActions } from "./CtaActions";
 import { CtaHeadline } from "./CtaHeadline";
 import { CtaTerminal } from "./CtaTerminal";
@@ -27,9 +29,17 @@ export function CtaPortal() {
     <div ref={ref} className="perspective-[1400px]">
       <m.div
         style={{ scale, rotateX }}
-        className={`grid origin-bottom items-center gap-12 rounded-3xl border border-border bg-bg-alt px-6 py-16 md:px-12 md:py-24 lg:grid-cols-12 ${pinned}`}
+        className={`relative isolate grid origin-bottom items-center gap-12 overflow-clip rounded-panel border border-border bg-bg-alt px-6 py-16 md:px-12 md:py-24 lg:grid-cols-12 ${pinned}`}
       >
+        <div
+          aria-hidden
+          className="absolute inset-x-0 bottom-0 -z-10 h-3/4 bg-nebula opacity-50 blur-3xl [--nebula-y:95%]"
+        />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-grain opacity-40" />
         <m.div style={{ y: copyY }} className={`lg:col-span-7 ${pinned}`}>
+          <Badge variant="glass" className="mb-8">
+            {home.finalCta.eyebrow}
+          </Badge>
           <CtaHeadline />
           <CtaActions />
         </m.div>
