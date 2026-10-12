@@ -10,7 +10,7 @@ export function Install() {
   const { install } = home;
 
   return (
-    <Section id={install.id} labelledBy="install-heading">
+    <Section id={install.id} labelledBy="install-heading" hasGlow>
       <SectionHeader
         headingId="install-heading"
         eyebrow={install.eyebrow}
@@ -18,25 +18,29 @@ export function Install() {
         heading={install.heading}
         intro={install.intro}
       />
-      <p className="reveal-text mt-4 text-sm text-text-tertiary">
+      <p className="reveal-text mt-6 text-sm text-text-tertiary">
         <RevealWords text={install.notice} />
       </p>
-      <div className="mt-10 max-w-4xl">
-        <InstallTerminal />
-        <InstallSetup />
-        <h3 className="reveal-text mt-12 text-xl font-semibold text-text">
-          <RevealWords text={install.commandsHeading} />
-        </h3>
-        <dl className="mt-4 divide-y divide-border border-y border-border">
-          {install.commands.map((item) => (
-            <div key={item.command} className="grid gap-1 py-4 sm:grid-cols-3 sm:gap-6">
-              <dt className="font-mono text-sm text-text">{item.command}</dt>
-              <dd className="reveal-text sm:col-span-2">
-                <RevealWords text={item.body} />
-              </dd>
-            </div>
-          ))}
-        </dl>
+      <div className="mt-10 grid items-start gap-6 lg:grid-cols-12">
+        <div className="lg:col-span-7">
+          <InstallTerminal />
+          <h3 className="reveal-text mt-12 text-h4 text-text">
+            <RevealWords text={install.commandsHeading} />
+          </h3>
+          <dl className="mt-4 divide-y divide-border border-y border-border">
+            {install.commands.map((item) => (
+              <div key={item.command} className="grid gap-1 py-4 sm:grid-cols-3 sm:gap-6">
+                <dt className="font-mono text-sm text-text">{item.command}</dt>
+                <dd className="reveal-text sm:col-span-2">
+                  <RevealWords text={item.body} />
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        <div className="lg:col-span-5">
+          <InstallSetup />
+        </div>
       </div>
     </Section>
   );
