@@ -5,8 +5,8 @@ const { nav, newTask } = home.dashboard.mockup;
 
 export function DashboardSidebar() {
   return (
-    <div className="hidden w-44 shrink-0 flex-col gap-4 border-r border-border bg-bg-alt p-3 lg:flex">
-      <span className="flex items-center justify-center gap-1.5 rounded-card bg-accent px-3 py-2 text-xs font-semibold text-text">
+    <div className="hidden w-44 shrink-0 flex-col gap-4 border-r border-border bg-bg p-3 lg:flex">
+      <span className="flex items-center justify-center gap-1.5 rounded-card px-3 py-2 text-xs font-semibold text-text shadow-duo border-duo">
         <Plus aria-hidden className="size-3.5" />
         {newTask}
       </span>
