@@ -10,7 +10,7 @@ import { DashboardWorkers } from "./DashboardWorkers";
 // text, and a fake screen read aloud row by row would only get in the way.
 export function DashboardMockup() {
   return (
-    <Card isDecorative className="mt-12 overflow-hidden text-sm">
+    <Card isDecorative className="overflow-hidden text-sm shadow-[0_30px_80px_-30px_rgb(0_0_0)]">
       <DashboardTopBar />
       <div className="flex">
         <DashboardSidebar />
