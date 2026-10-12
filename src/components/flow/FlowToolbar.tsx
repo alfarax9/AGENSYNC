@@ -39,7 +39,7 @@ export function FlowToolbar({
         <button
           type="button"
           onClick={onTogglePause}
-          className="flex items-center gap-1.5 rounded-sm border border-border px-2.5 py-1 font-mono text-xs text-text-secondary transition-colors hover:border-accent-glow hover:text-text"
+          className="flex items-center gap-1.5 rounded-full border border-border-strong bg-surface px-3 py-1 font-mono text-xs text-text-secondary transition-colors hover:border-text-tertiary hover:text-text"
         >
           <Icon aria-hidden className="size-3" />
           {isPaused ? controls.play : controls.pause}
