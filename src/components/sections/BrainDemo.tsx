@@ -26,8 +26,12 @@ export function BrainDemo() {
   const { checks, isAccepted } = evaluateAssignment(selectedWorker, selectedModel);
 
   return (
-    <Card tone="alt" className="flex flex-col gap-6 p-5 md:p-6">
-      <h3 className="reveal-text text-xl font-semibold text-text">
+    <Card className="relative isolate flex flex-col gap-6 overflow-clip p-6 md:p-8">
+      <div
+        aria-hidden
+        className="absolute -top-24 -right-24 -z-10 size-72 bg-nebula opacity-40 blur-3xl"
+      />
+      <h3 className="reveal-text text-h4 text-text">
         <RevealWords text={labels.heading} />
       </h3>
       <div className="grid gap-4 sm:grid-cols-2">
