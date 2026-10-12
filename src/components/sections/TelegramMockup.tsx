@@ -10,7 +10,7 @@ const topics = [telegram.generalTopic, ...divisions.map((division) => division.n
 
 export function TelegramMockup() {
   return (
-    <Card as="figure" tone="alt" className="overflow-hidden lg:col-span-3">
+    <Card as="figure" className="overflow-hidden">
       <figcaption className="flex items-center justify-between border-b border-border px-4 py-3">
         <span className="font-semibold text-text">{telegram.groupName}</span>
         <span className="font-mono text-xs text-text-tertiary">
