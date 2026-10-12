@@ -4,7 +4,8 @@ import site from "@/content/site.json";
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
-// Monogram until the real logo exists. Hex values mirror --color-accent and --color-text.
+// Monogram until the real logo exists: black on the duo gradient. Hex values
+// mirror --color-accent-glow, --color-amber and --color-bg.
 export default function Icon() {
   return new ImageResponse(
     <div
@@ -15,8 +16,8 @@ export default function Icon() {
         alignItems: "center",
         justifyContent: "center",
         borderRadius: 8,
-        background: "#2563eb",
-        color: "#ffffff",
+        backgroundImage: "linear-gradient(277deg, #3b82f6, #ffcd7d)",
+        color: "#000000",
         fontSize: 22,
         fontWeight: 700,
       }}
