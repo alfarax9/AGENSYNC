@@ -9,12 +9,11 @@ export const contentType = "image/png";
 // next/og renders outside the browser, so CSS variables are unavailable;
 // these mirror the tokens in globals.css.
 const colors = {
-  bg: "#080b11",
-  depth: "#101b35",
+  bg: "#000000",
+  amber: "#ffcd7d",
+  blue: "#3b82f6",
   text: "#ffffff",
-  textSecondary: "#d1d5db",
-  lineStart: "#60a5fa",
-  lineEnd: "#3b82f6",
+  textSecondary: "#9ba9c4",
 };
 
 const lines = [
@@ -30,7 +29,8 @@ const frameStyle = {
   flexDirection: "column",
   justifyContent: "center",
   padding: "0 88px",
-  background: `radial-gradient(circle at 70% 40%, ${colors.depth}, ${colors.bg} 70%)`,
+  backgroundColor: colors.bg,
+  backgroundImage: `radial-gradient(ellipse 60% 55% at 22% 100%, ${colors.amber}55, transparent 70%), radial-gradient(ellipse 55% 60% at 85% 85%, ${colors.blue}66, transparent 72%)`,
   position: "relative",
 } as const;
 
@@ -43,7 +43,7 @@ function lineStyle(line: (typeof lines)[number]) {
     height: 3,
     opacity: line.opacity,
     transform: `rotate(${line.rotate}deg)`,
-    background: `linear-gradient(90deg, transparent, ${colors.lineStart}, ${colors.lineEnd}, transparent)`,
+    background: `linear-gradient(90deg, transparent, ${colors.amber}, ${colors.blue}, transparent)`,
   } as const;
 }
 
