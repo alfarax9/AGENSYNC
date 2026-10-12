@@ -31,7 +31,7 @@ export function CtaActions() {
         </Button>
         <Button
           href={site.links.telegram}
-          variant="link"
+          variant="secondary"
           tracking={{ event: analyticsEvents.telegramClick, location: "final-cta" }}
         >
           {finalCta.telegram}
