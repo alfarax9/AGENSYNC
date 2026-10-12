@@ -1,3 +1,4 @@
+import { BrainCircuit } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import home from "@/content/home.json";
@@ -9,7 +10,13 @@ export function Brains() {
 
   return (
     <Section id={brains.id} labelledBy="brains-heading">
-      <SectionHeader headingId="brains-heading" heading={brains.heading} intro={brains.intro} />
+      <SectionHeader
+        headingId="brains-heading"
+        eyebrow={brains.eyebrow}
+        icon={BrainCircuit}
+        heading={brains.heading}
+        intro={brains.intro}
+      />
       <div className="mt-12 grid gap-8 lg:grid-cols-2">
         <BrainManifest slots={brains.anatomy} />
         <BrainDemo />

@@ -1,3 +1,4 @@
+import { Send } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import home from "@/content/home.json";
@@ -12,6 +13,9 @@ export function Telegram() {
         <div className="lg:col-span-2">
           <SectionHeader
             headingId="telegram-heading"
+            eyebrow={telegram.eyebrow}
+            icon={Send}
+            layout="stacked"
             heading={telegram.heading}
             intro={telegram.intro}
           />

@@ -1,3 +1,4 @@
+import { Building2 } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -12,6 +13,8 @@ export function Divisions() {
     <Section id={content.id} labelledBy="divisions-heading">
       <SectionHeader
         headingId="divisions-heading"
+        eyebrow={content.eyebrow}
+        icon={Building2}
         heading={content.heading}
         intro={content.intro}
       />

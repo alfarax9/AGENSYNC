@@ -1,3 +1,4 @@
+import { LayoutDashboard } from "lucide-react";
 import { RevealWords } from "@/components/motion/RevealWords";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -11,6 +12,8 @@ export function Dashboard() {
     <Section id={dashboard.id} labelledBy="dashboard-heading">
       <SectionHeader
         headingId="dashboard-heading"
+        eyebrow={dashboard.eyebrow}
+        icon={LayoutDashboard}
         heading={dashboard.heading}
         intro={dashboard.intro}
       />

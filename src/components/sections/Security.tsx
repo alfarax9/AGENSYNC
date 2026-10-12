@@ -1,3 +1,4 @@
+import { ShieldCheck } from "lucide-react";
 import { RevealWords } from "@/components/motion/RevealWords";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -8,7 +9,12 @@ export function Security() {
 
   return (
     <Section labelledBy="security-heading">
-      <SectionHeader headingId="security-heading" heading={security.heading} />
+      <SectionHeader
+        headingId="security-heading"
+        eyebrow={security.eyebrow}
+        icon={ShieldCheck}
+        heading={security.heading}
+      />
       <dl className="mt-10 divide-y divide-border border-y border-border">
         {security.items.map((item) => (
           <div key={item.id} className="grid gap-2 py-6 sm:grid-cols-3 sm:gap-6">

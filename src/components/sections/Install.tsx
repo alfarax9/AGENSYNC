@@ -1,3 +1,4 @@
+import { SquareTerminal } from "lucide-react";
 import { RevealWords } from "@/components/motion/RevealWords";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -10,7 +11,13 @@ export function Install() {
 
   return (
     <Section id={install.id} labelledBy="install-heading">
-      <SectionHeader headingId="install-heading" heading={install.heading} intro={install.intro} />
+      <SectionHeader
+        headingId="install-heading"
+        eyebrow={install.eyebrow}
+        icon={SquareTerminal}
+        heading={install.heading}
+        intro={install.intro}
+      />
       <p className="reveal-text mt-4 text-sm text-text-tertiary">
         <RevealWords text={install.notice} />
       </p>
