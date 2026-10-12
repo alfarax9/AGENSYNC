@@ -22,7 +22,7 @@ export function Navbar() {
           <div className="hidden items-center gap-4 whitespace-nowrap md:flex lg:gap-8">
             <NavLinks
               className="flex gap-4 lg:gap-8"
-              linkClassName="text-sm text-text-secondary hover:text-text"
+              linkClassName="relative text-sm text-text-secondary transition-colors hover:text-text focus-visible:text-text after:absolute after:inset-x-0 after:-bottom-1.5 after:h-px after:origin-right after:scale-x-0 after:bg-text after:transition-transform after:duration-300 after:ease-out hover:after:origin-left hover:after:scale-x-100 focus-visible:after:origin-left focus-visible:after:scale-x-100 motion-reduce:after:transition-none"
             />
             <StarButton />
           </div>
