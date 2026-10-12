@@ -6,13 +6,13 @@ type PillarEvidenceProps = {
 // its proof instead of an icon. The status is written out, never color alone.
 export function PillarEvidence({ lines }: PillarEvidenceProps) {
   return (
-    <dl className="border-l border-border pl-5 font-mono text-sm">
+    <dl className="font-mono text-sm">
       {lines.map((line) => (
-        <div key={line.label} className="grid gap-x-4 py-1.5 sm:grid-cols-[7rem_1fr]">
-          <dt className="text-text-tertiary">{line.label}</dt>
+        <div key={line.label} className="grid gap-x-4 py-1 sm:grid-cols-[6.5rem_1fr]">
+          <dt className="text-text-secondary">{line.label}</dt>
           <dd className="text-text">
             {line.value}
-            {line.status && <span className="ml-2 text-text-tertiary">[{line.status}]</span>}
+            {line.status && <span className="ml-2 text-amber">[{line.status}]</span>}
           </dd>
         </div>
       ))}
