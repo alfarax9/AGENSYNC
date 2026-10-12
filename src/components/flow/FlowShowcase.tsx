@@ -3,7 +3,6 @@
 import { useInView } from "motion/react";
 import { useRef } from "react";
 import home from "@/content/home.json";
-import { FlowBrackets } from "./FlowBrackets";
 import { FlowDiagram } from "./FlowDiagram";
 import { FlowSteps } from "./FlowSteps";
 import { FlowToolbar } from "./FlowToolbar";
@@ -30,9 +29,8 @@ export function FlowShowcase() {
   }
 
   return (
-    <div ref={ref} className="group/frame relative mx-auto mt-14 max-w-5xl">
-      <FlowBrackets />
-      <div className="border border-border bg-bg-alt">
+    <div ref={ref} className="mt-12 md:mt-16">
+      <div className="overflow-clip rounded-panel border border-border bg-bg-alt">
         <div role="tabpanel" id="flow-panel" aria-labelledby={`flow-tab-${zone}`}>
           <FlowToolbar
             caption={caption.replace("{task}", String(player.taskNumber))}
