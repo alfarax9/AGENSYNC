@@ -39,23 +39,24 @@
   --default-mono-font-family: var(--font-sans);
   --font-mono--font-feature-settings: "tnum";
 
-  /* Type scale measured from the reference layout at 390px and 1440px. */
-  --text-display: clamp(2.25rem, 1.646rem + 2.476vw, 3.875rem);
-  --text-display--line-height: 1.08;
+  /* Type scale after the Cosmoq reference: an 82px display at 500, then light
+     400 headings at 56 / 36 / 24px on desktop, each scaling down to 390px. */
+  --text-display: clamp(2.5rem, calc(1.5rem + 4vw), 5.125rem);
+  --text-display--line-height: 1.05;
   --text-display--letter-spacing: -0.03em;
   --text-display--font-weight: 500;
-  --text-h2: clamp(2rem, 1.536rem + 1.905vw, 3.25rem);
-  --text-h2--line-height: 1.12;
-  --text-h2--letter-spacing: -0.025em;
-  --text-h2--font-weight: 500;
-  --text-h3: clamp(1.75rem, 1.425rem + 1.333vw, 2.625rem);
-  --text-h3--line-height: 1.15;
-  --text-h3--letter-spacing: -0.02em;
-  --text-h3--font-weight: 500;
-  --text-h4: clamp(1.5rem, 1.314rem + 0.762vw, 2rem);
-  --text-h4--line-height: 1.2;
-  --text-h4--letter-spacing: -0.015em;
-  --text-h4--font-weight: 500;
+  --text-h2: clamp(2rem, calc(1.443rem + 2.286vw), 3.5rem);
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2--font-weight: 400;
+  --text-h3: clamp(1.625rem, calc(1.393rem + 0.952vw), 2.25rem);
+  --text-h3--line-height: 1.3;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h3--font-weight: 400;
+  --text-h4: clamp(1.25rem, calc(1.157rem + 0.381vw), 1.5rem);
+  --text-h4--line-height: 1.5;
+  --text-h4--letter-spacing: -0.01em;
+  --text-h4--font-weight: 400;
 
   /* The How it works diagram loops these inside an SVG, where CSS keeps them
      off the main thread and motion-reduce can switch them off without JavaScript. */
