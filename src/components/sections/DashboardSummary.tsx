@@ -8,7 +8,7 @@ export function DashboardSummary() {
       {summary.map((item) => (
         <div
           key={item.id}
-          className={`rounded-card border bg-bg-alt p-3 ${item.isHighlighted ? "border-accent-glow" : "border-border"}`}
+          className={`rounded-card p-3 ${item.isHighlighted ? "border-duo [--duo-fill:var(--color-surface)]" : "border border-border bg-surface"}`}
         >
           <dt className="text-xs text-text-tertiary">{item.label}</dt>
           <dd className="mt-1 font-mono text-lg text-text md:text-xl">
