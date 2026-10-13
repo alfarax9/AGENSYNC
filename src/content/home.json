@@ -70,7 +70,74 @@
           }
         ]
       }
-    ]
+    ],
+    "visuals": {
+      "gate": {
+        "label": "Quality gate: the visual diff is 4.2% against a 3% limit, so the task failed and goes back to Forge for attempt 2 of 3.",
+        "name": "visual diff",
+        "value": 4.2,
+        "limit": 3,
+        "max": 6,
+        "unit": "%",
+        "limitLabel": "limit",
+        "status": "failed",
+        "next": "back to Forge, attempt 2 of 3"
+      },
+      "model": {
+        "label": "The Slice / Markup Engineer in Forge was offered the Small and fast model, which was rejected because it does not support vision.",
+        "division": "forge",
+        "worker": "Slice / Markup Engineer",
+        "model": "Small and fast",
+        "check": "vision",
+        "result": "not supported",
+        "status": "rejected"
+      },
+      "handoff": {
+        "label": "A handoff from the UX Architect in Atelier to the Logic Developer in Forge carries the design_spec.v1 contract, which validated, and cost $0.12.",
+        "from": {
+          "division": "atelier",
+          "name": "UX Architect"
+        },
+        "to": {
+          "division": "forge",
+          "name": "Logic Developer"
+        },
+        "contract": "design_spec.v1",
+        "status": "valid",
+        "answeredBy": "design.primary",
+        "cost": "$0.12"
+      },
+      "limits": {
+        "label": "Limits: $1.84 of the $5.00 task budget, $8.60 of the $10.00 daily budget, and attempt 2 of 3.",
+        "sliders": [
+          {
+            "id": "task",
+            "name": "per task",
+            "used": 1.84,
+            "limit": 5,
+            "text": "$1.84 of $5.00"
+          },
+          {
+            "id": "day",
+            "name": "per day",
+            "used": 8.6,
+            "limit": 10,
+            "text": "$8.60 of $10.00"
+          },
+          {
+            "id": "tries",
+            "name": "attempts",
+            "used": 2,
+            "limit": 3,
+            "text": "2 of 3"
+          }
+        ]
+      }
+    },
+    "cta": {
+      "title": "Ready to see it run?",
+      "body": "One command starts AMORA on your own machine, with a budget you set before the first task."
+    }
   },
   "howItWorks": {
     "id": "how-it-works",
