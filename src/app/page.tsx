@@ -7,6 +7,7 @@ import { Hero } from "@/components/sections/Hero";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Install } from "@/components/sections/Install";
 import { Pillars } from "@/components/sections/Pillars";
+import { Platform } from "@/components/sections/Platform";
 import { Security } from "@/components/sections/Security";
 import { Stats } from "@/components/sections/Stats";
 import { Telegram } from "@/components/sections/Telegram";
@@ -19,6 +20,7 @@ export default function Home() {
       <Hero />
       <Stats />
       <Pillars />
+      <Platform />
       <HowItWorks />
       <Divisions />
       <Brains />
