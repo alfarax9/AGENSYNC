@@ -39,3 +39,8 @@ export function divisionWaves(division: Division) {
 export function divisionColor(divisionId: string) {
   return { "--division-color": `var(--color-division-${divisionId})` } as CSSProperties;
 }
+
+// Each division has a pixel-art mascot in public/, named after the division id.
+export function mascotSrc(divisionId: string) {
+  return `/amora-mascots-svg/${divisionId}.svg`;
+}
