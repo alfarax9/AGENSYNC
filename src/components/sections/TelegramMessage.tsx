@@ -1,6 +1,7 @@
 import * as m from "motion/react-m";
 import { messageAppear } from "@/components/motion/variants";
 import { divisionColor, findDivisionByName } from "@/lib/divisions";
+import { TelegramAvatar } from "./TelegramAvatar";
 
 type TelegramMessageProps = {
   message: { author: string; topic: string; text: string; actions?: string[] };
@@ -16,27 +17,30 @@ export function TelegramMessage({ message, isVisible }: TelegramMessageProps) {
       initial={false}
       animate={isVisible ? "visible" : "hidden"}
       style={division ? divisionColor(division.id) : undefined}
-      className="max-w-md rounded-2xl border border-border bg-surface px-4 py-3 text-sm"
+      className="flex max-w-lg items-start gap-3"
     >
-      <p className="flex flex-wrap items-baseline gap-x-2">
-        <span className="font-semibold text-(--division-color,var(--color-text))">
-          {message.author}
-        </span>
-        <span className="font-mono text-xs text-text-tertiary">#{message.topic}</span>
-      </p>
-      <p className="mt-1">{message.text}</p>
-      {message.actions && (
-        <p className="mt-3 flex flex-wrap gap-2">
-          {message.actions.map((action) => (
-            <span
-              key={action}
-              className="min-w-32 flex-1 rounded-card border border-border px-3 py-1.5 text-center text-xs text-text"
-            >
-              {action}
-            </span>
-          ))}
+      <TelegramAvatar divisionId={division?.id} />
+      <div className="min-w-0 flex-1 rounded-2xl border border-border bg-surface px-4 py-3 text-sm">
+        <p className="flex flex-wrap items-baseline gap-x-2">
+          <span className="font-semibold text-(--division-color,var(--color-text))">
+            {message.author}
+          </span>
+          <span className="font-mono text-xs text-text-tertiary">#{message.topic}</span>
         </p>
-      )}
+        <p className="mt-1">{message.text}</p>
+        {message.actions && (
+          <p className="mt-3 flex flex-wrap gap-2">
+            {message.actions.map((action) => (
+              <span
+                key={action}
+                className="min-w-32 flex-1 rounded-card border border-border px-3 py-1.5 text-center text-xs text-text"
+              >
+                {action}
+              </span>
+            ))}
+          </p>
+        )}
+      </div>
     </m.li>
   );
 }
