@@ -12,6 +12,7 @@
   },
   "notFound": {
     "code": "404",
+    "mascot": "lens",
     "title": "This room doesn't exist.",
     "body": "We couldn't find anything at this address.",
     "cta": "Back to home",
