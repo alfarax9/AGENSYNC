@@ -1,21 +1,43 @@
 import { Sparkles } from "lucide-react";
-import { RevealWords } from "@/components/motion/RevealWords";
+import type { ReactNode } from "react";
 import { Reveal } from "@/components/motion/Reveal";
-import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import home from "@/content/home.json";
-import { PillarEvidence } from "./PillarEvidence";
+import { BudgetVisual } from "./BudgetVisual";
+import { GateVisual } from "./GateVisual";
+import { HandoffVisual } from "./HandoffVisual";
+import { ModelVisual } from "./ModelVisual";
+import { PillarCard } from "./PillarCard";
+import { PillarCta } from "./PillarCta";
 
-// Each card's nebula sits somewhere else, so the three do not read as copies.
-const nebulaPositions = [
-  "[--nebula-x:20%] [--nebula-y:70%]",
-  "[--nebula-x:50%] [--nebula-y:85%]",
-  "[--nebula-x:80%] [--nebula-y:60%]",
-];
+// Per point: its illustration, where its nebula sits, and its width in the six
+// columns, so two wide cards sit over three narrower ones.
+const layout: Record<string, { visual: ReactNode; nebula: string; span: string }> = {
+  rules: {
+    visual: <GateVisual />,
+    nebula: "[--nebula-x:20%] [--nebula-y:70%]",
+    span: "lg:col-span-3",
+  },
+  brains: {
+    visual: <ModelVisual />,
+    nebula: "[--nebula-x:75%] [--nebula-y:80%]",
+    span: "lg:col-span-3",
+  },
+  handoffs: {
+    visual: <HandoffVisual />,
+    nebula: "[--nebula-x:30%] [--nebula-y:60%]",
+    span: "lg:col-span-2",
+  },
+  limits: {
+    visual: <BudgetVisual />,
+    nebula: "[--nebula-x:65%] [--nebula-y:85%]",
+    span: "lg:col-span-2",
+  },
+};
 
-// Three cards after the Cosmoq feature panels: a nebula with the runtime's own
-// record of the claim floating over it in glass, and the claim underneath.
+// A bento grid after the Cosmoq feature cards: four points with an
+// illustration each, then a card that sends the reader to the install.
 export function Pillars() {
   const { pillars } = home;
 
@@ -28,31 +50,20 @@ export function Pillars() {
         heading={pillars.heading}
         intro={pillars.intro}
       />
-      <ol className="mt-12 grid gap-6 md:mt-16 lg:grid-cols-3">
+      <ol className="mt-12 grid gap-6 md:mt-16 lg:grid-cols-6">
         {pillars.items.map((item, index) => (
-          <Reveal key={item.id} index={index}>
-            <Card as="article" className="flex h-full flex-col overflow-clip">
-              <div className="relative isolate flex min-h-64 items-end bg-bg-alt p-4">
-                <div
-                  aria-hidden
-                  className={`absolute inset-0 -z-10 bg-nebula opacity-80 blur-2xl ${nebulaPositions[index]}`}
-                />
-                <div aria-hidden className="absolute inset-0 -z-10 bg-grain opacity-50" />
-                <div className="w-full rounded-card border border-border-strong bg-bg/45 p-4 shadow-glass backdrop-blur-md">
-                  <PillarEvidence lines={item.evidence} />
-                </div>
-              </div>
-              <div className="p-6 md:p-8">
-                <h3 className="reveal-text text-h4 text-text">
-                  <RevealWords text={item.title} />
-                </h3>
-                <p className="reveal-text mt-3">
-                  <RevealWords text={item.body} />
-                </p>
-              </div>
-            </Card>
+          <Reveal key={item.id} index={index} className={`flex ${layout[item.id].span}`}>
+            <PillarCard
+              nebula={layout[item.id].nebula}
+              visual={layout[item.id].visual}
+              title={item.title}
+              body={item.body}
+            />
           </Reveal>
         ))}
+        <Reveal index={pillars.items.length} className="flex lg:col-span-2">
+          <PillarCta />
+        </Reveal>
       </ol>
     </Section>
   );
