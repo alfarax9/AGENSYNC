@@ -1,6 +1,5 @@
 {
   "hero": {
-    "badge": "Open source and still experimental",
     "headline": "An AI software agency where every worker has its own brain.",
     "subheadline": "66 AI workers in 12 divisions, each with its own model and plugins. One command starts them on your own machine.",
     "primaryCta": "Try it in one command",

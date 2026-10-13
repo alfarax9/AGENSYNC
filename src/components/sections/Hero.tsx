@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import home from "@/content/home.json";
@@ -17,8 +16,7 @@ export function Hero() {
     >
       <HeroBackground />
       <Container className="flex flex-col items-center py-24 text-center">
-        <Badge variant="glass">{hero.badge}</Badge>
-        <h1 id="hero-heading" className="mt-8 max-w-5xl text-display text-balance text-text">
+        <h1 id="hero-heading" className="max-w-5xl text-display text-balance text-text">
           {hero.headline}
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-balance">{hero.subheadline}</p>
