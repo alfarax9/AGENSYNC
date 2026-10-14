@@ -2,13 +2,14 @@ import { useCallback, useState } from "react";
 
 type PlayerState = { index: number; taskNumber: number; run: number };
 
-// Showing the last step delivers one more task. `run` changes on every pick,
-// so the step's progress bar restarts even when the same step is chosen again.
+// Leaving the last step ships the task, so the next walk is the next task;
+// the number stays put from brief to review. `run` changes on every pick, so
+// the step's progress bar restarts even when the same step is chosen again.
 function moveTo(previous: PlayerState, index: number, stepCount: number): PlayerState {
-  const isDelivering = index === stepCount - 1 && previous.index !== index;
+  const isShipping = previous.index === stepCount - 1 && index !== previous.index;
   return {
     index,
-    taskNumber: previous.taskNumber + (isDelivering ? 1 : 0),
+    taskNumber: previous.taskNumber + (isShipping ? 1 : 0),
     run: previous.run + 1,
   };
 }
