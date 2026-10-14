@@ -183,14 +183,77 @@
     ],
     "visuals": {
       "workers": {
-        "label": "A brief, Build a pricing page with yearly plans, typed into AMORA, with four workers ready to take it: the Product Manager, UX Architect, Logic Developer, and Unit and Integration Tester.",
+        "label": "A task thread: you send the brief Build a pricing page with yearly plans, the Planner / Decomposer replies with a plan, you approve it, and the Product Manager, UX Architect, Logic Developer, and Unit and Integration Tester each report back in turn until the page waits for your approval.",
         "brief": "Build a pricing page with yearly plans",
-        "workers": ["product-manager", "ux-architect", "logic-developer", "unit-integration-tester"]
+        "workers": [
+          "product-manager",
+          "ux-architect",
+          "logic-developer",
+          "unit-integration-tester"
+        ],
+        "task": "Task #141 · Pricing page",
+        "live": "live",
+        "you": "You",
+        "composer": "Message the agency",
+        "messages": [
+          {
+            "author": "you",
+            "text": "Build a pricing page with yearly plans"
+          },
+          {
+            "workerId": "planner-decomposer",
+            "text": "Plan ready: Compass scopes it, Atelier designs it, Forge builds it, Crucible tests it. Nothing runs until you approve."
+          },
+          {
+            "author": "you",
+            "text": "Approved."
+          },
+          {
+            "workerId": "product-manager",
+            "text": "Scope set: three tiers and a monthly or yearly toggle."
+          },
+          {
+            "workerId": "ux-architect",
+            "text": "Layout and states are in design_spec.v1. Handing off to Forge."
+          },
+          {
+            "workerId": "logic-developer",
+            "text": "Page and toggle built. Sending it to Crucible."
+          },
+          {
+            "workerId": "unit-integration-tester",
+            "text": "12 of 12 tests pass. It's waiting for your approval."
+          }
+        ]
       },
       "models": {
-        "label": "Four ways in, OmniRoute, OpenRouter, a provider directly, or Ollama, all lead to AMORA, which probes each model for tool use, structured output, and vision.",
+        "label": "A probe bench cycling through four pairings: through OpenRouter, Frontier multimodal is accepted for the Slice / Markup Engineer; through Ollama, Local open-weights is rejected for the Logic Developer; through OmniRoute, Small and fast is rejected for the Slice / Markup Engineer because it lacks vision; through a provider directly, Reasoning specialist is accepted for the Logic Developer.",
         "sources": ["OmniRoute", "OpenRouter", "Provider", "Ollama"],
-        "probes": "tool use · structured output · vision"
+        "probes": "tool use · structured output · vision",
+        "gateways": ["OmniRoute", "OpenRouter", "Provider", "Ollama"],
+        "probing": "probing",
+        "scenarios": [
+          {
+            "gateway": "OpenRouter",
+            "modelId": "frontier-multimodal",
+            "workerId": "slice-markup-engineer"
+          },
+          {
+            "gateway": "Ollama",
+            "modelId": "local-open-weights",
+            "workerId": "logic-developer"
+          },
+          {
+            "gateway": "OmniRoute",
+            "modelId": "small-fast",
+            "workerId": "slice-markup-engineer"
+          },
+          {
+            "gateway": "Provider",
+            "modelId": "reasoning-specialist",
+            "workerId": "logic-developer"
+          }
+        ]
       },
       "control": {
         "label": "Pricing page is ready for review, with View diff and Approve buttons. Today's budget is $8.60 of $10.00, and Pause all workers is one click away.",
