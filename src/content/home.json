@@ -305,7 +305,7 @@
         "divisions": "Compass scopes it, Atelier designs it, Forge builds it.",
         "dev-qa": "Attempt 1: 11 of 12 tests pass. Back to Forge for attempt 2.",
         "gatekeeper": "Gate checks run as code: lint, types, tests, accessibility.",
-        "deliver": "Task #{task} is ready. $1.84 of $5.00 spent. Click it to ship."
+        "deliver": "Task #{task} is ready. $1.84 of $5.00 spent. Approve it to ship."
       },
       "label": "A brief goes to the planner, workers in each division pick up their part, AMORA checks the work against its gates, and finished tasks stack up for your approval.",
       "brief": "Brief",
@@ -348,7 +348,151 @@
       "tablist": "Steps in a task",
       "pause": "Pause",
       "play": "Play",
-      "hint": "Click a step or any part of the diagram"
+      "hint": "Click a step, or the buttons in the window"
+    },
+    "screen": {
+      "address": "127.0.0.1:4310/tasks/{task}",
+      "title": "Pricing page",
+      "live": "live",
+      "stages": ["Brief", "Plan", "Build", "Test", "Gate", "Review"],
+      "brief": {
+        "heading": "New task",
+        "titleLabel": "Title",
+        "briefLabel": "Brief",
+        "text": "Build a pricing page with three tiers and a monthly or yearly toggle. Yearly should save two months.",
+        "files": ["pricing.fig", "copy.md"],
+        "budgetLabel": "Budget",
+        "budget": "$5.00",
+        "signoffLabel": "Sign off",
+        "signoff": ["At every gate", "Only at the end"],
+        "send": "Send brief"
+      },
+      "plan": {
+        "plannerId": "planner-decomposer",
+        "heading": "Plan",
+        "summary": "4 steps · 5 workers",
+        "rows": [
+          {
+            "workerId": "product-manager",
+            "task": "Scope the tiers and the toggle",
+            "cost": "$0.18"
+          },
+          {
+            "workerId": "ux-architect",
+            "task": "Lay out the page and its states",
+            "cost": "$0.36"
+          },
+          {
+            "workerId": "logic-developer",
+            "task": "Build the page and the toggle",
+            "cost": "$0.82"
+          },
+          {
+            "workerId": "unit-integration-tester",
+            "task": "Test prices and the toggle",
+            "cost": "$0.48"
+          }
+        ],
+        "total": "Estimate $1.84",
+        "edit": "Edit plan",
+        "approve": "Approve plan"
+      },
+      "build": {
+        "rows": [
+          {
+            "workerId": "product-manager",
+            "state": "Scoped",
+            "file": "scope.md",
+            "isDone": true
+          },
+          {
+            "workerId": "ux-architect",
+            "state": "Designed",
+            "file": "design_spec.v1",
+            "isDone": true
+          },
+          {
+            "workerId": "logic-developer",
+            "state": "Building",
+            "file": "PricingTable.tsx",
+            "isDone": false
+          }
+        ],
+        "log": [
+          {
+            "time": "14:02:11",
+            "division": "compass",
+            "text": "scope.md written"
+          },
+          {
+            "time": "14:02:48",
+            "division": "atelier",
+            "text": "design_spec.v1 validated"
+          },
+          {
+            "time": "14:03:05",
+            "division": "forge",
+            "text": "PricingTable.tsx  +142"
+          },
+          {
+            "time": "14:03:19",
+            "division": "forge",
+            "text": "BillingToggle.tsx  +38"
+          }
+        ]
+      },
+      "loop": {
+        "devId": "logic-developer",
+        "qaId": "unit-integration-tester",
+        "attemptLabel": "Attempt",
+        "attempts": 3,
+        "first": "Attempt 1 · 11 of 12 pass",
+        "failure": "Yearly price rounds down by a cent",
+        "expected": "expected $100.00, got $99.99",
+        "back": "Sent back to Forge",
+        "second": "Attempt 2 · 12 of 12 pass"
+      },
+      "gate": {
+        "heading": "Gatekeeper",
+        "checks": [
+          {
+            "name": "lint",
+            "result": "0 problems"
+          },
+          {
+            "name": "types",
+            "result": "0 errors"
+          },
+          {
+            "name": "tests",
+            "result": "12 of 12"
+          },
+          {
+            "name": "a11y",
+            "result": "0 violations"
+          },
+          {
+            "name": "visual diff",
+            "result": "1.8% of 3%"
+          }
+        ],
+        "passed": "All gates passed"
+      },
+      "deliver": {
+        "heading": "Ready for review",
+        "diff": "+214 −12 · 6 files",
+        "files": ["PricingTable.tsx", "BillingToggle.tsx", "pricing.test.ts"],
+        "spentLabel": "Spent",
+        "spent": "$1.84 of $5.00",
+        "changes": "Request changes",
+        "approve": "Approve",
+        "preview": {
+          "toggle": ["Monthly", "Yearly"],
+          "tiers": ["Starter", "Team", "Studio"]
+        },
+        "notice": "AMORA · #Bridge",
+        "shipped": "Shipped"
+      }
     }
   },
   "dashboard": {
