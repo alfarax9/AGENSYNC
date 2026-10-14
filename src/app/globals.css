@@ -70,6 +70,17 @@
   --animate-rise: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   --animate-grow: probe-fill 3.4s cubic-bezier(0.4, 0, 0.2, 1) both;
   --animate-fade-out: fade-out 0.2s ease-out both;
+  /* Workflow inside the task window: a cursor glides to a button and clicks
+     it (cursor, press, ripple), packets cross between workers (cross, drop),
+     a plan's assignment line draws down (grow-y), and a scan line sweeps the
+     gate checks (scan). Delays are set per element. */
+  --animate-cursor: cursor 1.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+  --animate-press: press 0.3s ease-out both;
+  --animate-ripple: ripple 0.7s ease-out both;
+  --animate-cross: cross 0.9s ease-in-out both;
+  --animate-drop: drop 0.8s ease-in-out both;
+  --animate-grow-y: grow-y 1.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+  --animate-scan: scan 3.4s linear both;
   --animate-sheet-in: sheet-in 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   /* The Pillars illustrations share one 5s loop, after the Cosmoq feature
      cards: a dot crosses its line (travel), and the result it carries shows
@@ -198,6 +209,103 @@
   @keyframes fade-out {
     to {
       opacity: 0;
+    }
+  }
+
+  /* The cursor starts up and to the left of its button (buttons sit low in
+     the window, so below would be clipped), glides onto it, presses, and stays. */
+  @keyframes cursor {
+    0% {
+      opacity: 0;
+      transform: translate(-8rem, -3.5rem);
+    }
+    20% {
+      opacity: 1;
+    }
+    75% {
+      transform: translate(0, 0);
+    }
+    82% {
+      transform: translate(0, 0) scale(0.82);
+    }
+    90%,
+    100% {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+    }
+  }
+
+  @keyframes press {
+    50% {
+      transform: scale(0.94);
+    }
+  }
+
+  /* Starts invisible, so holding the first frame through the delay shows nothing. */
+  @keyframes ripple {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    1% {
+      opacity: 0.7;
+      transform: scale(0.3);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(2.4);
+    }
+  }
+
+  /* Applied to a wrapper as long as the lane, so 100% is the lane's length. */
+  @keyframes cross {
+    0% {
+      opacity: 0;
+      transform: translateX(0);
+    }
+    15%,
+    85% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes drop {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    15%,
+    85% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes grow-y {
+    from {
+      transform: scaleY(0);
+    }
+  }
+
+  @keyframes scan {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    10%,
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100%);
     }
   }
 
