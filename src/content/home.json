@@ -184,13 +184,6 @@
     "visuals": {
       "workers": {
         "label": "A task thread: you send the brief Build a pricing page with yearly plans, the Planner / Decomposer replies with a plan, you approve it, and the Product Manager, UX Architect, Logic Developer, and Unit and Integration Tester each report back in turn until the page waits for your approval.",
-        "brief": "Build a pricing page with yearly plans",
-        "workers": [
-          "product-manager",
-          "ux-architect",
-          "logic-developer",
-          "unit-integration-tester"
-        ],
         "task": "Task #141 · Pricing page",
         "live": "live",
         "you": "You",
@@ -228,8 +221,6 @@
       },
       "models": {
         "label": "A probe bench cycling through four pairings: through OpenRouter, Frontier multimodal is accepted for the Slice / Markup Engineer; through Ollama, Local open-weights is rejected for the Logic Developer; through OmniRoute, Small and fast is rejected for the Slice / Markup Engineer because it lacks vision; through a provider directly, Reasoning specialist is accepted for the Logic Developer.",
-        "sources": ["OmniRoute", "OpenRouter", "Provider", "Ollama"],
-        "probes": "tool use · structured output · vision",
         "gateways": ["OmniRoute", "OpenRouter", "Provider", "Ollama"],
         "probing": "probing",
         "scenarios": [

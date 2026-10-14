@@ -3,17 +3,20 @@ import type { ReactNode } from "react";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import home from "@/content/home.json";
+import { AgentThread } from "./AgentThread";
 import { ControlVisual } from "./ControlVisual";
-import { ModelsVisual } from "./ModelsVisual";
+import { LightBeam } from "./LightBeam";
+import { LightCurtain } from "./LightCurtain";
+import { LightEclipse } from "./LightEclipse";
+import { ModelProbe } from "./ModelProbe";
 import { PlatformChips } from "./PlatformChips";
 import { PlatformNav } from "./PlatformNav";
 import { PlatformPanel } from "./PlatformPanel";
-import { WorkersVisual } from "./WorkersVisual";
 
-const visuals: Record<string, { visual: ReactNode; nebula: string }> = {
-  workers: { visual: <WorkersVisual />, nebula: "[--nebula-x:30%] [--nebula-y:25%]" },
-  models: { visual: <ModelsVisual />, nebula: "[--nebula-x:70%] [--nebula-y:70%]" },
-  control: { visual: <ControlVisual />, nebula: "[--nebula-x:25%] [--nebula-y:75%]" },
+const visuals: Record<string, { visual: ReactNode; light: ReactNode }> = {
+  workers: { visual: <AgentThread />, light: <LightCurtain /> },
+  models: { visual: <ModelProbe />, light: <LightBeam /> },
+  control: { visual: <ControlVisual />, light: <LightEclipse /> },
 };
 
 // An overview of the three layers after the Cosmoq features section: links to
@@ -42,7 +45,7 @@ export function Platform() {
               panel={panel}
               chips={<PlatformChips chips={panel.chips} />}
               visual={visuals[panel.id].visual}
-              nebula={visuals[panel.id].nebula}
+              light={visuals[panel.id].light}
             />
           ))}
         </div>
