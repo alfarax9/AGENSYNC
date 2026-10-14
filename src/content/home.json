@@ -55,7 +55,7 @@
         "modelId": "small-fast"
       },
       "handoff": {
-        "label": "A handoff from the UX Architect in Atelier to the Logic Developer in Forge carries the design_spec.v1 contract, which validated, and cost $0.12.",
+        "label": "A handoff arcs from the UX Architect in Atelier to the Logic Developer in Forge, carrying the design_spec.v1 contract. It validates on arrival, answered by design.primary for $0.12.",
         "from": {
           "division": "atelier",
           "name": "UX Architect"

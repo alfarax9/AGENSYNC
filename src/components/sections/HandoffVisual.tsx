@@ -1,26 +1,38 @@
-import { GlassPanel } from "@/components/ui/GlassPanel";
 import home from "@/content/home.json";
+import { HandoffArc } from "./HandoffArc";
 import { WorkerMark } from "./WorkerMark";
 
 const handoff = home.pillars.visuals.handoff;
 
-// One handoff between two workers: the contract that crossed, whether it
-// validated, and which model answered at what cost.
+// One handoff drawn large: an arc of light from one worker to the next, the
+// contract riding it, and the record (valid, who answered, the cost) lighting
+// up as it lands. Everything sits on the arc's 2:1 drawing, so the workers
+// stay on its ends at any width.
 export function HandoffVisual() {
   return (
-    <div role="img" aria-label={handoff.label} className="flex w-full max-w-xs flex-col gap-5">
-      <div className="flex items-start justify-between">
-        <WorkerMark divisionId={handoff.from.division} name={handoff.from.name} />
-        <div className="mt-5 flex min-w-0 flex-1 flex-col items-center gap-2 px-1">
-          <span className="font-mono text-xs text-text">{handoff.contract}</span>
-          <span className="h-px w-full border-t border-dashed border-text-secondary" />
-          <span className="font-mono text-xs text-amber">[{handoff.status}]</span>
+    <div
+      role="img"
+      aria-label={handoff.label}
+      className="absolute inset-0 grid place-items-center p-4"
+    >
+      <div className="relative aspect-[2/1] w-full max-w-sm">
+        <HandoffArc />
+        <p className="absolute top-[4%] left-1/2 -translate-x-1/2 rounded-full border border-border-strong bg-bg/60 px-3 py-1 font-mono text-[0.6875rem] whitespace-nowrap text-text backdrop-blur-md">
+          {handoff.contract}
+          <span className="ml-2 text-highlight-from motion-safe:animate-arrive">
+            {handoff.status}
+          </span>
+        </p>
+        <div className="absolute top-[70%] left-[15%] -translate-1/2">
+          <WorkerMark divisionId={handoff.from.division} name={handoff.from.name} />
         </div>
-        <WorkerMark divisionId={handoff.to.division} name={handoff.to.name} />
+        <div className="absolute top-[70%] left-[85%] -translate-1/2">
+          <WorkerMark divisionId={handoff.to.division} name={handoff.to.name} />
+        </div>
+        <p className="absolute top-full left-1/2 mt-6 -translate-x-1/2 font-mono text-[0.6875rem] whitespace-nowrap text-text-secondary motion-safe:animate-arrive">
+          {handoff.answeredBy} · {handoff.cost}
+        </p>
       </div>
-      <GlassPanel className="px-4 py-3 text-center font-mono text-xs text-text-secondary">
-        {handoff.answeredBy}, {handoff.cost}
-      </GlassPanel>
     </div>
   );
 }
