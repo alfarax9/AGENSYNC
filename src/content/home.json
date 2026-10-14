@@ -48,13 +48,11 @@
         "next": "back to Forge, attempt 2 of 3"
       },
       "model": {
-        "label": "The Slice / Markup Engineer in Forge was offered the Small and fast model, which was rejected because it does not support vision.",
+        "label": "The Slice / Markup Engineer from Forge, in a lit slot, tries the demo models one after another while they drift past. Only models with vision fit it: Small and fast is rejected, Frontier multimodal and Multimodal lite are accepted.",
         "division": "forge",
         "worker": "Slice / Markup Engineer",
-        "model": "Small and fast",
-        "check": "vision",
-        "result": "not supported",
-        "status": "rejected"
+        "workerId": "slice-markup-engineer",
+        "modelId": "small-fast"
       },
       "handoff": {
         "label": "A handoff from the UX Architect in Atelier to the Logic Developer in Forge carries the design_spec.v1 contract, which validated, and cost $0.12.",

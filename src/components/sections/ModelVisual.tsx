@@ -1,31 +1,30 @@
-import { ArrowRight, X } from "lucide-react";
-import { GlassPanel } from "@/components/ui/GlassPanel";
+import { Mascot } from "@/components/ui/Mascot";
 import home from "@/content/home.json";
-import { WorkerMark } from "./WorkerMark";
+import { ModelMarquee } from "./ModelMarquee";
+import { ModelSlot } from "./ModelSlot";
 
 const model = home.pillars.visuals.model;
 
-// A worker offered a model that fails one of its requirements: the pairing is
-// refused in writing, with the reason.
+// After the Cosmoq "Flexibility" card: two rows of models drifting across the
+// whole card, and in front of them the worker in a lit socket, trying each
+// model in its slot. The rows sit back, dimmed, so the socket reads first.
 export function ModelVisual() {
   return (
-    <div role="img" aria-label={model.label} className="flex w-full max-w-md flex-col gap-5">
-      <div className="flex items-center justify-between gap-3">
-        <WorkerMark divisionId={model.division} name={model.worker} />
-        <ArrowRight
-          aria-hidden
-          strokeWidth={1.25}
-          className="size-6 shrink-0 text-text-secondary"
-        />
-        <GlassPanel className="px-5 py-4 text-text">{model.model}</GlassPanel>
+    <div role="img" aria-label={model.label} className="absolute inset-0 overflow-clip">
+      <div className="absolute inset-0 flex flex-col justify-center gap-3 [mask-image:linear-gradient(to_right,transparent,black_18%,black_82%,transparent)] opacity-45">
+        <ModelMarquee />
+        <ModelMarquee isReversed />
       </div>
-      <GlassPanel className="flex items-center gap-3 px-4 py-3 font-mono text-sm">
-        <X aria-hidden className="size-4 shrink-0 text-danger" />
-        <span className="text-text">
-          {model.check}: {model.result}
-        </span>
-        <span className="ml-auto text-amber">[{model.status}]</span>
-      </GlassPanel>
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
+        <div className="relative grid size-32 place-items-center rounded-full shadow-duo-strong border-duo">
+          <div className="absolute inset-0 -z-10 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--color-accent-glow)_55%,transparent),transparent)] blur-xl" />
+          <Mascot divisionId={model.division} size={64} />
+        </div>
+        <p className="rounded-full bg-bg/70 px-3 py-1 text-xs text-text-secondary backdrop-blur-md">
+          {model.worker}
+        </p>
+        <ModelSlot />
+      </div>
     </div>
   );
 }
