@@ -116,7 +116,7 @@
         "id": "workers",
         "tab": "Workers",
         "title": "66 workers in 12 divisions",
-        "body": "Each division owns one part of the job, from scoping to testing, and every worker in it has a role you can read. A brief goes in, and the right workers pick it up.",
+        "body": "Each division owns one part of the job, from scoping to testing, and every worker in it has a role you can read. Brief the whole agency, or ask one division or one worker what it's doing.",
         "chips": ["compass", "atelier", "forge", "crucible"],
         "moreChips": "more",
         "link": {
