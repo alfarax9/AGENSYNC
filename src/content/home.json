@@ -675,7 +675,7 @@
     "id": "install",
     "eyebrow": "Install",
     "heading": "One command to a running agency",
-    "intro": "One command starts the runtime and opens the dashboard in your browser, where a short setup gets you to your first task. You'll need Node.js and a key for at least one model gateway. Docker is optional and only sandboxes the code workers run.",
+    "intro": "One command starts the runtime and opens the dashboard in your browser, where a short setup gets you to your first task. You'll need Node.js, and a free OpenRouter account is enough to start. Docker is optional and only sandboxes the code workers run.",
     "notice": "[PLACEHOLDER] The package isn't published yet. These commands follow the spec until the first release.",
     "copy": "Copy",
     "copied": "Copied",
@@ -696,7 +696,7 @@
       {
         "id": "gateway",
         "title": "Connect a gateway",
-        "body": "OmniRoute by default, or OpenRouter, a provider directly, or local models through Ollama. The key goes into your OS keychain."
+        "body": "OpenRouter by default, connected in one click so you never copy a key. Or use OmniRoute, a provider key, or local models through Ollama. Any key goes into your OS keychain."
       },
       {
         "id": "probes",
