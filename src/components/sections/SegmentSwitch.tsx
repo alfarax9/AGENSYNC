@@ -3,18 +3,19 @@
 import { useRef } from "react";
 import { useSlidingHighlight } from "./useSlidingHighlight";
 
-type GatewaySwitchProps = {
-  gateways: string[];
+type SegmentSwitchProps = {
+  labels: string[];
   activeIndex: number;
 };
 
-// The four ways in as a segmented control whose highlight slides to the one
-// the current model arrives through. It shows a state; it is not a control.
+// A segmented control whose highlight slides to the active label: the gateway
+// a model arrives through on the probe bench, the target of a chat message in
+// the agent thread. It shows a state; it is not a control.
 // One row of labels each as wide as its text when the bench has room, a
 // two-by-two grid when it does not (a container query in rem, so it follows
 // the reader's text size too). The highlight is measured from the active
 // label rather than assuming equal quarters, which made long names collide.
-export function GatewaySwitch({ gateways, activeIndex }: GatewaySwitchProps) {
+export function SegmentSwitch({ labels, activeIndex }: SegmentSwitchProps) {
   const listRef = useRef<HTMLDivElement>(null);
   const highlightRef = useRef<HTMLSpanElement>(null);
   useSlidingHighlight(listRef, highlightRef, activeIndex);
@@ -29,13 +30,13 @@ export function GatewaySwitch({ gateways, activeIndex }: GatewaySwitchProps) {
           ref={highlightRef}
           className="absolute top-0 left-0 rounded-full border border-border-strong bg-surface opacity-0 shadow-glass transition-[transform,width,height] duration-500 ease-out motion-reduce:transition-none"
         />
-        {gateways.map((gateway, index) => (
+        {labels.map((label, index) => (
           <span
-            key={gateway}
-            data-gateway
+            key={label}
+            data-segment
             className={`relative flex-auto px-2.5 py-1.5 text-center whitespace-nowrap transition-colors duration-500 ${index === activeIndex ? "text-text" : "text-text-tertiary"}`}
           >
-            {gateway}
+            {label}
           </span>
         ))}
       </div>

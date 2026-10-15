@@ -5,7 +5,7 @@ import { GlassPanel } from "@/components/ui/GlassPanel";
 import home from "@/content/home.json";
 import { demoModels, demoWorkers, evaluateAssignment } from "@/lib/brainDemo";
 import { findDivisionOfWorker } from "@/lib/divisions";
-import { GatewaySwitch } from "./GatewaySwitch";
+import { SegmentSwitch } from "./SegmentSwitch";
 import { checksDuration, ProbeChecks } from "./ProbeChecks";
 import { ProbeRoute } from "./ProbeRoute";
 import { useCycle } from "./useCycle";
@@ -38,10 +38,7 @@ export function ModelProbe() {
   return (
     <GlassPanel className="w-full max-w-md p-5">
       <div ref={ref} role="img" aria-label={bench.label} className="flex flex-col gap-5">
-        <GatewaySwitch
-          gateways={bench.gateways}
-          activeIndex={bench.gateways.indexOf(run.gateway)}
-        />
+        <SegmentSwitch labels={bench.gateways} activeIndex={bench.gateways.indexOf(run.gateway)} />
         <div key={isPlaying ? index : "still"} className="flex flex-col gap-5">
           <ProbeRoute
             divisionId={run.divisionId}
