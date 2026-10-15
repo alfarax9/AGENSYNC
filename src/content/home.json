@@ -616,6 +616,10 @@
         "body": "Typed input and output, like design_spec.v1, so the next worker knows exactly what it's getting."
       },
       {
+        "id": "memory",
+        "body": "What the worker keeps between tasks: this project's history, and patterns it picked up on earlier ones."
+      },
+      {
         "id": "permissions",
         "body": "Which files it can touch, which commands it can run, and whether it can reach the network."
       }
