@@ -6,7 +6,7 @@
     {
       "id": "default-model",
       "question": "Which model does AMORA use by default?",
-      "answer": "[PLACEHOLDER] The default combos are still being chosen. Every model in a combo has to pass AMORA's probes for tool use, structured output, and vision before it can be a default."
+      "answer": "Reef, the free preset: free cloud models through your own free OpenRouter account. Free tiers have small daily quotas, so Reef suits small tasks, and the dashboard shows what's left and warns you before a task is likely to run out. A worker with no free model that meets its requirements is marked as unavailable in free mode rather than given one that doesn't."
     },
     {
       "id": "cost",
