@@ -755,7 +755,7 @@
       {
         "id": "keychain",
         "title": "Keys live in your OS keychain",
-        "body": "Keychain on macOS, Credential Manager on Windows, Secret Service on Linux. The dashboard only ever shows the last four characters, and keys never go through Telegram."
+        "body": "Keychain on macOS, Credential Manager on Windows, Secret Service on Linux. The dashboard only ever shows the last four characters, and keys never go through Telegram. Paste a key into the chat and it gets blocked, with a pointer to Settings."
       },
       {
         "id": "local",
