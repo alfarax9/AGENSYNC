@@ -704,6 +704,11 @@
         "body": "AMORA tests each model for tool use, structured output, and vision. A model that fails a check a worker needs can't be given to that worker."
       },
       {
+        "id": "preset",
+        "title": "Pick a preset",
+        "body": "Reef uses free models only, and it's where everyone starts. Tide puts strong low-cost models on every worker. Abyss saves frontier models for the Planner and the gatekeepers. Each assignment says whether it's verified."
+      },
+      {
         "id": "waves",
         "title": "Pick your workers",
         "body": "Wave 1 is switched on: 29 workers, enough to plan, design, build, and test a web feature. Add more waves later."
