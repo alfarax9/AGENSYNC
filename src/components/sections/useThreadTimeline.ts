@@ -13,6 +13,13 @@ const steps: Step[] = messages.flatMap((message, index) => [
   { kind: "message", message: index },
 ]);
 
+// Who each of your messages so far was addressed to: a reply keeps the target
+// of the message it answers.
+const targetAfter: string[] = [];
+for (const message of messages) {
+  targetAfter.push(message.to ?? targetAfter[targetAfter.length - 1]);
+}
+
 const msPerCharacter = 38;
 const durations = { typing: 1400, message: 1100 };
 const sendPause = 400;
@@ -48,8 +55,11 @@ export function useThreadTimeline(ref: RefObject<Element | null>) {
     ? steps.slice(0, stepIndex + 1).filter((candidate) => candidate.kind === "message").length
     : messages.length;
 
+  const addressedCount = current?.kind === "compose" ? current.message + 1 : visibleCount;
+
   return {
     visibleCount,
+    target: targetAfter[Math.max(addressedCount, 1) - 1],
     typingMessage: current?.kind === "typing" ? messages[current.message] : undefined,
     composerText: current?.kind === "compose" ? messages[current.message].text.slice(0, typed) : "",
   };
