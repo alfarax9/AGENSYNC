@@ -9,6 +9,11 @@
       "answer": "Reef, the free preset: free cloud models through your own free OpenRouter account. Free tiers have small daily quotas, so Reef suits small tasks, and the dashboard shows what's left and warns you before a task is likely to run out. A worker with no free model that meets its requirements is marked as unavailable in free mode rather than given one that doesn't."
     },
     {
+      "id": "presets",
+      "question": "What are Reef, Tide, and Abyss?",
+      "answer": "Presets: a model picked for every worker in one go, so you don't fill 66 slots by hand. Reef is free models only. Tide puts strong low-cost models everywhere and mid-tier ones on the Planner and gatekeepers. Abyss uses frontier models only where they change the outcome. They run on your own gateway account and aren't subscriptions. Every assignment is labelled Verified, Experimental, Unverified, or Rejected."
+    },
+    {
       "id": "cost",
       "question": "Do I have to pay?",
       "answer": "AMORA is free. What costs money is model usage: you pay your providers for the tokens your workers use. You set a spending limit per task and per day, and the Costs page shows what each successful task cost. Those figures come from gateway telemetry, so some of them are estimates, and the page says which."
