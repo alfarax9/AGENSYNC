@@ -127,16 +127,16 @@
       {
         "id": "models",
         "tab": "Models",
-        "title": "Bring the models you already pay for",
-        "body": "Connect a gateway once, then point any worker's model slot at what fits the job. AMORA probes each model before it gets the work.",
+        "title": "Start free, or bring the models you already pay for",
+        "body": "Free models through your own OpenRouter account get you going. When you want more, switch a preset or point any worker's model slot at what fits the job. AMORA probes each model before it gets the work.",
         "chips": [
-          {
-            "id": "omniroute",
-            "label": "OmniRoute"
-          },
           {
             "id": "openrouter",
             "label": "OpenRouter"
+          },
+          {
+            "id": "omniroute",
+            "label": "OmniRoute"
           },
           {
             "id": "provider",
@@ -221,7 +221,7 @@
       },
       "models": {
         "label": "A probe bench cycling through four pairings: through OpenRouter, Frontier multimodal is accepted for the Slice / Markup Engineer; through Ollama, Local open-weights is rejected for the Logic Developer; through OmniRoute, Small and fast is rejected for the Slice / Markup Engineer because it lacks vision; through a provider directly, Reasoning specialist is accepted for the Logic Developer.",
-        "gateways": ["OmniRoute", "OpenRouter", "Provider", "Ollama"],
+        "gateways": ["OpenRouter", "OmniRoute", "Provider", "Ollama"],
         "probing": "probing",
         "scenarios": [
           {
