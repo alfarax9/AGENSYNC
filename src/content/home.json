@@ -269,12 +269,12 @@
       {
         "id": "brief",
         "title": "You write a brief",
-        "body": "Type the job into the dashboard the way you'd explain it to a colleague. Attach designs or specs, set a budget, and choose whether you sign off at every gate or only at the end."
+        "body": "Type the job into the agency chat in the dashboard, the way you'd explain it to a colleague. Attach designs or specs, set a budget, and choose whether you sign off at every gate or only at the end."
       },
       {
         "id": "plan",
         "title": "You approve the plan",
-        "body": "The Planner / Decomposer in Nexus shows which workers it wants and in what order. Nothing runs until you approve it, so a bad plan costs nothing."
+        "body": "The Planner / Decomposer in Nexus answers with a plan card: which workers it wants, in what order, and what it should cost. Nothing runs until you approve it, so a bad plan costs nothing."
       },
       {
         "id": "divisions",
