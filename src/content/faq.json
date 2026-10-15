@@ -31,7 +31,7 @@
     {
       "id": "training",
       "question": "Is my data used for training?",
-      "answer": "AMORA runs on your machine and only sends prompts to the providers you connect, so their terms decide. If you pick a free-tier model, the dashboard warns you that prompts may be used for training. With OpenRouter, data collection is switched off by default."
+      "answer": "AMORA runs on your machine and only sends prompts to the providers you connect, so their terms decide. Some free models may use prompts for training, so setup tells you before free mode starts. With OpenRouter, data collection is switched off by default."
     },
     {
       "id": "change-model",
