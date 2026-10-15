@@ -183,14 +183,32 @@
     ],
     "visuals": {
       "workers": {
-        "label": "A task thread: you send the brief Build a pricing page with yearly plans, the Planner / Decomposer replies with a plan, you approve it, and the Product Manager, UX Architect, Logic Developer, and Unit and Integration Tester each report back in turn until the page waits for your approval.",
+        "label": "A task thread. To the whole agency, you send the brief Build a pricing page with yearly plans; the Planner / Decomposer replies with a plan, you approve it, and the Product Manager and Logic Developer report back. To Bridge, you ask what's left before review, and the Status Reporter answers from the task state. To the Slice / Markup Engineer, you ask for yearly as the default, and it logs a change request for the next gate.",
         "task": "Task #141 · Pricing page",
         "live": "live",
         "you": "You",
         "composer": "Message the agency",
+        "targets": [
+          {
+            "id": "agency",
+            "label": "Agency",
+            "placeholder": "Message the agency"
+          },
+          {
+            "id": "bridge",
+            "label": "Bridge",
+            "placeholder": "Message Bridge"
+          },
+          {
+            "id": "slice-markup-engineer",
+            "label": "Slice / Markup Engineer",
+            "placeholder": "Message the Slice / Markup Engineer"
+          }
+        ],
         "messages": [
           {
             "author": "you",
+            "to": "agency",
             "text": "Build a pricing page with yearly plans"
           },
           {
@@ -199,6 +217,7 @@
           },
           {
             "author": "you",
+            "to": "agency",
             "text": "Approved."
           },
           {
@@ -206,16 +225,26 @@
             "text": "Scope set: three tiers and a monthly or yearly toggle."
           },
           {
-            "workerId": "ux-architect",
-            "text": "Layout and states are in design_spec.v1. Handing off to Forge."
-          },
-          {
             "workerId": "logic-developer",
             "text": "Page and toggle built. Sending it to Crucible."
           },
           {
-            "workerId": "unit-integration-tester",
-            "text": "12 of 12 tests pass. It's waiting for your approval."
+            "author": "you",
+            "to": "bridge",
+            "text": "What's left before I can review it?"
+          },
+          {
+            "workerId": "status-reporter",
+            "text": "Crucible is on attempt 1 of 3, with 9 of 12 tests done. $1.12 of the $5.00 budget is spent."
+          },
+          {
+            "author": "you",
+            "to": "slice-markup-engineer",
+            "text": "Make yearly the default."
+          },
+          {
+            "workerId": "slice-markup-engineer",
+            "text": "Logged as a change request. It goes in at the next gate, once this test run finishes."
           }
         ]
       },
