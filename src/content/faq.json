@@ -16,7 +16,7 @@
     {
       "id": "cost",
       "question": "Do I have to pay?",
-      "answer": "AMORA is free. What costs money is model usage: you pay your providers for the tokens your workers use. You set a spending limit per task and per day, and the Costs page shows what each successful task cost. Those figures come from gateway telemetry, so some of them are estimates, and the page says which."
+      "answer": "AMORA is free, and so is the Reef preset as long as you stay inside your gateway's free quota. Beyond that you pay your providers for the tokens your workers use. You set a spending limit per task and per day, and the Costs page shows what each successful task cost. Those figures come from gateway telemetry, so some of them are estimates, and the page says which."
     },
     {
       "id": "telegram",
