@@ -2,19 +2,24 @@
 
 import { useRef } from "react";
 import home from "@/content/home.json";
+import { SegmentSwitch } from "./SegmentSwitch";
 import { ThreadComposer } from "./ThreadComposer";
 import { ThreadMessage } from "./ThreadMessage";
 import { TypingBubble } from "./TypingBubble";
 import { useThreadTimeline } from "./useThreadTimeline";
 
 const thread = home.platform.visuals.workers;
+const targetLabels = thread.targets.map((target) => target.label);
 
-// A task thread playing out: you send the brief, the planner answers with a
-// plan, you approve it, and each division reports back in turn. Older messages
-// slide up and fade under the top edge as new ones arrive.
+// A task thread playing out: you brief the whole agency, the planner answers
+// with a plan, you approve it, and divisions report back; then you ask one
+// division and one worker directly. The target above the composer follows
+// whoever you are writing to. Older messages slide up and fade under the top
+// edge as new ones arrive.
 export function AgentThread() {
   const ref = useRef<HTMLDivElement>(null);
-  const { visibleCount, typingMessage, composerText } = useThreadTimeline(ref);
+  const { visibleCount, typingMessage, composerText, target } = useThreadTimeline(ref);
+  const targetIndex = thread.targets.findIndex((candidate) => candidate.id === target);
 
   return (
     <div
@@ -38,7 +43,8 @@ export function AgentThread() {
           <TypingBubble workerId={typingMessage.workerId} />
         )}
       </ol>
-      <ThreadComposer text={composerText} placeholder={thread.composer} />
+      <SegmentSwitch labels={targetLabels} activeIndex={targetIndex} />
+      <ThreadComposer text={composerText} placeholder={thread.targets[targetIndex].placeholder} />
     </div>
   );
 }
